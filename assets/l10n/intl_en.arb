@@ -1,0 +1,9 @@
+{
+    "app_name": "My Library",
+
+    "login_welcome": "Welcome to My Library",
+    "username": "Username",
+    "password": "Password",
+    "dont_have_account": "Don't have an account?",
+    "sign_up": "Sign Up"
+}

@@ -1,0 +1,9 @@
+{
+    "app_name": "My Library",
+
+    "login_welcome": "My Library xin chào",
+    "username": "Tài khoản",
+    "password": "Mật khẩu",
+    "dont_have_account": "Chưa có tài khoản?",
+    "sign_up": "Đăng ký"
+}
