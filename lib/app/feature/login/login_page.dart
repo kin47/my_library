@@ -6,6 +6,7 @@ import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
+import 'package:my_library/design_system/ds_text_style.dart';
 import 'package:my_library/di/di.dart';
 import 'package:my_library/generated/assets.gen.dart';
 import 'package:my_library/generated/l10n.dart';
@@ -107,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
           SH16,
           Text(
             S.current.login_welcome,
-            style: const TextStyle(fontSize: 20),
+            style: DSTextStyle.ws20w400,
           ),
         ],
       ),
