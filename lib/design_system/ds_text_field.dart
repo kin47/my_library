@@ -4,11 +4,14 @@ class DSTextField extends StatefulWidget {
   const DSTextField({
     super.key,
     this.hintText,
+    this.hintStyle = const TextStyle(fontSize: 14),
     this.onChanged,
     this.onSubmitted,
     this.prefixIcon,
     this.isPasswordInput = false,
     this.controller,
+    this.height = 48,
+    this.textInputAction,
   });
 
   final TextEditingController? controller;
@@ -17,6 +20,9 @@ class DSTextField extends StatefulWidget {
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
   final bool isPasswordInput;
+  final double height;
+  final TextInputAction? textInputAction;
+  final TextStyle hintStyle;
 
   @override
   State<DSTextField> createState() => _DSTextFieldState();
@@ -28,8 +34,9 @@ class _DSTextFieldState extends State<DSTextField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: widget.height,
       child: TextField(
+        textInputAction: widget.textInputAction,
         controller: widget.controller,
         obscureText: obscureText,
         decoration: InputDecoration(
@@ -58,6 +65,7 @@ class _DSTextFieldState extends State<DSTextField> {
             ),
           ),
           hintText: widget.hintText,
+          hintStyle: widget.hintStyle,
           prefixIcon: widget.prefixIcon,
           suffixIcon: _buildSuffixWidget(),
           border: InputBorder.none,
@@ -78,6 +86,7 @@ class _DSTextFieldState extends State<DSTextField> {
         },
         icon: const Icon(
           Icons.remove_red_eye,
+          size: 24,
         ),
       );
     } else {

@@ -100,11 +100,31 @@ class S {
     );
   }
 
-  /// `Sign Up`
+  /// `Log in`
+  String get log_in {
+    return Intl.message(
+      'Log in',
+      name: 'log_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
   String get sign_up {
     return Intl.message(
-      'Sign Up',
+      'Sign up',
       name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot password',
+      name: 'forgot_password',
       desc: '',
       args: [],
     );
