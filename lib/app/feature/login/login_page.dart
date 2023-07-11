@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_library/app/feature/login/bloc/login_cubit.dart';
 import 'package:my_library/app/feature/login/bloc/login_state.dart';
 import 'package:my_library/design_system/ds_color.dart';
+import 'package:my_library/design_system/ds_elevated_button.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
 import 'package:my_library/di/di.dart';
@@ -118,15 +119,20 @@ class _LoginPageState extends State<LoginPage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SH30,
+        SH50,
+
+        // username
         DSTextField(
           controller: usernameController,
           hintText: S.current.username,
           prefixIcon: const Icon(
             Icons.person,
           ),
+          onChanged: (String value) => _cubit.changeUsernameEvent(value),
         ),
         SH10,
+
+        // password
         DSTextField(
           controller: passwordController,
           hintText: S.current.password,
@@ -135,7 +141,31 @@ class _LoginPageState extends State<LoginPage> {
             Icons.lock,
           ),
         ),
+        SH10,
+
+        // forgot password
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: Text(
+                  S.current.forgot_password,
+                ),
+              ),
+            ],
+          ),
+        ),
         SH20,
+
+        // login button
+        DSElevatedButton(
+          text: S.current.log_in,
+          width: screenWidth(context) * 0.4,
+          onPressed: () {},
+        )
       ],
     );
   }

@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Quên mật khẩu"),
+        "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "login_welcome":
             MessageLookupByLibrary.simpleMessage("My Library xin chào"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
