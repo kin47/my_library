@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_library/design_system/ds_color.dart';
 
 class DSTextField extends StatefulWidget {
   const DSTextField({
@@ -41,25 +42,25 @@ class _DSTextFieldState extends State<DSTextField> {
         obscureText: obscureText,
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey, width: 2.0),
+            borderSide: BorderSide(color: AppColors.grey600, width: 2.0),
             borderRadius: BorderRadius.all(
               Radius.circular(24),
             ),
           ),
           errorBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red, width: 2.0),
+            borderSide: BorderSide(color: AppColors.warning, width: 2.0),
             borderRadius: BorderRadius.all(
               Radius.circular(24),
             ),
           ),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.purple, width: 2.0),
+            borderSide: BorderSide(color: AppColors.primary, width: 2.0),
             borderRadius: BorderRadius.all(
               Radius.circular(24),
             ),
           ),
           focusedErrorBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.purple, width: 2.0),
+            borderSide: BorderSide(color: AppColors.primary, width: 2.0),
             borderRadius: BorderRadius.all(
               Radius.circular(24),
             ),

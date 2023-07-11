@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_library/design_system/ds_color.dart';
+import 'package:my_library/design_system/ds_text_style.dart';
 
 class DSElevatedButton extends StatelessWidget {
   final double width;
@@ -46,10 +47,8 @@ class DSElevatedButton extends StatelessWidget {
               Text(
                 text,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+                style: DSTextStyle.ws16w500.copyWith(
+                  color: AppColors.white,
                 ),
               ),
             ],
