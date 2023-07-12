@@ -129,6 +129,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's start register now`
+  String get register_subtitle {
+    return Intl.message(
+      'Let\'s start register now',
+      name: 'register_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fullname`
+  String get fullname {
+    return Intl.message(
+      'Fullname',
+      name: 'fullname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get phone_number {
+    return Intl.message(
+      'Phone number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `With registration, you will also accept our`
+  String get with_registration {
+    return Intl.message(
+      'With registration, you will also accept our',
+      name: 'with_registration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms and Conditions`
+  String get terms_and_conditions {
+    return Intl.message(
+      'Terms and Conditions',
+      name: 'terms_and_conditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fullname must not be empty`
+  String get fullname_required {
+    return Intl.message(
+      'Fullname must not be empty',
+      name: 'fullname_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must have at least 10 numbers`
+  String get phoneNumber_required {
+    return Intl.message(
+      'Phone number must have at least 10 numbers',
+      name: 'phoneNumber_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address must not be empty`
+  String get address_required {
+    return Intl.message(
+      'Address must not be empty',
+      name: 'address_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email is invalid`
+  String get email_required {
+    return Intl.message(
+      'Email is invalid',
+      name: 'email_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username must have at least 6 character`
+  String get username_required {
+    return Intl.message(
+      'Username must have at least 6 character',
+      name: 'username_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have at least 8 characters, 1 upper case, 1 lower case, 1 digit and 1 special character !@#$&*~`
+  String get password_required {
+    return Intl.message(
+      'Password must have at least 8 characters, 1 upper case, 1 lower case, 1 digit and 1 special character !@#\$&*~',
+      name: 'password_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm password do not match`
+  String get confirm_password_required {
+    return Intl.message(
+      'Confirm password do not match',
+      name: 'confirm_password_required',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

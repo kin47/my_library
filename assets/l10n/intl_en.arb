@@ -7,5 +7,22 @@
     "dont_have_account": "Don't have an account?",
     "log_in": "Log in",
     "sign_up": "Sign up",
-    "forgot_password": "Forgot password"
+    "forgot_password": "Forgot password",
+
+    "register": "Register",
+    "register_subtitle": "Let's start register now",
+    "fullname": "Fullname",
+    "phone_number": "Phone number",
+    "address": "Address",
+    "email": "Email",
+    "confirm_password": "Confirm password",
+    "with_registration": "With registration, you will also accept our",
+    "terms_and_conditions": "Terms and Conditions",
+    "fullname_required": "Fullname must not be empty",
+    "phoneNumber_required": "Phone number must have at least 10 numbers",
+    "address_required": "Address must not be empty",
+    "email_required": "Email is invalid",
+    "username_required": "Username must have at least 6 character",
+    "password_required": "Password must have at least 8 characters, 1 upper case, 1 lower case, 1 digit and 1 special character !@#$&*~",
+    "confirm_password_required": "Confirm password do not match"
 }

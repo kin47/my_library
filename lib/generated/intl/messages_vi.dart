@@ -22,16 +22,43 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "address": MessageLookupByLibrary.simpleMessage("Địa chỉ nhà"),
+        "address_required":
+            MessageLookupByLibrary.simpleMessage("Địa chỉ không được để trống"),
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
+        "confirm_password_required": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu xác nhận không đúng"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "email_required":
+            MessageLookupByLibrary.simpleMessage("Email không hợp lệ"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu"),
+        "fullname": MessageLookupByLibrary.simpleMessage("Họ và tên"),
+        "fullname_required":
+            MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "login_welcome":
             MessageLookupByLibrary.simpleMessage("My Library xin chào"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "password_required": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu phải tối thiểu 8 kí tự, gồm 1 chữ cái viết thường, 1 chữ in hoa, 1 số và 1 kí tự đặc biệt !@#\$&*~"),
+        "phoneNumber_required": MessageLookupByLibrary.simpleMessage(
+            "Số điện thoại phải tối thiểu 10 số"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+        "register_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Hãy bắt đầu đăng ký ngay nhé"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Đăng ký"),
-        "username": MessageLookupByLibrary.simpleMessage("Tài khoản")
+        "terms_and_conditions":
+            MessageLookupByLibrary.simpleMessage("Điều khoản và Điều kiện"),
+        "username": MessageLookupByLibrary.simpleMessage("Tài khoản"),
+        "username_required":
+            MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
+        "with_registration": MessageLookupByLibrary.simpleMessage(
+            "Với việc đăng ký, bạn đồng ý với các")
       };
 }
