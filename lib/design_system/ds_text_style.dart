@@ -72,6 +72,24 @@ abstract class DSTextStyle {
     fontFamily: 'Work Sans',
   );
 
+  static TextStyle ws22w400 = const TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Work Sans',
+  );
+
+  static TextStyle ws22w500 = const TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Work Sans',
+  );
+
+  static TextStyle ws22w700 = const TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'Work Sans',
+  );
+
   static TextStyle ws24w400 = const TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w400,

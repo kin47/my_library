@@ -129,6 +129,7 @@ class _LoginPageState extends State<LoginPage> {
           prefixIcon: const Icon(
             Icons.person,
           ),
+          textInputAction: TextInputAction.next,
           onChanged: (String value) => _cubit.changeUsernameEvent(value),
         ),
         SH10,
@@ -138,9 +139,11 @@ class _LoginPageState extends State<LoginPage> {
           controller: passwordController,
           hintText: S.current.password,
           isPasswordInput: true,
+          textInputAction: TextInputAction.done,
           prefixIcon: const Icon(
             Icons.lock,
           ),
+          onChanged: (String value) => _cubit.changePasswordEvent(value),
         ),
         SH10,
 
@@ -154,6 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () {},
                 child: Text(
                   S.current.forgot_password,
+                  style: DSTextStyle.ws14w400,
                 ),
               ),
             ],
