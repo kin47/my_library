@@ -56,11 +56,15 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/ic_book.jpg
-  AssetGenImage get icBook => const AssetGenImage('assets/images/ic_book.jpg');
-
   /// File path: assets/images/ic_en.png
   AssetGenImage get icEn => const AssetGenImage('assets/images/ic_en.png');
+
+  /// File path: assets/images/ic_logo.png
+  AssetGenImage get icLogo => const AssetGenImage('assets/images/ic_logo.png');
+
+  /// File path: assets/images/ic_logo_foreground.png
+  AssetGenImage get icLogoForeground =>
+      const AssetGenImage('assets/images/ic_logo_foreground.png');
 
   /// File path: assets/images/ic_vn.png
   AssetGenImage get icVn => const AssetGenImage('assets/images/ic_vn.png');
@@ -70,7 +74,8 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/img_background.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [icBook, icEn, icVn, imgBackground];
+  List<AssetGenImage> get values =>
+      [icEn, icLogo, icLogoForeground, icVn, imgBackground];
 }
 
 class Assets {

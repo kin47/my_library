@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       ),
       debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,
-      initialRoute: RouteName.login,
+      initialRoute: RouteName.root,
       routes: AppPages.routes,
       localizationsDelegates: const [S.delegate],
     );
