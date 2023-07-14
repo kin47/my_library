@@ -24,5 +24,17 @@
     "email_required": "Email is invalid",
     "username_required": "Username must have at least 6 character",
     "password_required": "Password must have at least 8 characters, 1 upper case, 1 lower case, 1 digit and 1 special character !@#$&*~",
-    "confirm_password_required": "Confirm password do not match"
+    "confirm_password_required": "Confirm password do not match",
+
+    "home": "Home",
+    "number_of_users": "Number of users",
+    "most_liked_books": "Most Liked",
+    "most_comments": "Most Comments",
+    "most_liked_category": "Most Liked Category",
+    "recent_additions": "Recent addition",
+    "recent_update": "Recent update",
+
+    "library": "Library",
+
+    "profile": "Profile"
 }

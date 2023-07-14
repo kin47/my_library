@@ -1,5 +1,5 @@
 abstract class RouteName {
-  //root - check at the beginning whether is logged in or not?
+  // splash page
   static const root = '/';
 
   //authentication
@@ -7,6 +7,8 @@ abstract class RouteName {
   static const register = '/signup';
 
   // home
+  static const main = '/main'; // bottom nav bar
+
   static const home = '/home';
   static const library = '/library';
   static const profile = '/profile';

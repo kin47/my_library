@@ -40,15 +40,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullname": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "fullname_required":
             MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
+        "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "library": MessageLookupByLibrary.simpleMessage("Thư viện"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "login_welcome":
             MessageLookupByLibrary.simpleMessage("My Library xin chào"),
+        "most_comments":
+            MessageLookupByLibrary.simpleMessage("Nhiều bình luận nhất"),
+        "most_liked_books":
+            MessageLookupByLibrary.simpleMessage("Sách được yêu thích nhất"),
+        "most_liked_category": MessageLookupByLibrary.simpleMessage(
+            "Thể loại được yêu thích nhất"),
+        "number_of_users":
+            MessageLookupByLibrary.simpleMessage("Số lượng người dùng"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "password_required": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu phải tối thiểu 8 kí tự, gồm 1 chữ cái viết thường, 1 chữ in hoa, 1 số và 1 kí tự đặc biệt !@#\$&*~"),
         "phoneNumber_required": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại phải tối thiểu 10 số"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "profile": MessageLookupByLibrary.simpleMessage("Tài khoản"),
+        "recent_additions":
+            MessageLookupByLibrary.simpleMessage("Được thêm gần đây"),
+        "recent_update":
+            MessageLookupByLibrary.simpleMessage("Cập nhật gần đây"),
         "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "register_subtitle": MessageLookupByLibrary.simpleMessage(
             "Hãy bắt đầu đăng ký ngay nhé"),

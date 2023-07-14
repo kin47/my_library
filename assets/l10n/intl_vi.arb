@@ -24,5 +24,17 @@
     "email_required": "Email không hợp lệ",
     "username_required": "Tên không được để trống",
     "password_required": "Mật khẩu phải tối thiểu 8 kí tự, gồm 1 chữ cái viết thường, 1 chữ in hoa, 1 số và 1 kí tự đặc biệt !@#$&*~",
-    "confirm_password_required": "Mật khẩu xác nhận không đúng"
+    "confirm_password_required": "Mật khẩu xác nhận không đúng",
+
+    "home": "Trang chủ",
+    "number_of_users": "Số lượng người dùng",
+    "most_liked_books": "Sách được yêu thích nhất",
+    "most_comments": "Nhiều bình luận nhất",
+    "most_liked_category": "Thể loại được yêu thích nhất",
+    "recent_additions": "Được thêm gần đây",
+    "recent_update": "Cập nhật gần đây",
+
+    "library": "Thư viện",
+
+    "profile": "Tài khoản"
 }

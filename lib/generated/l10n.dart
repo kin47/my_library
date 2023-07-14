@@ -289,6 +289,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of users`
+  String get number_of_users {
+    return Intl.message(
+      'Number of users',
+      name: 'number_of_users',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most Liked`
+  String get most_liked_books {
+    return Intl.message(
+      'Most Liked',
+      name: 'most_liked_books',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most Comments`
+  String get most_comments {
+    return Intl.message(
+      'Most Comments',
+      name: 'most_comments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most Liked Category`
+  String get most_liked_category {
+    return Intl.message(
+      'Most Liked Category',
+      name: 'most_liked_category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent addition`
+  String get recent_additions {
+    return Intl.message(
+      'Recent addition',
+      name: 'recent_additions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent update`
+  String get recent_update {
+    return Intl.message(
+      'Recent update',
+      name: 'recent_update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Library`
+  String get library {
+    return Intl.message(
+      'Library',
+      name: 'library',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

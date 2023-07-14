@@ -38,9 +38,8 @@ class _SplashPageState extends State<SplashPage> {
               await Future.delayed(const Duration(seconds: 3));
               navigatorState.pushReplacementNamed(RouteName.login);
             },
-            child: CircleAvatar(
-              radius: screenWidthPercentage(context, percentage: 0.25),
-              foregroundImage: AssetImage(
+            child: Image(
+              image: AssetImage(
                 Assets.images.icLogo.keyName,
               ),
             ),

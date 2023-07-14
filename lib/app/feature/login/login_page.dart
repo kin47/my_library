@@ -169,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
         DSElevatedButton(
           text: S.current.log_in,
           width: screenWidth(context) * 0.4,
-          onPressed: () {},
+          onPressed: () => _cubit.goToHomePage(),
         )
       ],
     );

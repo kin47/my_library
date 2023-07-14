@@ -40,15 +40,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullname": MessageLookupByLibrary.simpleMessage("Fullname"),
         "fullname_required":
             MessageLookupByLibrary.simpleMessage("Fullname must not be empty"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "library": MessageLookupByLibrary.simpleMessage("Library"),
         "log_in": MessageLookupByLibrary.simpleMessage("Log in"),
         "login_welcome":
             MessageLookupByLibrary.simpleMessage("Welcome to My Library"),
+        "most_comments": MessageLookupByLibrary.simpleMessage("Most Comments"),
+        "most_liked_books": MessageLookupByLibrary.simpleMessage("Most Liked"),
+        "most_liked_category":
+            MessageLookupByLibrary.simpleMessage("Most Liked Category"),
+        "number_of_users":
+            MessageLookupByLibrary.simpleMessage("Number of users"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_required": MessageLookupByLibrary.simpleMessage(
             "Password must have at least 8 characters, 1 upper case, 1 lower case, 1 digit and 1 special character !@#\$&*~"),
         "phoneNumber_required": MessageLookupByLibrary.simpleMessage(
             "Phone number must have at least 10 numbers"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "recent_additions":
+            MessageLookupByLibrary.simpleMessage("Recent addition"),
+        "recent_update": MessageLookupByLibrary.simpleMessage("Recent update"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "register_subtitle":
             MessageLookupByLibrary.simpleMessage("Let\'s start register now"),
