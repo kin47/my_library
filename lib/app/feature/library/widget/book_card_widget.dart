@@ -3,6 +3,7 @@ import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
 import 'package:my_library/generated/assets.gen.dart';
+import 'package:my_library/generated/l10n.dart';
 
 class BookCardWidget extends StatelessWidget {
   const BookCardWidget({
@@ -57,11 +58,11 @@ class BookCardWidget extends StatelessWidget {
             ),
             SH5,
             Text(
-              "Author: J.K.Rowling",
+              "${S.current.author}: J.K.Rowling",
               style: DSTextStyle.ws14w400,
             ),
             Text(
-              "Genre: Fantasy",
+              "${S.current.genre}: Fantasy",
               style: DSTextStyle.ws14w400,
             ),
             _buildLikedAndCommentsWidget()

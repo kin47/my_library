@@ -35,6 +35,11 @@
     "recent_update": "Recent update",
 
     "library": "Library",
+    "book_name": "Book name",
+    "find_by_category": "Find by category",
+    "add_new_book": "Add new book",
+    "author": "Author",
+    "genre": "Genre",
 
     "profile": "Profile"
 }

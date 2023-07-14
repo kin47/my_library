@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:my_library/app/feature/home_admin/widget/book_card_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_library/app/feature/home_admin/bloc/home_admin_cubit.dart';
+import 'package:my_library/app/feature/home_admin/bloc/home_admin_state.dart';
+import 'package:my_library/app/feature/library/widget/book_card_widget.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
+import 'package:my_library/di/di.dart';
 import 'package:my_library/generated/assets.gen.dart';
 import 'package:my_library/generated/l10n.dart';
 
-class HomeAdminPage extends StatelessWidget {
+class HomeAdminPage extends StatefulWidget {
   const HomeAdminPage({super.key});
+
+  @override
+  State<HomeAdminPage> createState() => _HomeAdminPageState();
+}
+
+class _HomeAdminPageState extends State<HomeAdminPage> {
+  final HomeAdminCubit _cubit = di();
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -16,21 +27,26 @@ class HomeAdminPage extends StatelessWidget {
           title: S.current.home,
           offAllNamed: true,
         ),
-        body: _buildPrimaryWidget(context),
+        body: BlocBuilder<HomeAdminCubit, HomeAdminState>(
+          bloc: _cubit,
+          builder: (context, state) {
+            return _buildPrimaryWidget();
+          },
+        ),
       );
 
-  Widget _buildPrimaryWidget(BuildContext context) {
+  Widget _buildPrimaryWidget() {
     return SingleChildScrollView(
       child: Column(
         children: [
           SH20,
-          _buildBodyWidget(context),
+          _buildBodyWidget(),
         ],
       ),
     );
   }
 
-  Widget _buildBodyWidget(BuildContext context) {
+  Widget _buildBodyWidget() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -89,18 +105,18 @@ class HomeAdminPage extends StatelessWidget {
       children: [
         Flexible(
           flex: 1,
-          child: _buildNumberOfUsersWidget(context),
+          child: _buildNumberOfUsersWidget(),
         ),
         SW20,
         Flexible(
           flex: 1,
-          child: _buildMostLikedCategoryWidget(context),
+          child: _buildMostLikedCategoryWidget(),
         ),
       ],
     );
   }
 
-  Widget _buildNumberOfUsersWidget(BuildContext context) {
+  Widget _buildNumberOfUsersWidget() {
     return Container(
       height: 120,
       width: MediaQuery.of(context).size.width,
@@ -151,7 +167,7 @@ class HomeAdminPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMostLikedCategoryWidget(BuildContext context) {
+  Widget _buildMostLikedCategoryWidget() {
     return Container(
       height: 120,
       width: MediaQuery.of(context).size.width,

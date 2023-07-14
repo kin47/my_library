@@ -370,6 +370,56 @@ class S {
     );
   }
 
+  /// `Book name`
+  String get book_name {
+    return Intl.message(
+      'Book name',
+      name: 'book_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Find by category`
+  String get find_by_category {
+    return Intl.message(
+      'Find by category',
+      name: 'find_by_category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add new book`
+  String get add_new_book {
+    return Intl.message(
+      'Add new book',
+      name: 'add_new_book',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Author`
+  String get author {
+    return Intl.message(
+      'Author',
+      name: 'author',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Genre`
+  String get genre {
+    return Intl.message(
+      'Genre',
+      name: 'genre',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profile`
   String get profile {
     return Intl.message(

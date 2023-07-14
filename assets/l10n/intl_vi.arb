@@ -35,6 +35,11 @@
     "recent_update": "Cập nhật gần đây",
 
     "library": "Thư viện",
+    "book_name": "Tên sách",
+    "find_by_category": "Tìm theo danh mục",
+    "add_new_book": "Thêm sách mới",
+    "author": "Tác giả",
+    "genre": "Thể loại",
 
     "profile": "Tài khoản"
 }
