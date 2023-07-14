@@ -14,6 +14,7 @@ class DSTextField extends StatefulWidget {
     this.onChanged,
     this.onSubmitted,
     this.prefixIcon,
+    this.suffixIcon,
     this.isPasswordInput = false,
     this.controller,
     this.height = 48,
@@ -26,6 +27,7 @@ class DSTextField extends StatefulWidget {
   final TextEditingController? controller;
   final String? hintText;
   final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
   final bool isPasswordInput;
@@ -140,7 +142,7 @@ class _DSTextFieldState extends State<DSTextField> {
       setState(() {
         obscureText = false;
       });
-      return null;
+      return widget.suffixIcon;
     }
   }
 }

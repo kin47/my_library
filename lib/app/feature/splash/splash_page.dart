@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/app/routes/app_routes.dart';
-import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/generated/assets.gen.dart';
 
 class SplashPage extends StatefulWidget {

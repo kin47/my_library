@@ -22,10 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_new_book": MessageLookupByLibrary.simpleMessage("Thêm sách mới"),
         "address": MessageLookupByLibrary.simpleMessage("Địa chỉ nhà"),
         "address_required":
             MessageLookupByLibrary.simpleMessage("Địa chỉ không được để trống"),
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
+        "author": MessageLookupByLibrary.simpleMessage("Tác giả"),
+        "book_name": MessageLookupByLibrary.simpleMessage("Tên sách"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
@@ -35,11 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email không hợp lệ"),
+        "find_by_category":
+            MessageLookupByLibrary.simpleMessage("Tìm theo danh mục"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu"),
         "fullname": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "fullname_required":
             MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
+        "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "library": MessageLookupByLibrary.simpleMessage("Thư viện"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),

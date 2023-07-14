@@ -10,15 +10,18 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.title = '',
     this.offAllNamed = false,
+    this.actions,
   });
 
   final String title;
   final bool offAllNamed;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: kToolbarHeight,
+      actions: actions,
       flexibleSpace: Container(
         height: kToolbarHeight + MediaQuery.of(context).padding.top + 20,
         decoration: BoxDecoration(
@@ -42,7 +45,7 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SH10,
+            SH20,
             Row(
               children: [
                 SW16,

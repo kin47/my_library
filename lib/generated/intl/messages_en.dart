@@ -22,10 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_new_book": MessageLookupByLibrary.simpleMessage("Add new book"),
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "address_required":
             MessageLookupByLibrary.simpleMessage("Address must not be empty"),
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
+        "author": MessageLookupByLibrary.simpleMessage("Author"),
+        "book_name": MessageLookupByLibrary.simpleMessage("Book name"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
@@ -35,11 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email is invalid"),
+        "find_by_category":
+            MessageLookupByLibrary.simpleMessage("Find by category"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password"),
         "fullname": MessageLookupByLibrary.simpleMessage("Fullname"),
         "fullname_required":
             MessageLookupByLibrary.simpleMessage("Fullname must not be empty"),
+        "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "library": MessageLookupByLibrary.simpleMessage("Library"),
         "log_in": MessageLookupByLibrary.simpleMessage("Log in"),
