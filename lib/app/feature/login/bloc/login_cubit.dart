@@ -23,4 +23,8 @@ class LoginCubit extends Cubit<LoginState> {
   void goToRegisterPage() {
     navigatorState.pushNamed(RouteName.register);
   }
+
+  void goToHomePage() {
+    navigatorState.pushReplacementNamed(RouteName.main);
+  }
 }

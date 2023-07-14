@@ -77,9 +77,20 @@ class $AssetsImagesGen {
   AssetGenImage get imgReading =>
       const AssetGenImage('assets/images/img_reading.png');
 
+  /// File path: assets/images/img_transaction_bg.png
+  AssetGenImage get imgTransactionBg =>
+      const AssetGenImage('assets/images/img_transaction_bg.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [icEn, icLogo, icLogoForeground, icVn, imgBackground, imgReading];
+  List<AssetGenImage> get values => [
+        icEn,
+        icLogo,
+        icLogoForeground,
+        icVn,
+        imgBackground,
+        imgReading,
+        imgTransactionBg
+      ];
 }
 
 class Assets {
