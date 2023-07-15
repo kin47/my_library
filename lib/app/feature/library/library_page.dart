@@ -122,7 +122,7 @@ class _LibraryPageState extends State<LibraryPage> {
             DropdownMenuItem<String>(
               value: '',
               child: Text(
-                'Find by category',
+                S.current.find_by_category,
                 style: DSTextStyle.ws14w400,
               ),
             ),

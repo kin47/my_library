@@ -45,7 +45,7 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SH20,
+            SH32,
             Row(
               children: [
                 SW16,

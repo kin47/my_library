@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
         "author": MessageLookupByLibrary.simpleMessage("Author"),
         "book_name": MessageLookupByLibrary.simpleMessage("Book name"),
+        "change_information":
+            MessageLookupByLibrary.simpleMessage("Change information"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
@@ -38,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email is invalid"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "find_by_category":
             MessageLookupByLibrary.simpleMessage("Find by category"),
         "forgot_password":
@@ -49,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "library": MessageLookupByLibrary.simpleMessage("Library"),
         "log_in": MessageLookupByLibrary.simpleMessage("Log in"),
+        "log_out": MessageLookupByLibrary.simpleMessage("Log out"),
         "login_welcome":
             MessageLookupByLibrary.simpleMessage("Welcome to My Library"),
         "most_comments": MessageLookupByLibrary.simpleMessage("Most Comments"),
@@ -76,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "username_required": MessageLookupByLibrary.simpleMessage(
             "Username must have at least 6 character"),
+        "vietnamese": MessageLookupByLibrary.simpleMessage("Vietnamese"),
         "with_registration": MessageLookupByLibrary.simpleMessage(
             "With registration, you will also accept our")
       };

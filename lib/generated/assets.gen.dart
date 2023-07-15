@@ -69,6 +69,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_vn.png
   AssetGenImage get icVn => const AssetGenImage('assets/images/ic_vn.png');
 
+  /// File path: assets/images/img_avatar.png
+  AssetGenImage get imgAvatar =>
+      const AssetGenImage('assets/images/img_avatar.png');
+
   /// File path: assets/images/img_background.png
   AssetGenImage get imgBackground =>
       const AssetGenImage('assets/images/img_background.png');
@@ -87,6 +91,7 @@ class $AssetsImagesGen {
         icLogo,
         icLogoForeground,
         icVn,
+        imgAvatar,
         imgBackground,
         imgReading,
         imgTransactionBg
