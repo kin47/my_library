@@ -11,13 +11,15 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:my_library/app/feature/home_admin/bloc/home_admin_cubit.dart'
+import 'package:my_library/app/feature/book_preview/bloc/book_preview_cubit.dart'
     as _i3;
-import 'package:my_library/app/feature/library/bloc/library_cubit.dart' as _i4;
-import 'package:my_library/app/feature/login/bloc/login_cubit.dart' as _i5;
-import 'package:my_library/app/feature/profile/bloc/profile_cubit.dart' as _i6;
+import 'package:my_library/app/feature/home_admin/bloc/home_admin_cubit.dart'
+    as _i4;
+import 'package:my_library/app/feature/library/bloc/library_cubit.dart' as _i5;
+import 'package:my_library/app/feature/login/bloc/login_cubit.dart' as _i6;
+import 'package:my_library/app/feature/profile/bloc/profile_cubit.dart' as _i7;
 import 'package:my_library/app/feature/register/bloc/register_cubit.dart'
-    as _i7;
+    as _i8;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -30,11 +32,12 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i3.HomeAdminCubit>(() => _i3.HomeAdminCubit());
-    gh.factory<_i4.LibraryCubit>(() => _i4.LibraryCubit());
-    gh.factory<_i5.LoginCubit>(() => _i5.LoginCubit());
-    gh.factory<_i6.ProfileCubit>(() => _i6.ProfileCubit());
-    gh.factory<_i7.RegisterCubit>(() => _i7.RegisterCubit());
+    gh.factory<_i3.BookPreviewCubit>(() => _i3.BookPreviewCubit());
+    gh.factory<_i4.HomeAdminCubit>(() => _i4.HomeAdminCubit());
+    gh.factory<_i5.LibraryCubit>(() => _i5.LibraryCubit());
+    gh.factory<_i6.LoginCubit>(() => _i6.LoginCubit());
+    gh.factory<_i7.ProfileCubit>(() => _i7.ProfileCubit());
+    gh.factory<_i8.RegisterCubit>(() => _i8.RegisterCubit());
     return this;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_library/app/feature/book_preview/book_preview_page.dart';
 import 'package:my_library/app/feature/home_admin/home_admin_page.dart';
 import 'package:my_library/app/feature/login/login_page.dart';
 import 'package:my_library/app/feature/main/bottom_nav_bar.dart';
@@ -16,5 +17,6 @@ abstract class AppPages {
     RouteName.register: (ctx) => const RegisterPage(),
     RouteName.main: (ctx) => const BottomNavBar(),
     RouteName.home: (ctx) => const HomeAdminPage(),
+    RouteName.bookPreview: (ctx) => const BookPreviewPage(),
   };
 }

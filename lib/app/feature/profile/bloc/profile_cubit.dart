@@ -12,7 +12,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit() : super(const ProfilePrimaryState());
 
   void changeLanguageEvent(Locale locale) {
-    emit(ProfilePrimaryState(viewModel: ProfileViewModel()));
+    emit(const ProfilePrimaryState(viewModel: ProfileViewModel()));
   }
 
   void goToChangeInformationPage() {}

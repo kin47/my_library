@@ -420,6 +420,46 @@ class S {
     );
   }
 
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read this book`
+  String get read_book {
+    return Intl.message(
+      'Read this book',
+      name: 'read_book',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Like`
+  String get like {
+    return Intl.message(
+      'Like',
+      name: 'like',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comment`
+  String get comment {
+    return Intl.message(
+      'Comment',
+      name: 'comment',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profile`
   String get profile {
     return Intl.message(

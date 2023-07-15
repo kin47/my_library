@@ -40,6 +40,10 @@
     "add_new_book": "Add new book",
     "author": "Author",
     "genre": "Genre",
+    "description": "Description",
+    "read_book": "Read this book",
+    "like": "Like",
+    "comment": "Comment",
 
     "profile": "Profile",
     "english": "English",

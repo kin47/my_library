@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
@@ -9,12 +8,10 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DSAppBar({
     super.key,
     this.title = '',
-    this.offAllNamed = false,
     this.actions,
   });
 
   final String title;
-  final bool offAllNamed;
   final List<Widget>? actions;
 
   @override
@@ -22,6 +19,9 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: kToolbarHeight,
       actions: actions,
+      iconTheme: const IconThemeData(
+        color: AppColors.white,
+      ),
       flexibleSpace: Container(
         height: kToolbarHeight + MediaQuery.of(context).padding.top + 20,
         decoration: BoxDecoration(
@@ -43,32 +43,14 @@ class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SH32,
-            Row(
-              children: [
-                SW16,
-                if (offAllNamed == true) ...[
-                  SW24,
-                ] else ...[
-                  GestureDetector(
-                    onTap: () => navigatorState.pop(),
-                    child: const Icon(
-                      Icons.arrow_back,
-                      color: AppColors.white,
-                    ),
-                  ),
-                ],
-                SW14,
-                Text(
-                  title,
-                  style: DSTextStyle.ws20w500.copyWith(
-                    color: AppColors.white,
-                  ),
-                ),
-              ],
-            )
+            SH35,
+            Text(
+              title,
+              style: DSTextStyle.ws20w500.copyWith(
+                color: AppColors.white,
+              ),
+            ),
           ],
         ),
       ),

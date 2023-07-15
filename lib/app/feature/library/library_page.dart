@@ -27,7 +27,6 @@ class _LibraryPageState extends State<LibraryPage> {
     return Scaffold(
       appBar: DSAppBar(
         title: S.current.library,
-        offAllNamed: true,
         actions: [
           IconButton(
             tooltip: S.current.add_new_book,
@@ -93,7 +92,7 @@ class _LibraryPageState extends State<LibraryPage> {
         ListView.separated(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemBuilder: (context, index) => const BookCardWidget(),
+          itemBuilder: (BuildContext context, int index) => BookCardWidget(),
           separatorBuilder: (context, index) => SH16,
           itemCount: 10,
         ),
