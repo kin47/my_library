@@ -118,7 +118,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
 
   Widget _buildNumberOfUsersWidget() {
     return Container(
-      height: 120,
+      height: 130,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
@@ -169,7 +169,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
 
   Widget _buildMostLikedCategoryWidget() {
     return Container(
-      height: 120,
+      height: 130,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(

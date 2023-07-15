@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
         "author": MessageLookupByLibrary.simpleMessage("Tác giả"),
         "book_name": MessageLookupByLibrary.simpleMessage("Tên sách"),
+        "change_information":
+            MessageLookupByLibrary.simpleMessage("Thay đổi thông tin"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
@@ -38,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email không hợp lệ"),
+        "english": MessageLookupByLibrary.simpleMessage("Tiếng Anh"),
         "find_by_category":
             MessageLookupByLibrary.simpleMessage("Tìm theo danh mục"),
         "forgot_password":
@@ -49,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "library": MessageLookupByLibrary.simpleMessage("Thư viện"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
+        "log_out": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "login_welcome":
             MessageLookupByLibrary.simpleMessage("My Library xin chào"),
         "most_comments":
@@ -79,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Tài khoản"),
         "username_required":
             MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
+        "vietnamese": MessageLookupByLibrary.simpleMessage("Tiếng Việt"),
         "with_registration": MessageLookupByLibrary.simpleMessage(
             "Với việc đăng ký, bạn đồng ý với các")
       };

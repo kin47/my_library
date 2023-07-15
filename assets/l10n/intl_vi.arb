@@ -41,5 +41,9 @@
     "author": "Tác giả",
     "genre": "Thể loại",
 
-    "profile": "Tài khoản"
+    "profile": "Tài khoản",
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt",
+    "change_information": "Thay đổi thông tin",
+    "log_out": "Đăng xuất"
 }

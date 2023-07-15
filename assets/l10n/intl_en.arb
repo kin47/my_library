@@ -41,5 +41,9 @@
     "author": "Author",
     "genre": "Genre",
 
-    "profile": "Profile"
+    "profile": "Profile",
+    "english": "English",
+    "vietnamese": "Vietnamese",
+    "change_information": "Change information",
+    "log_out": "Log out"
 }

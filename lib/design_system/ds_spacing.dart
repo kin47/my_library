@@ -36,6 +36,7 @@ const Widget SH20 = SizedBox(height: 20.0);
 const Widget SH24 = SizedBox(height: 24.0);
 const Widget SH30 = SizedBox(height: 30.0);
 const Widget SH32 = SizedBox(height: 32.0);
+const Widget SH35 = SizedBox(height: 35.0);
 const Widget SH40 = SizedBox(height: 40.0);
 const Widget SH47 = SizedBox(height: 47.0);
 const Widget SH50 = SizedBox(height: 50.0);
