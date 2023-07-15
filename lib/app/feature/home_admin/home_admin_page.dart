@@ -25,7 +25,6 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: DSAppBar(
           title: S.current.home,
-          offAllNamed: true,
         ),
         body: BlocBuilder<HomeAdminCubit, HomeAdminState>(
           bloc: _cubit,
@@ -62,7 +61,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          const BookCardWidget(),
+          BookCardWidget(),
           SH20,
 
           // recent update
@@ -72,7 +71,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          const BookCardWidget(),
+          BookCardWidget(),
           SH20,
 
           // most liked
@@ -82,7 +81,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          const BookCardWidget(),
+          BookCardWidget(),
           SH20,
 
           // most comments
@@ -92,7 +91,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          const BookCardWidget(),
+          BookCardWidget(),
           SH30,
         ],
       ),

@@ -10,6 +10,12 @@ abstract class RouteName {
   static const main = '/main'; // bottom nav bar
 
   static const home = '/home';
+
   static const library = '/library';
+  static const bookPreview = '/book_preview';
+  static const readBook = 'read_book';
+  static const editBook = 'edit_book';
+  static const addBook = 'add_book';
+
   static const profile = '/profile';
 }

@@ -16,6 +16,7 @@ const Widget SW32 = SizedBox(width: 32.0);
 const Widget SW40 = SizedBox(width: 40.0);
 const Widget SW47 = SizedBox(width: 47.0);
 const Widget SW50 = SizedBox(width: 50.0);
+const Widget SW54 = SizedBox(width: 54.0);
 
 /// Vertical sized box Spacing
 const Widget SH2 = SizedBox(height: 2.0);

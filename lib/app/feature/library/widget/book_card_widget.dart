@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:my_library/app/feature/library/bloc/library_cubit.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
+import 'package:my_library/di/di.dart';
 import 'package:my_library/generated/assets.gen.dart';
 import 'package:my_library/generated/l10n.dart';
 
 class BookCardWidget extends StatelessWidget {
-  const BookCardWidget({
+  BookCardWidget({
     Key? key,
   }) : super(key: key);
+
+  final LibraryCubit _cubit = di();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => _cubit.goToBookPreviewPage(),
       child: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),

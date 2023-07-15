@@ -31,10 +31,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "book_name": MessageLookupByLibrary.simpleMessage("Book name"),
         "change_information":
             MessageLookupByLibrary.simpleMessage("Change information"),
+        "comment": MessageLookupByLibrary.simpleMessage("Comment"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
             "Confirm password do not match"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -51,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "library": MessageLookupByLibrary.simpleMessage("Library"),
+        "like": MessageLookupByLibrary.simpleMessage("Like"),
         "log_in": MessageLookupByLibrary.simpleMessage("Log in"),
         "log_out": MessageLookupByLibrary.simpleMessage("Log out"),
         "login_welcome":
@@ -68,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Phone number must have at least 10 numbers"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone number"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "read_book": MessageLookupByLibrary.simpleMessage("Read this book"),
         "recent_additions":
             MessageLookupByLibrary.simpleMessage("Recent addition"),
         "recent_update": MessageLookupByLibrary.simpleMessage("Recent update"),

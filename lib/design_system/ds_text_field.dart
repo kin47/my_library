@@ -21,6 +21,7 @@ class DSTextField extends StatefulWidget {
     this.textInputAction,
     this.keyboardType,
     this.errorText = '',
+    this.focusNode,
     this.validator = true,
   });
 
@@ -37,6 +38,7 @@ class DSTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final String errorText;
   final bool validator;
+  final FocusNode? focusNode;
 
   @override
   State<DSTextField> createState() => _DSTextFieldState();
@@ -58,6 +60,7 @@ class _DSTextFieldState extends State<DSTextField> {
             controller: widget.controller,
             obscureText: obscureText,
             keyboardType: widget.keyboardType,
+            focusNode: widget.focusNode,
             decoration: InputDecoration(
               enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: AppColors.grey600, width: 2.0),

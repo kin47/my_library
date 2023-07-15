@@ -31,10 +31,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "book_name": MessageLookupByLibrary.simpleMessage("Tên sách"),
         "change_information":
             MessageLookupByLibrary.simpleMessage("Thay đổi thông tin"),
+        "comment": MessageLookupByLibrary.simpleMessage("Comment"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu xác nhận không đúng"),
+        "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -51,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "library": MessageLookupByLibrary.simpleMessage("Thư viện"),
+        "like": MessageLookupByLibrary.simpleMessage("Like"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "log_out": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "login_welcome":
@@ -70,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Số điện thoại phải tối thiểu 10 số"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "profile": MessageLookupByLibrary.simpleMessage("Tài khoản"),
+        "read_book": MessageLookupByLibrary.simpleMessage("Đọc sách này"),
         "recent_additions":
             MessageLookupByLibrary.simpleMessage("Được thêm gần đây"),
         "recent_update":

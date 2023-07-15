@@ -40,6 +40,10 @@
     "add_new_book": "Thêm sách mới",
     "author": "Tác giả",
     "genre": "Thể loại",
+    "description": "Mô tả",
+    "read_book": "Đọc sách này",
+    "like": "Like",
+    "comment": "Comment",
 
     "profile": "Tài khoản",
     "english": "Tiếng Anh",
