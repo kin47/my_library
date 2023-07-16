@@ -16,8 +16,8 @@ class BookPreviewCubit extends Cubit<BookPreviewState> {
     );
   }
 
-  void goToReadBookPage() {
-    navigatorState.pushNamed(RouteName.readBook);
+  void goToReadingPage() {
+    navigatorState.pushNamed(RouteName.reading);
   }
 
   void goToEditBookPage() {
