@@ -509,6 +509,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Book title`
+  String get book_title {
+    return Intl.message(
+      'Book title',
+      name: 'book_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content`
+  String get content {
+    return Intl.message(
+      'Content',
+      name: 'content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image Url`
+  String get image_url {
+    return Intl.message(
+      'Image Url',
+      name: 'image_url',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book title must not be empty`
+  String get book_title_required {
+    return Intl.message(
+      'Book title must not be empty',
+      name: 'book_title_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image url must not be empty`
+  String get image_url_required {
+    return Intl.message(
+      'Image url must not be empty',
+      name: 'image_url_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Author must not be empty`
+  String get author_required {
+    return Intl.message(
+      'Author must not be empty',
+      name: 'author_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select a category`
+  String get category_required {
+    return Intl.message(
+      'You must select a category',
+      name: 'category_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content must not be empty`
+  String get content_required {
+    return Intl.message(
+      'Content must not be empty',
+      name: 'content_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description must not be empty`
+  String get description_required {
+    return Intl.message(
+      'Description must not be empty',
+      name: 'description_required',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

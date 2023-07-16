@@ -49,5 +49,15 @@
     "english": "Tiếng Anh",
     "vietnamese": "Tiếng Việt",
     "change_information": "Thay đổi thông tin",
-    "log_out": "Đăng xuất"
+    "log_out": "Đăng xuất",
+
+    "book_title": "Tên sách",
+    "content": "Nội dung",
+    "image_url": "Url của ảnh",
+    "book_title_required": "Tên sách không được để trống",
+    "image_url_required": "Url của ảnh không được để trống",
+    "author_required": "Tên tác giả không được để trống",
+    "category_required": "Bạn phải chọn 1 thể loại cho truyện",
+    "content_required": "Nội dung sách không được để trống",
+    "description_required": "Mô tả không được để trống"
 }

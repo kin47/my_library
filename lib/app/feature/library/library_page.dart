@@ -30,7 +30,7 @@ class _LibraryPageState extends State<LibraryPage> {
         actions: [
           IconButton(
             tooltip: S.current.add_new_book,
-            onPressed: () {},
+            onPressed: () => _cubit.goToAddBookPage(),
             icon: const Icon(
               Icons.add_box_outlined,
               color: AppColors.white,
