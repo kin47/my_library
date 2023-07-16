@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Description must not be empty"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "edit_book": MessageLookupByLibrary.simpleMessage("Edit this book"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email is invalid"),

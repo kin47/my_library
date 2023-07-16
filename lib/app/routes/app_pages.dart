@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_library/app/feature/book_addition/book_addition_page.dart';
+import 'package:my_library/app/feature/book_editor/book_editor_page.dart';
 import 'package:my_library/app/feature/book_preview/book_preview_page.dart';
 import 'package:my_library/app/feature/home_admin/home_admin_page.dart';
 import 'package:my_library/app/feature/login/login_page.dart';
@@ -22,5 +23,6 @@ abstract class AppPages {
     RouteName.bookPreview: (ctx) => const BookPreviewPage(),
     RouteName.reading: (ctx) => const ReadingPage(),
     RouteName.addBook: (ctx) => const BookAdditionPage(),
+    RouteName.editBook: (ctx) => const BookEditorPage(),
   };
 }
