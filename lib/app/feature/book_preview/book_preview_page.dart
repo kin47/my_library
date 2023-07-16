@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_library/app/feature/book_preview/bloc/book_preview_cubit.dart';
 import 'package:my_library/app/feature/book_preview/bloc/book_preview_state.dart';
+import 'package:my_library/app/feature/book_preview/view_model/book_preview_view_model.dart';
 import 'package:my_library/app/feature/book_preview/widget/comment_widget.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
@@ -43,14 +44,14 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         listener: (context, state) {
           // TODO: implement listener
         },
-        builder: (context, state) {
-          return _buildPrimaryWidget();
+        builder: (BuildContext context, BookPreviewState state) {
+          return _buildPrimaryWidget(state);
         },
       ),
     );
   }
 
-  Widget _buildPrimaryWidget() {
+  Widget _buildPrimaryWidget(BookPreviewState state) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +67,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
           ),
           _buildBodyWidget(),
           SH20,
-          _buildBottomWidget(),
+          _buildBottomWidget(state.viewModel),
         ],
       ),
     );
@@ -102,7 +103,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
           SH30,
           Center(
             child: DSElevatedButton(
-              onPressed: () => _cubit.goToReadBookPage(),
+              onPressed: () => _cubit.goToReadingPage(),
               text: S.current.read_book,
             ),
           )
@@ -111,35 +112,43 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
     );
   }
 
-  Widget _buildBottomWidget() {
+  Widget _buildBottomWidget(BookPreviewViewModel viewModel) {
     return Column(
       children: [
         const Divider(),
-        _buildLikeAndCommentWidget(),
+        _buildLikeAndCommentWidget(viewModel),
         const Divider(),
-        _buildAddCommentWidget(),
+        _buildAddCommentWidget(viewModel),
         const Divider(),
         _buildCommentSection(),
       ],
     );
   }
 
-  Widget _buildLikeAndCommentWidget() {
+  Widget _buildLikeAndCommentWidget(BookPreviewViewModel viewModel) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         // like icon button
         Row(
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.thumb_up,
-              ),
-              color: AppColors.primary,
-            ),
+            viewModel.like == true
+                ? IconButton(
+                    onPressed: () => _cubit.changeLikeStatus(false),
+                    icon: const Icon(
+                      Icons.thumb_up,
+                    ),
+                    color: AppColors.primary,
+                  )
+                : IconButton(
+                    onPressed: () => _cubit.changeLikeStatus(true),
+                    icon: const Icon(
+                      Icons.thumb_up_outlined,
+                    ),
+                    color: AppColors.subText,
+                  ),
             Text(
-              '10',
+              '40',
               style: DSTextStyle.ws14w500.copyWith(
                 color: AppColors.primary,
               ),
@@ -158,7 +167,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
               color: AppColors.primary,
             ),
             Text(
-              '10',
+              '40',
               style: DSTextStyle.ws14w500.copyWith(
                 color: AppColors.primary,
               ),
@@ -169,7 +178,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
     );
   }
 
-  Widget _buildAddCommentWidget() {
+  Widget _buildAddCommentWidget(BookPreviewViewModel viewModel) {
     return Row(
       children: [
         SW10,
@@ -210,7 +219,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         );
       },
       separatorBuilder: (_, index) => SH10,
-      itemCount: 10,
+      itemCount: 40,
     );
   }
 }
