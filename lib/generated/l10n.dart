@@ -599,6 +599,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit this book`
+  String get edit_book {
+    return Intl.message(
+      'Edit this book',
+      name: 'edit_book',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

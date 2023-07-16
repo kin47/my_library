@@ -59,5 +59,7 @@
     "author_required": "Author must not be empty",
     "category_required": "You must select a category",
     "content_required": "Content must not be empty",
-    "description_required": "Description must not be empty"
+    "description_required": "Description must not be empty",
+
+    "edit_book": "Edit this book"
 }

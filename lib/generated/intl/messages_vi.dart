@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mô tả không được để trống"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
+        "edit_book": MessageLookupByLibrary.simpleMessage("Sửa sách"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email không hợp lệ"),

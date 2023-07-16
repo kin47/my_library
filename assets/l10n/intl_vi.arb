@@ -59,5 +59,7 @@
     "author_required": "Tên tác giả không được để trống",
     "category_required": "Bạn phải chọn 1 thể loại cho truyện",
     "content_required": "Nội dung sách không được để trống",
-    "description_required": "Mô tả không được để trống"
+    "description_required": "Mô tả không được để trống",
+
+    "edit_book": "Sửa sách"
 }
