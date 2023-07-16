@@ -23,6 +23,7 @@ class DSTextField extends StatefulWidget {
     this.errorText = '',
     this.focusNode,
     this.validator = true,
+    this.maxLines = 1,
   });
 
   final TextEditingController? controller;
@@ -39,14 +40,22 @@ class DSTextField extends StatefulWidget {
   final String errorText;
   final bool validator;
   final FocusNode? focusNode;
+  final int maxLines;
 
   @override
   State<DSTextField> createState() => _DSTextFieldState();
 }
 
 class _DSTextFieldState extends State<DSTextField> {
-  bool obscureText = true;
   bool showError = false;
+  late bool obscureText;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    obscureText = widget.isPasswordInput;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +70,7 @@ class _DSTextFieldState extends State<DSTextField> {
             obscureText: obscureText,
             keyboardType: widget.keyboardType,
             focusNode: widget.focusNode,
+            maxLines: widget.maxLines,
             decoration: InputDecoration(
               enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: AppColors.grey600, width: 2.0),
@@ -142,9 +152,6 @@ class _DSTextFieldState extends State<DSTextField> {
         ),
       );
     } else {
-      setState(() {
-        obscureText = false;
-      });
       return widget.suffixIcon;
     }
   }

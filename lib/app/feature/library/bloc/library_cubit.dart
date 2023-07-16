@@ -22,5 +22,7 @@ class LibraryCubit extends Cubit<LibraryState> {
     navigatorState.pushNamed(RouteName.bookPreview);
   }
 
-  void goToAddBookPage() {}
+  void goToAddBookPage() {
+    navigatorState.pushNamed(RouteName.addBook);
+  }
 }

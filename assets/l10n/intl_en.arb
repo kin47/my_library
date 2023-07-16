@@ -49,5 +49,15 @@
     "english": "English",
     "vietnamese": "Vietnamese",
     "change_information": "Change information",
-    "log_out": "Log out"
+    "log_out": "Log out",
+
+    "book_title": "Book title",
+    "content": "Content",
+    "image_url": "Image Url",
+    "book_title_required": "Book title must not be empty",
+    "image_url_required": "Image url must not be empty",
+    "author_required": "Author must not be empty",
+    "category_required": "You must select a category",
+    "content_required": "Content must not be empty",
+    "description_required": "Description must not be empty"
 }

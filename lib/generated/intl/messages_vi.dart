@@ -28,7 +28,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Địa chỉ không được để trống"),
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
         "author": MessageLookupByLibrary.simpleMessage("Tác giả"),
+        "author_required": MessageLookupByLibrary.simpleMessage(
+            "Tên tác giả không được để trống"),
         "book_name": MessageLookupByLibrary.simpleMessage("Tên sách"),
+        "book_title": MessageLookupByLibrary.simpleMessage("Tên sách"),
+        "book_title_required": MessageLookupByLibrary.simpleMessage(
+            "Tên sách không được để trống"),
+        "category_required": MessageLookupByLibrary.simpleMessage(
+            "Bạn phải chọn 1 thể loại cho truyện"),
         "change_information":
             MessageLookupByLibrary.simpleMessage("Thay đổi thông tin"),
         "comment": MessageLookupByLibrary.simpleMessage("Comment"),
@@ -36,7 +43,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu xác nhận không đúng"),
+        "content": MessageLookupByLibrary.simpleMessage("Nội dung"),
+        "content_required": MessageLookupByLibrary.simpleMessage(
+            "Nội dung sách không được để trống"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
+        "description_required":
+            MessageLookupByLibrary.simpleMessage("Mô tả không được để trống"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -52,6 +64,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
         "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "image_url": MessageLookupByLibrary.simpleMessage("Url của ảnh"),
+        "image_url_required": MessageLookupByLibrary.simpleMessage(
+            "Url của ảnh không được để trống"),
         "library": MessageLookupByLibrary.simpleMessage("Thư viện"),
         "like": MessageLookupByLibrary.simpleMessage("Like"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),

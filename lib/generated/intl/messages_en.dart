@@ -28,7 +28,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Address must not be empty"),
         "app_name": MessageLookupByLibrary.simpleMessage("My Library"),
         "author": MessageLookupByLibrary.simpleMessage("Author"),
+        "author_required":
+            MessageLookupByLibrary.simpleMessage("Author must not be empty"),
         "book_name": MessageLookupByLibrary.simpleMessage("Book name"),
+        "book_title": MessageLookupByLibrary.simpleMessage("Book title"),
+        "book_title_required": MessageLookupByLibrary.simpleMessage(
+            "Book title must not be empty"),
+        "category_required":
+            MessageLookupByLibrary.simpleMessage("You must select a category"),
         "change_information":
             MessageLookupByLibrary.simpleMessage("Change information"),
         "comment": MessageLookupByLibrary.simpleMessage("Comment"),
@@ -36,7 +43,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm password"),
         "confirm_password_required": MessageLookupByLibrary.simpleMessage(
             "Confirm password do not match"),
+        "content": MessageLookupByLibrary.simpleMessage("Content"),
+        "content_required":
+            MessageLookupByLibrary.simpleMessage("Content must not be empty"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "description_required": MessageLookupByLibrary.simpleMessage(
+            "Description must not be empty"),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -52,6 +64,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fullname must not be empty"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "image_url": MessageLookupByLibrary.simpleMessage("Image Url"),
+        "image_url_required":
+            MessageLookupByLibrary.simpleMessage("Image url must not be empty"),
         "library": MessageLookupByLibrary.simpleMessage("Library"),
         "like": MessageLookupByLibrary.simpleMessage("Like"),
         "log_in": MessageLookupByLibrary.simpleMessage("Log in"),
