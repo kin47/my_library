@@ -64,10 +64,11 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Image(
               height: 250,
               image: AssetImage(
-                Assets.images.imgReading.keyName,
+                Assets.images.imgRegister.keyName,
               ),
             ),
           ),
+          SH20,
           Text(
             S.current.register_subtitle,
             style: DSTextStyle.ws20w500.copyWith(
@@ -139,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
           // password
           DSTextField(
             isPasswordInput: true,
-            hintText: S.current.password,
+            hintText: S.current.new_password,
             prefixIcon: const Icon(Icons.password),
             textInputAction: TextInputAction.next,
             validator:

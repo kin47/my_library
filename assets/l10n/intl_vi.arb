@@ -65,5 +65,10 @@
     "content_required": "Nội dung sách không được để trống",
     "description_required": "Mô tả không được để trống",
 
-    "edit_book": "Sửa sách"
+    "edit_book": "Sửa sách",
+    "change_information_subtitle": "Hãy thay đổi thông tin của bạn",
+    "change_password": "Hãy đổi mật khẩu mới",
+    "current_password": "Mật khẩu hiện tại",
+    "new_password": "Mật khẩu mới",
+    "change_other_information": "Thay đổi thông tin khác (không bắt buộc)"
 }

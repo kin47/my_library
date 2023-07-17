@@ -85,6 +85,10 @@ class $AssetsImagesGen {
   AssetGenImage get imgReading =>
       const AssetGenImage('assets/images/img_reading.png');
 
+  /// File path: assets/images/img_register.png
+  AssetGenImage get imgRegister =>
+      const AssetGenImage('assets/images/img_register.png');
+
   /// File path: assets/images/img_transaction_bg.png
   AssetGenImage get imgTransactionBg =>
       const AssetGenImage('assets/images/img_transaction_bg.png');
@@ -99,6 +103,7 @@ class $AssetsImagesGen {
         imgAvatar,
         imgBackground,
         imgReading,
+        imgRegister,
         imgTransactionBg
       ];
 }

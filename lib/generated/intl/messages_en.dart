@@ -38,6 +38,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You must select a category"),
         "change_information":
             MessageLookupByLibrary.simpleMessage("Change information"),
+        "change_information_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Let\'s change your information"),
+        "change_other_information": MessageLookupByLibrary.simpleMessage(
+            "Change other information (not required)"),
+        "change_password":
+            MessageLookupByLibrary.simpleMessage("Change your password"),
         "comment": MessageLookupByLibrary.simpleMessage("Comment"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
@@ -48,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Content must not be empty"),
         "continue_reading":
             MessageLookupByLibrary.simpleMessage("Continue reading"),
+        "current_password":
+            MessageLookupByLibrary.simpleMessage("Current password"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "description_required": MessageLookupByLibrary.simpleMessage(
             "Description must not be empty"),
@@ -81,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "most_liked_books": MessageLookupByLibrary.simpleMessage("Most Liked"),
         "most_liked_category":
             MessageLookupByLibrary.simpleMessage("Most Liked Category"),
+        "new_password": MessageLookupByLibrary.simpleMessage("New password"),
         "number_of_users":
             MessageLookupByLibrary.simpleMessage("Number of users"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),

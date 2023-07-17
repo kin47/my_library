@@ -17,15 +17,17 @@ import 'package:my_library/app/feature/book_editor/bloc/book_editor_cubit.dart'
     as _i4;
 import 'package:my_library/app/feature/book_preview/bloc/book_preview_cubit.dart'
     as _i5;
-import 'package:my_library/app/feature/home_admin/bloc/home_admin_cubit.dart'
+import 'package:my_library/app/feature/change_information/bloc/change_information_cubit.dart'
     as _i6;
-import 'package:my_library/app/feature/home_user/bloc/home_user_cubit.dart'
+import 'package:my_library/app/feature/home_admin/bloc/home_admin_cubit.dart'
     as _i7;
-import 'package:my_library/app/feature/library/bloc/library_cubit.dart' as _i8;
-import 'package:my_library/app/feature/login/bloc/login_cubit.dart' as _i9;
-import 'package:my_library/app/feature/profile/bloc/profile_cubit.dart' as _i10;
+import 'package:my_library/app/feature/home_user/bloc/home_user_cubit.dart'
+    as _i8;
+import 'package:my_library/app/feature/library/bloc/library_cubit.dart' as _i9;
+import 'package:my_library/app/feature/login/bloc/login_cubit.dart' as _i10;
+import 'package:my_library/app/feature/profile/bloc/profile_cubit.dart' as _i11;
 import 'package:my_library/app/feature/register/bloc/register_cubit.dart'
-    as _i11;
+    as _i12;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -41,12 +43,13 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i3.BookAdditionCubit>(() => _i3.BookAdditionCubit());
     gh.factory<_i4.BookEditorCubit>(() => _i4.BookEditorCubit());
     gh.factory<_i5.BookPreviewCubit>(() => _i5.BookPreviewCubit());
-    gh.factory<_i6.HomeAdminCubit>(() => _i6.HomeAdminCubit());
-    gh.factory<_i7.HomeUserCubit>(() => _i7.HomeUserCubit());
-    gh.factory<_i8.LibraryCubit>(() => _i8.LibraryCubit());
-    gh.factory<_i9.LoginCubit>(() => _i9.LoginCubit());
-    gh.factory<_i10.ProfileCubit>(() => _i10.ProfileCubit());
-    gh.factory<_i11.RegisterCubit>(() => _i11.RegisterCubit());
+    gh.factory<_i6.ChangeInformationCubit>(() => _i6.ChangeInformationCubit());
+    gh.factory<_i7.HomeAdminCubit>(() => _i7.HomeAdminCubit());
+    gh.factory<_i8.HomeUserCubit>(() => _i8.HomeUserCubit());
+    gh.factory<_i9.LibraryCubit>(() => _i9.LibraryCubit());
+    gh.factory<_i10.LoginCubit>(() => _i10.LoginCubit());
+    gh.factory<_i11.ProfileCubit>(() => _i11.ProfileCubit());
+    gh.factory<_i12.RegisterCubit>(() => _i12.RegisterCubit());
     return this;
   }
 }

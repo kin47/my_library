@@ -65,5 +65,10 @@
     "content_required": "Content must not be empty",
     "description_required": "Description must not be empty",
 
-    "edit_book": "Edit this book"
+    "edit_book": "Edit this book",
+    "change_information_subtitle": "Let's change your information",
+    "change_password": "Change your password",
+    "current_password": "Current password",
+    "new_password": "New password",
+    "change_other_information": "Change other information (not required)"
 }
