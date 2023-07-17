@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_library/app/feature/library/bloc/library_cubit.dart';
 import 'package:my_library/app/feature/library/bloc/library_state.dart';
 import 'package:my_library/app/feature/library/view_model/library_view_model.dart';
-import 'package:my_library/app/feature/library/widget/book_card_widget.dart';
+import 'package:my_library/app/feature/main/widget/book_card_widget.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_spacing.dart';

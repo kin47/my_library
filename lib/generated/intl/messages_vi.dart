@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "content": MessageLookupByLibrary.simpleMessage("Nội dung"),
         "content_required": MessageLookupByLibrary.simpleMessage(
             "Nội dung sách không được để trống"),
+        "continue_reading":
+            MessageLookupByLibrary.simpleMessage("Tiếp tục đọc"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "description_required":
             MessageLookupByLibrary.simpleMessage("Mô tả không được để trống"),
@@ -64,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullname_required":
             MessageLookupByLibrary.simpleMessage("Tên không được để trống"),
         "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
+        "hi": MessageLookupByLibrary.simpleMessage("Xin chào"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "image_url": MessageLookupByLibrary.simpleMessage("Url của ảnh"),
         "image_url_required": MessageLookupByLibrary.simpleMessage(
@@ -94,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Được thêm gần đây"),
         "recent_update":
             MessageLookupByLibrary.simpleMessage("Cập nhật gần đây"),
+        "recommend": MessageLookupByLibrary.simpleMessage("Gợi ý dành cho bạn"),
         "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "register_subtitle": MessageLookupByLibrary.simpleMessage(
             "Hãy bắt đầu đăng ký ngay nhé"),

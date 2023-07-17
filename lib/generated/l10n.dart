@@ -360,6 +360,36 @@ class S {
     );
   }
 
+  /// `Hi`
+  String get hi {
+    return Intl.message(
+      'Hi',
+      name: 'hi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue reading`
+  String get continue_reading {
+    return Intl.message(
+      'Continue reading',
+      name: 'continue_reading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommendation`
+  String get recommend {
+    return Intl.message(
+      'Recommendation',
+      name: 'recommend',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Library`
   String get library {
     return Intl.message(

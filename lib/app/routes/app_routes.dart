@@ -9,7 +9,8 @@ abstract class RouteName {
   // home
   static const main = '/main'; // bottom nav bar
 
-  static const home = '/home';
+  static const homeAdmin = '/home_admin';
+  static const homeUser = '/home_user';
 
   static const library = '/library';
   static const bookPreview = '/book_preview';
