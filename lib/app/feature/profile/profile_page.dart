@@ -84,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
             _buildAddressEmailPhoneNumberWidget(),
             SH20,
             GestureDetector(
-              onTap: () {},
+              onTap: () => _cubit.goToChangeInformationPage(),
               child: Text(
                 S.current.change_information,
                 style: DSTextStyle.ws16w500.copyWith(

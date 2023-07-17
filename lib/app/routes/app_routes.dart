@@ -19,4 +19,5 @@ abstract class RouteName {
   static const addBook = '/add_book';
 
   static const profile = '/profile';
+  static const changeInformation = '/changeInfomation';
 }

@@ -38,6 +38,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bạn phải chọn 1 thể loại cho truyện"),
         "change_information":
             MessageLookupByLibrary.simpleMessage("Thay đổi thông tin"),
+        "change_information_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Hãy thay đổi thông tin của bạn"),
+        "change_other_information": MessageLookupByLibrary.simpleMessage(
+            "Thay đổi thông tin khác (không bắt buộc)"),
+        "change_password":
+            MessageLookupByLibrary.simpleMessage("Hãy đổi mật khẩu mới"),
         "comment": MessageLookupByLibrary.simpleMessage("Comment"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
@@ -48,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nội dung sách không được để trống"),
         "continue_reading":
             MessageLookupByLibrary.simpleMessage("Tiếp tục đọc"),
+        "current_password":
+            MessageLookupByLibrary.simpleMessage("Mật khẩu hiện tại"),
         "description": MessageLookupByLibrary.simpleMessage("Mô tả"),
         "description_required":
             MessageLookupByLibrary.simpleMessage("Mô tả không được để trống"),
@@ -83,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sách được yêu thích nhất"),
         "most_liked_category": MessageLookupByLibrary.simpleMessage(
             "Thể loại được yêu thích nhất"),
+        "new_password": MessageLookupByLibrary.simpleMessage("Mật khẩu mới"),
         "number_of_users":
             MessageLookupByLibrary.simpleMessage("Số lượng người dùng"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
