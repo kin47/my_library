@@ -4,14 +4,12 @@ Inspired by my mentor TungTC
 
 This project is about library management
 
-## Getting Started
-What is this project used
-
+## Technologies Used
 - Mobile: Flutter (Dart)
 - BE: Spring (Java)
 
 Mobile:
-+ Flutter BloC
-+ Project Structure: MVVM
++ State Management: BloC
++ Project Structure: MVVM, Clean Architecture
 + Dio
-+ Freezed Annotation
++ Freezed Annotation/Injectable

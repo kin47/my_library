@@ -34,6 +34,10 @@
     "recent_additions": "Recent addition",
     "recent_update": "Recent update",
 
+    "hi": "Hi",
+    "continue_reading": "Continue reading",
+    "recommend": "Recommendation",
+
     "library": "Library",
     "book_name": "Book name",
     "find_by_category": "Find by category",

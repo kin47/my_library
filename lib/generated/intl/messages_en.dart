@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "content": MessageLookupByLibrary.simpleMessage("Content"),
         "content_required":
             MessageLookupByLibrary.simpleMessage("Content must not be empty"),
+        "continue_reading":
+            MessageLookupByLibrary.simpleMessage("Continue reading"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "description_required": MessageLookupByLibrary.simpleMessage(
             "Description must not be empty"),
@@ -64,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullname_required":
             MessageLookupByLibrary.simpleMessage("Fullname must not be empty"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
+        "hi": MessageLookupByLibrary.simpleMessage("Hi"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "image_url": MessageLookupByLibrary.simpleMessage("Image Url"),
         "image_url_required":
@@ -91,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "recent_additions":
             MessageLookupByLibrary.simpleMessage("Recent addition"),
         "recent_update": MessageLookupByLibrary.simpleMessage("Recent update"),
+        "recommend": MessageLookupByLibrary.simpleMessage("Recommendation"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "register_subtitle":
             MessageLookupByLibrary.simpleMessage("Let\'s start register now"),
