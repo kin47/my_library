@@ -13,3 +13,8 @@ Mobile:
 + Project Structure: MVVM, Clean Architecture
 + Dio
 + Freezed Annotation/Injectable
+
+Backend:
+- Database: MySQL
+- Database Diagram
+![Alt text](assets/images/database_diagrams.png)
