@@ -11,6 +11,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
+import 'package:my_library/app/config/network/rest_client/app_rest_client.dart'
+    as _i14;
 import 'package:my_library/app/feature/book_addition/bloc/book_addition_cubit.dart'
     as _i3;
 import 'package:my_library/app/feature/book_editor/bloc/book_editor_cubit.dart'
@@ -27,7 +29,17 @@ import 'package:my_library/app/feature/library/bloc/library_cubit.dart' as _i9;
 import 'package:my_library/app/feature/login/bloc/login_cubit.dart' as _i10;
 import 'package:my_library/app/feature/profile/bloc/profile_cubit.dart' as _i11;
 import 'package:my_library/app/feature/register/bloc/register_cubit.dart'
+    as _i18;
+import 'package:my_library/app/remote/register/register_remote_data_source.dart'
     as _i12;
+import 'package:my_library/app/remote/register/register_remote_data_source_impl.dart'
+    as _i13;
+import 'package:my_library/app/repository/register/register_repository.dart'
+    as _i15;
+import 'package:my_library/app/repository/register/register_repository_impl.dart'
+    as _i16;
+import 'package:my_library/app/use_case/register/register_use_case.dart'
+    as _i17;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -49,7 +61,14 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i9.LibraryCubit>(() => _i9.LibraryCubit());
     gh.factory<_i10.LoginCubit>(() => _i10.LoginCubit());
     gh.factory<_i11.ProfileCubit>(() => _i11.ProfileCubit());
-    gh.factory<_i12.RegisterCubit>(() => _i12.RegisterCubit());
+    gh.factory<_i12.RegisterRemoteDataSource>(
+        () => _i13.RegisterRemoteDataSourceImpl(gh<_i14.AppRestClient>()));
+    gh.factory<_i15.RegisterRepository>(
+        () => _i16.RegisterRepositoryImpl(gh<_i12.RegisterRemoteDataSource>()));
+    gh.factory<_i17.RegisterUseCase>(
+        () => _i17.RegisterUseCase(gh<_i15.RegisterRepository>()));
+    gh.factory<_i18.RegisterCubit>(
+        () => _i18.RegisterCubit(gh<_i17.RegisterUseCase>()));
     return this;
   }
 }
