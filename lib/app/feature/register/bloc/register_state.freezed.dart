@@ -24,7 +24,9 @@ mixin _$RegisterState {
             RegisterViewModel viewModel, bool showShouldLoading)
         registerLoadingState,
     required TResult Function(RegisterViewModel viewModel) registerSuccessState,
-    required TResult Function(RegisterViewModel viewModel) registerErrorState,
+    required TResult Function(
+            RegisterViewModel viewModel, BaseException exception)
+        registerErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,7 +35,8 @@ mixin _$RegisterState {
     TResult? Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult? Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult? Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult? Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,7 +45,8 @@ mixin _$RegisterState {
     TResult Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,7 +201,9 @@ class _$RegisterPrimaryState implements RegisterPrimaryState {
             RegisterViewModel viewModel, bool showShouldLoading)
         registerLoadingState,
     required TResult Function(RegisterViewModel viewModel) registerSuccessState,
-    required TResult Function(RegisterViewModel viewModel) registerErrorState,
+    required TResult Function(
+            RegisterViewModel viewModel, BaseException exception)
+        registerErrorState,
   }) {
     return registerPrimaryState(viewModel);
   }
@@ -209,7 +215,8 @@ class _$RegisterPrimaryState implements RegisterPrimaryState {
     TResult? Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult? Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult? Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult? Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
   }) {
     return registerPrimaryState?.call(viewModel);
   }
@@ -221,7 +228,8 @@ class _$RegisterPrimaryState implements RegisterPrimaryState {
     TResult Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
     required TResult orElse(),
   }) {
     if (registerPrimaryState != null) {
@@ -369,7 +377,9 @@ class _$RegisterLoadingState implements RegisterLoadingState {
             RegisterViewModel viewModel, bool showShouldLoading)
         registerLoadingState,
     required TResult Function(RegisterViewModel viewModel) registerSuccessState,
-    required TResult Function(RegisterViewModel viewModel) registerErrorState,
+    required TResult Function(
+            RegisterViewModel viewModel, BaseException exception)
+        registerErrorState,
   }) {
     return registerLoadingState(viewModel, showShouldLoading);
   }
@@ -381,7 +391,8 @@ class _$RegisterLoadingState implements RegisterLoadingState {
     TResult? Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult? Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult? Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult? Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
   }) {
     return registerLoadingState?.call(viewModel, showShouldLoading);
   }
@@ -393,7 +404,8 @@ class _$RegisterLoadingState implements RegisterLoadingState {
     TResult Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
     required TResult orElse(),
   }) {
     if (registerLoadingState != null) {
@@ -531,7 +543,9 @@ class _$RegisterSuccessState implements RegisterSuccessState {
             RegisterViewModel viewModel, bool showShouldLoading)
         registerLoadingState,
     required TResult Function(RegisterViewModel viewModel) registerSuccessState,
-    required TResult Function(RegisterViewModel viewModel) registerErrorState,
+    required TResult Function(
+            RegisterViewModel viewModel, BaseException exception)
+        registerErrorState,
   }) {
     return registerSuccessState(viewModel);
   }
@@ -543,7 +557,8 @@ class _$RegisterSuccessState implements RegisterSuccessState {
     TResult? Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult? Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult? Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult? Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
   }) {
     return registerSuccessState?.call(viewModel);
   }
@@ -555,7 +570,8 @@ class _$RegisterSuccessState implements RegisterSuccessState {
     TResult Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
     required TResult orElse(),
   }) {
     if (registerSuccessState != null) {
@@ -622,10 +638,11 @@ abstract class _$$RegisterErrorStateCopyWith<$Res>
       __$$RegisterErrorStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RegisterViewModel viewModel});
+  $Res call({RegisterViewModel viewModel, BaseException exception});
 
   @override
   $RegisterViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
 }
 
 /// @nodoc
@@ -640,28 +657,46 @@ class __$$RegisterErrorStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? viewModel = null,
+    Object? exception = null,
   }) {
     return _then(_$RegisterErrorState(
       viewModel: null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
               as RegisterViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$RegisterErrorState implements RegisterErrorState {
-  const _$RegisterErrorState({this.viewModel = const RegisterViewModel()});
+  const _$RegisterErrorState(
+      {this.viewModel = const RegisterViewModel(),
+      this.exception = const BaseException()});
 
   @override
   @JsonKey()
   final RegisterViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
 
   @override
   String toString() {
-    return 'RegisterState.registerErrorState(viewModel: $viewModel)';
+    return 'RegisterState.registerErrorState(viewModel: $viewModel, exception: $exception)';
   }
 
   @override
@@ -670,11 +705,13 @@ class _$RegisterErrorState implements RegisterErrorState {
         (other.runtimeType == runtimeType &&
             other is _$RegisterErrorState &&
             (identical(other.viewModel, viewModel) ||
-                other.viewModel == viewModel));
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, viewModel);
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
 
   @JsonKey(ignore: true)
   @override
@@ -691,9 +728,11 @@ class _$RegisterErrorState implements RegisterErrorState {
             RegisterViewModel viewModel, bool showShouldLoading)
         registerLoadingState,
     required TResult Function(RegisterViewModel viewModel) registerSuccessState,
-    required TResult Function(RegisterViewModel viewModel) registerErrorState,
+    required TResult Function(
+            RegisterViewModel viewModel, BaseException exception)
+        registerErrorState,
   }) {
-    return registerErrorState(viewModel);
+    return registerErrorState(viewModel, exception);
   }
 
   @override
@@ -703,9 +742,10 @@ class _$RegisterErrorState implements RegisterErrorState {
     TResult? Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult? Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult? Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult? Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
   }) {
-    return registerErrorState?.call(viewModel);
+    return registerErrorState?.call(viewModel, exception);
   }
 
   @override
@@ -715,11 +755,12 @@ class _$RegisterErrorState implements RegisterErrorState {
     TResult Function(RegisterViewModel viewModel, bool showShouldLoading)?
         registerLoadingState,
     TResult Function(RegisterViewModel viewModel)? registerSuccessState,
-    TResult Function(RegisterViewModel viewModel)? registerErrorState,
+    TResult Function(RegisterViewModel viewModel, BaseException exception)?
+        registerErrorState,
     required TResult orElse(),
   }) {
     if (registerErrorState != null) {
-      return registerErrorState(viewModel);
+      return registerErrorState(viewModel, exception);
     }
     return orElse();
   }
@@ -763,11 +804,13 @@ class _$RegisterErrorState implements RegisterErrorState {
 }
 
 abstract class RegisterErrorState implements RegisterState {
-  const factory RegisterErrorState({final RegisterViewModel viewModel}) =
-      _$RegisterErrorState;
+  const factory RegisterErrorState(
+      {final RegisterViewModel viewModel,
+      final BaseException exception}) = _$RegisterErrorState;
 
   @override
   RegisterViewModel get viewModel;
+  BaseException get exception;
   @override
   @JsonKey(ignore: true)
   _$$RegisterErrorStateCopyWith<_$RegisterErrorState> get copyWith =>

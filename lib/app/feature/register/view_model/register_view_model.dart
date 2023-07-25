@@ -38,7 +38,7 @@ class RegisterViewModel with _$RegisterViewModel {
       phoneNumber.length >= 10 &&
       address.isNotEmpty &&
       isValidEmail(email) &&
-      username.length > 6 &&
+      username.length >= 6 &&
       isValidPassword(password) &&
       confirmPassword == password &&
       termsAndConditions == true;

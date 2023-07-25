@@ -26,7 +26,9 @@ class _AppRestClient implements AppRestClient {
     final _data = body;
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
-      headers: _headers,
+      headers: {
+        'Content-Type': 'application/json',
+      },
       extra: _extra,
     )
         .compose(
