@@ -27,7 +27,7 @@ class RegisterUseCase extends UseCase<dynamic, RegisterUseCaseParam> {
       return Right(result);
     } catch (e, trace) {
       print('RegisterUseCase ERROR: $e \n $trace');
-      return Left(exceptionHandler.handleRegisterMessage(e));
+      return Left(exception);
     }
   }
 }

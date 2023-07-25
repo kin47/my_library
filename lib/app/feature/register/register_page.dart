@@ -36,8 +36,21 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
       ),
-      body: BlocBuilder<RegisterCubit, RegisterState>(
+      body: BlocConsumer<RegisterCubit, RegisterState>(
         bloc: _cubit,
+        listener: (BuildContext context, RegisterState state) {
+          print('In the listener');
+          if (state is RegisterLoadingState && state.showShouldLoading) {
+            print('In the loading state');
+          }
+          if (state is RegisterSuccessState) {
+            print('In the success state');
+            _cubit.goToLoginPageEvent();
+          }
+          if (state is RegisterErrorState) {
+            print('Register Error');
+          }
+        },
         builder: (BuildContext context, RegisterState state) {
           return _buildPrimaryWidget(state);
         },
@@ -211,7 +224,7 @@ class _RegisterPageState extends State<RegisterPage> {
         // register button
         DSElevatedButton(
           enable: viewModel.isValid,
-          onPressed: () {},
+          onPressed: () => _cubit.registerEvent(),
           text: S.current.register,
         ),
         SH20,
