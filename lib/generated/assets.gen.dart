@@ -56,6 +56,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/database_diagrams.png
+  AssetGenImage get databaseDiagrams =>
+      const AssetGenImage('assets/images/database_diagrams.png');
+
   /// File path: assets/images/ic_en.png
   AssetGenImage get icEn => const AssetGenImage('assets/images/ic_en.png');
 
@@ -95,6 +99,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        databaseDiagrams,
         icEn,
         icLogo,
         icLogoForeground,
