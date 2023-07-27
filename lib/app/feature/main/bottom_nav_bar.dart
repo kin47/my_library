@@ -45,7 +45,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       child: Scaffold(
         body: BottomBarPageTransition(
           currentIndex: _selectedPageIndex,
-          totalLength: _userPages.length,
+          totalLength: _adminPages.length,
           builder: (_, index) => _userPages[index]['page'],
           transitionType: TransitionType.slide,
           transitionDuration: const Duration(milliseconds: 300),

@@ -5,6 +5,8 @@ import 'package:my_library/app/feature/register/bloc/register_state.dart';
 import 'package:my_library/app/feature/register/view_model/register_view_model.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
+import 'package:my_library/design_system/ds_loading.dart';
+import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
@@ -39,16 +41,16 @@ class _RegisterPageState extends State<RegisterPage> {
       body: BlocConsumer<RegisterCubit, RegisterState>(
         bloc: _cubit,
         listener: (BuildContext context, RegisterState state) {
-          print('In the listener');
           if (state is RegisterLoadingState && state.showShouldLoading) {
-            print('In the loading state');
+            const DSLoading();
+            return;
           }
           if (state is RegisterSuccessState) {
-            print('In the success state');
+            showSnackBar(context, 'Register Successfully');
             _cubit.goToLoginPageEvent();
           }
           if (state is RegisterErrorState) {
-            print('Register Error');
+            showSnackBar(context, 'Register Error');
           }
         },
         builder: (BuildContext context, RegisterState state) {

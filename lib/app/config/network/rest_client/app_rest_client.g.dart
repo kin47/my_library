@@ -22,18 +22,46 @@ class _AppRestClient implements AppRestClient {
   Future<dynamic> register(RegisterRequest body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      'Content-Type': 'application/json',
+    };
     final _data = body;
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
           '/register',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data;
+    return value;
+  }
+
+  @override
+  Future<dynamic> addBook(BookRequest body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      'Content-Type': 'application/json',
+    };
+    final _data = body;
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/book',
           queryParameters: queryParameters,
           data: _data,
         )

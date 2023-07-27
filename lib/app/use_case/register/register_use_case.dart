@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_library/app/config/exception/base_exception.dart';
-import 'package:my_library/app/model/request/register_request.dart';
+import 'package:my_library/app/model/request/register/register_request.dart';
 import 'package:my_library/app/repository/register/register_repository.dart';
 import 'package:my_library/app/use_case/use_case.dart';
 
@@ -18,7 +18,7 @@ class RegisterUseCase extends UseCase<dynamic, RegisterUseCaseParam> {
       final result = await _repository.register(
           param: RegisterRequest(
         name: param.name,
-        phoneNumber: param.phoneNumber,
+        phone: param.phoneNumber,
         address: param.address,
         email: param.email,
         username: param.username,

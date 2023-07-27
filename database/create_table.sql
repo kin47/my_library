@@ -3,6 +3,7 @@ create database my_library;
 create table book(
     book_id int(11) NOT NULL,
     title text NOT NULL,
+    author nvarchar(50) not null,
     content text NOT NULL,
     image varchar(300),
     description text,

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:my_library/app/config/exception/base_exception.dart';
 import 'package:my_library/app/feature/book_addition/view_model/book_addition_view_model.dart';
 
 part 'book_addition_state.freezed.dart';
@@ -20,5 +21,6 @@ class BookAdditionState with _$BookAdditionState {
 
   const factory BookAdditionState.bookAdditionErrorState({
     @Default(BookAdditionViewModel()) BookAdditionViewModel viewModel,
+    @Default(BaseException()) BaseException exception,
   }) = BookAdditionErrorState;
 }

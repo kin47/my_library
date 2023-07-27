@@ -26,7 +26,8 @@ mixin _$BookAdditionState {
         bookAdditionLoadingState,
     required TResult Function(BookAdditionViewModel viewModel)
         bookAdditionSuccessState,
-    required TResult Function(BookAdditionViewModel viewModel)
+    required TResult Function(
+            BookAdditionViewModel viewModel, BaseException exception)
         bookAdditionErrorState,
   }) =>
       throw _privateConstructorUsedError;
@@ -38,7 +39,8 @@ mixin _$BookAdditionState {
         bookAdditionLoadingState,
     TResult? Function(BookAdditionViewModel viewModel)?
         bookAdditionSuccessState,
-    TResult? Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult? Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,7 +49,8 @@ mixin _$BookAdditionState {
     TResult Function(BookAdditionViewModel viewModel, bool showShouldLoading)?
         bookAdditionLoadingState,
     TResult Function(BookAdditionViewModel viewModel)? bookAdditionSuccessState,
-    TResult Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -210,7 +213,8 @@ class _$BookAdditionPrimaryState implements BookAdditionPrimaryState {
         bookAdditionLoadingState,
     required TResult Function(BookAdditionViewModel viewModel)
         bookAdditionSuccessState,
-    required TResult Function(BookAdditionViewModel viewModel)
+    required TResult Function(
+            BookAdditionViewModel viewModel, BaseException exception)
         bookAdditionErrorState,
   }) {
     return bookAdditionPrimaryState(viewModel);
@@ -225,7 +229,8 @@ class _$BookAdditionPrimaryState implements BookAdditionPrimaryState {
         bookAdditionLoadingState,
     TResult? Function(BookAdditionViewModel viewModel)?
         bookAdditionSuccessState,
-    TResult? Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult? Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
   }) {
     return bookAdditionPrimaryState?.call(viewModel);
   }
@@ -237,7 +242,8 @@ class _$BookAdditionPrimaryState implements BookAdditionPrimaryState {
     TResult Function(BookAdditionViewModel viewModel, bool showShouldLoading)?
         bookAdditionLoadingState,
     TResult Function(BookAdditionViewModel viewModel)? bookAdditionSuccessState,
-    TResult Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
     required TResult orElse(),
   }) {
     if (bookAdditionPrimaryState != null) {
@@ -392,7 +398,8 @@ class _$BookAdditionLoadingState implements BookAdditionLoadingState {
         bookAdditionLoadingState,
     required TResult Function(BookAdditionViewModel viewModel)
         bookAdditionSuccessState,
-    required TResult Function(BookAdditionViewModel viewModel)
+    required TResult Function(
+            BookAdditionViewModel viewModel, BaseException exception)
         bookAdditionErrorState,
   }) {
     return bookAdditionLoadingState(viewModel, showShouldLoading);
@@ -407,7 +414,8 @@ class _$BookAdditionLoadingState implements BookAdditionLoadingState {
         bookAdditionLoadingState,
     TResult? Function(BookAdditionViewModel viewModel)?
         bookAdditionSuccessState,
-    TResult? Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult? Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
   }) {
     return bookAdditionLoadingState?.call(viewModel, showShouldLoading);
   }
@@ -419,7 +427,8 @@ class _$BookAdditionLoadingState implements BookAdditionLoadingState {
     TResult Function(BookAdditionViewModel viewModel, bool showShouldLoading)?
         bookAdditionLoadingState,
     TResult Function(BookAdditionViewModel viewModel)? bookAdditionSuccessState,
-    TResult Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
     required TResult orElse(),
   }) {
     if (bookAdditionLoadingState != null) {
@@ -565,7 +574,8 @@ class _$BookAdditionSuccessState implements BookAdditionSuccessState {
         bookAdditionLoadingState,
     required TResult Function(BookAdditionViewModel viewModel)
         bookAdditionSuccessState,
-    required TResult Function(BookAdditionViewModel viewModel)
+    required TResult Function(
+            BookAdditionViewModel viewModel, BaseException exception)
         bookAdditionErrorState,
   }) {
     return bookAdditionSuccessState(viewModel);
@@ -580,7 +590,8 @@ class _$BookAdditionSuccessState implements BookAdditionSuccessState {
         bookAdditionLoadingState,
     TResult? Function(BookAdditionViewModel viewModel)?
         bookAdditionSuccessState,
-    TResult? Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult? Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
   }) {
     return bookAdditionSuccessState?.call(viewModel);
   }
@@ -592,7 +603,8 @@ class _$BookAdditionSuccessState implements BookAdditionSuccessState {
     TResult Function(BookAdditionViewModel viewModel, bool showShouldLoading)?
         bookAdditionLoadingState,
     TResult Function(BookAdditionViewModel viewModel)? bookAdditionSuccessState,
-    TResult Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
     required TResult orElse(),
   }) {
     if (bookAdditionSuccessState != null) {
@@ -663,10 +675,11 @@ abstract class _$$BookAdditionErrorStateCopyWith<$Res>
       __$$BookAdditionErrorStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({BookAdditionViewModel viewModel});
+  $Res call({BookAdditionViewModel viewModel, BaseException exception});
 
   @override
   $BookAdditionViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
 }
 
 /// @nodoc
@@ -681,13 +694,26 @@ class __$$BookAdditionErrorStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? viewModel = null,
+    Object? exception = null,
   }) {
     return _then(_$BookAdditionErrorState(
       viewModel: null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
               as BookAdditionViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
   }
 }
 
@@ -695,15 +721,19 @@ class __$$BookAdditionErrorStateCopyWithImpl<$Res>
 
 class _$BookAdditionErrorState implements BookAdditionErrorState {
   const _$BookAdditionErrorState(
-      {this.viewModel = const BookAdditionViewModel()});
+      {this.viewModel = const BookAdditionViewModel(),
+      this.exception = const BaseException()});
 
   @override
   @JsonKey()
   final BookAdditionViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
 
   @override
   String toString() {
-    return 'BookAdditionState.bookAdditionErrorState(viewModel: $viewModel)';
+    return 'BookAdditionState.bookAdditionErrorState(viewModel: $viewModel, exception: $exception)';
   }
 
   @override
@@ -712,11 +742,13 @@ class _$BookAdditionErrorState implements BookAdditionErrorState {
         (other.runtimeType == runtimeType &&
             other is _$BookAdditionErrorState &&
             (identical(other.viewModel, viewModel) ||
-                other.viewModel == viewModel));
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, viewModel);
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
 
   @JsonKey(ignore: true)
   @override
@@ -735,10 +767,11 @@ class _$BookAdditionErrorState implements BookAdditionErrorState {
         bookAdditionLoadingState,
     required TResult Function(BookAdditionViewModel viewModel)
         bookAdditionSuccessState,
-    required TResult Function(BookAdditionViewModel viewModel)
+    required TResult Function(
+            BookAdditionViewModel viewModel, BaseException exception)
         bookAdditionErrorState,
   }) {
-    return bookAdditionErrorState(viewModel);
+    return bookAdditionErrorState(viewModel, exception);
   }
 
   @override
@@ -750,9 +783,10 @@ class _$BookAdditionErrorState implements BookAdditionErrorState {
         bookAdditionLoadingState,
     TResult? Function(BookAdditionViewModel viewModel)?
         bookAdditionSuccessState,
-    TResult? Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult? Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
   }) {
-    return bookAdditionErrorState?.call(viewModel);
+    return bookAdditionErrorState?.call(viewModel, exception);
   }
 
   @override
@@ -762,11 +796,12 @@ class _$BookAdditionErrorState implements BookAdditionErrorState {
     TResult Function(BookAdditionViewModel viewModel, bool showShouldLoading)?
         bookAdditionLoadingState,
     TResult Function(BookAdditionViewModel viewModel)? bookAdditionSuccessState,
-    TResult Function(BookAdditionViewModel viewModel)? bookAdditionErrorState,
+    TResult Function(BookAdditionViewModel viewModel, BaseException exception)?
+        bookAdditionErrorState,
     required TResult orElse(),
   }) {
     if (bookAdditionErrorState != null) {
-      return bookAdditionErrorState(viewModel);
+      return bookAdditionErrorState(viewModel, exception);
     }
     return orElse();
   }
@@ -815,10 +850,12 @@ class _$BookAdditionErrorState implements BookAdditionErrorState {
 
 abstract class BookAdditionErrorState implements BookAdditionState {
   const factory BookAdditionErrorState(
-      {final BookAdditionViewModel viewModel}) = _$BookAdditionErrorState;
+      {final BookAdditionViewModel viewModel,
+      final BaseException exception}) = _$BookAdditionErrorState;
 
   @override
   BookAdditionViewModel get viewModel;
+  BaseException get exception;
   @override
   @JsonKey(ignore: true)
   _$$BookAdditionErrorStateCopyWith<_$BookAdditionErrorState> get copyWith =>
