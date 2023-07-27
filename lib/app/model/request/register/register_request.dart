@@ -8,10 +8,9 @@ part 'register_request.g.dart';
 class RegisterRequest with _$RegisterRequest {
   const RegisterRequest._();
 
-  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory RegisterRequest({
     required String name,
-    required String phoneNumber,
+    required String phone,
     required String address,
     required String email,
     required String username,

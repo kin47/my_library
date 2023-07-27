@@ -21,7 +21,7 @@ RegisterRequest _$RegisterRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RegisterRequest {
   String get name => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $RegisterRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      String phoneNumber,
+      String phone,
       String address,
       String email,
       String username,
@@ -62,7 +62,7 @@ class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
   @override
   $Res call({
     Object? name = null,
-    Object? phoneNumber = null,
+    Object? phone = null,
     Object? address = null,
     Object? email = null,
     Object? username = null,
@@ -73,9 +73,9 @@ class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       address: null == address
           ? _value.address
@@ -107,7 +107,7 @@ abstract class _$$_RegisterRequestCopyWith<$Res>
   @useResult
   $Res call(
       {String name,
-      String phoneNumber,
+      String phone,
       String address,
       String email,
       String username,
@@ -126,7 +126,7 @@ class __$$_RegisterRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? phoneNumber = null,
+    Object? phone = null,
     Object? address = null,
     Object? email = null,
     Object? username = null,
@@ -137,9 +137,9 @@ class __$$_RegisterRequestCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
               as String,
       address: null == address
           ? _value.address
@@ -162,12 +162,11 @@ class __$$_RegisterRequestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_RegisterRequest extends _RegisterRequest {
   const _$_RegisterRequest(
       {required this.name,
-      required this.phoneNumber,
+      required this.phone,
       required this.address,
       required this.email,
       required this.username,
@@ -180,7 +179,7 @@ class _$_RegisterRequest extends _RegisterRequest {
   @override
   final String name;
   @override
-  final String phoneNumber;
+  final String phone;
   @override
   final String address;
   @override
@@ -192,7 +191,7 @@ class _$_RegisterRequest extends _RegisterRequest {
 
   @override
   String toString() {
-    return 'RegisterRequest(name: $name, phoneNumber: $phoneNumber, address: $address, email: $email, username: $username, password: $password)';
+    return 'RegisterRequest(name: $name, phone: $phone, address: $address, email: $email, username: $username, password: $password)';
   }
 
   @override
@@ -201,8 +200,7 @@ class _$_RegisterRequest extends _RegisterRequest {
         (other.runtimeType == runtimeType &&
             other is _$_RegisterRequest &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.username, username) ||
@@ -213,8 +211,8 @@ class _$_RegisterRequest extends _RegisterRequest {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, name, phoneNumber, address, email, username, password);
+  int get hashCode =>
+      Object.hash(runtimeType, name, phone, address, email, username, password);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +231,7 @@ class _$_RegisterRequest extends _RegisterRequest {
 abstract class _RegisterRequest extends RegisterRequest {
   const factory _RegisterRequest(
       {required final String name,
-      required final String phoneNumber,
+      required final String phone,
       required final String address,
       required final String email,
       required final String username,
@@ -246,7 +244,7 @@ abstract class _RegisterRequest extends RegisterRequest {
   @override
   String get name;
   @override
-  String get phoneNumber;
+  String get phone;
   @override
   String get address;
   @override

@@ -55,6 +55,8 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   Future<void> registerEvent() async {
+    emit(RegisterLoadingState(
+        showShouldLoading: true, viewModel: state.viewModel));
     final result = await _registerUseCase.call(
       RegisterUseCaseParam(
         name: state.viewModel.fullName,

@@ -6,6 +6,7 @@ import 'package:my_library/app/feature/book_addition/view_model/book_addition_vi
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
+import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
@@ -32,7 +33,13 @@ class _BookAdditionPageState extends State<BookAdditionPage> {
       body: BlocConsumer<BookAdditionCubit, BookAdditionState>(
         bloc: _cubit,
         listener: (BuildContext context, BookAdditionState state) {
-          // TODO: implement listener
+          if (state is BookAdditionSuccessState) {
+            showSnackBar(context, 'Add Book Successfully');
+          }
+          if (state is BookAdditionErrorState) {
+            showSnackBar(
+                context, 'Add Book Error: ${state.exception.toString()}');
+          }
         },
         builder: (BuildContext context, BookAdditionState state) {
           return _buildPrimaryWidget(state);
@@ -155,7 +162,7 @@ class _BookAdditionPageState extends State<BookAdditionPage> {
 
   Widget _buildBottomWidget(BookAdditionViewModel viewModel) {
     return DSElevatedButton(
-      onPressed: () {},
+      onPressed: () => _cubit.addBookEvent(),
       enable: viewModel.isValid,
       text: S.current.add_new_book,
     );

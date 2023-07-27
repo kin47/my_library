@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:my_library/app/model/request/register_request.dart';
+import 'package:my_library/app/model/request/register/register_request.dart';
 import 'package:my_library/app/remote/register/register_remote_data_source.dart';
 import 'package:my_library/app/repository/register/register_repository.dart';
 
