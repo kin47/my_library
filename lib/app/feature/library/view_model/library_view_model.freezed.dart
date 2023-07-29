@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LibraryViewModel {
   String get searchBook => throw _privateConstructorUsedError;
   String get selectedCategory => throw _privateConstructorUsedError;
+  List<BookViewModel> get listBooks => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LibraryViewModelCopyWith<LibraryViewModel> get copyWith =>
@@ -30,7 +31,10 @@ abstract class $LibraryViewModelCopyWith<$Res> {
           LibraryViewModel value, $Res Function(LibraryViewModel) then) =
       _$LibraryViewModelCopyWithImpl<$Res, LibraryViewModel>;
   @useResult
-  $Res call({String searchBook, String selectedCategory});
+  $Res call(
+      {String searchBook,
+      String selectedCategory,
+      List<BookViewModel> listBooks});
 }
 
 /// @nodoc
@@ -48,6 +52,7 @@ class _$LibraryViewModelCopyWithImpl<$Res, $Val extends LibraryViewModel>
   $Res call({
     Object? searchBook = null,
     Object? selectedCategory = null,
+    Object? listBooks = null,
   }) {
     return _then(_value.copyWith(
       searchBook: null == searchBook
@@ -58,6 +63,10 @@ class _$LibraryViewModelCopyWithImpl<$Res, $Val extends LibraryViewModel>
           ? _value.selectedCategory
           : selectedCategory // ignore: cast_nullable_to_non_nullable
               as String,
+      listBooks: null == listBooks
+          ? _value.listBooks
+          : listBooks // ignore: cast_nullable_to_non_nullable
+              as List<BookViewModel>,
     ) as $Val);
   }
 }
@@ -70,7 +79,10 @@ abstract class _$$_LibraryViewModelCopyWith<$Res>
       __$$_LibraryViewModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String searchBook, String selectedCategory});
+  $Res call(
+      {String searchBook,
+      String selectedCategory,
+      List<BookViewModel> listBooks});
 }
 
 /// @nodoc
@@ -86,6 +98,7 @@ class __$$_LibraryViewModelCopyWithImpl<$Res>
   $Res call({
     Object? searchBook = null,
     Object? selectedCategory = null,
+    Object? listBooks = null,
   }) {
     return _then(_$_LibraryViewModel(
       searchBook: null == searchBook
@@ -96,6 +109,10 @@ class __$$_LibraryViewModelCopyWithImpl<$Res>
           ? _value.selectedCategory
           : selectedCategory // ignore: cast_nullable_to_non_nullable
               as String,
+      listBooks: null == listBooks
+          ? _value._listBooks
+          : listBooks // ignore: cast_nullable_to_non_nullable
+              as List<BookViewModel>,
     ));
   }
 }
@@ -103,8 +120,12 @@ class __$$_LibraryViewModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LibraryViewModel extends _LibraryViewModel {
-  const _$_LibraryViewModel({this.searchBook = '', this.selectedCategory = ''})
-      : super._();
+  const _$_LibraryViewModel(
+      {this.searchBook = '',
+      this.selectedCategory = '',
+      final List<BookViewModel> listBooks = const []})
+      : _listBooks = listBooks,
+        super._();
 
   @override
   @JsonKey()
@@ -112,10 +133,18 @@ class _$_LibraryViewModel extends _LibraryViewModel {
   @override
   @JsonKey()
   final String selectedCategory;
+  final List<BookViewModel> _listBooks;
+  @override
+  @JsonKey()
+  List<BookViewModel> get listBooks {
+    if (_listBooks is EqualUnmodifiableListView) return _listBooks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listBooks);
+  }
 
   @override
   String toString() {
-    return 'LibraryViewModel(searchBook: $searchBook, selectedCategory: $selectedCategory)';
+    return 'LibraryViewModel(searchBook: $searchBook, selectedCategory: $selectedCategory, listBooks: $listBooks)';
   }
 
   @override
@@ -126,11 +155,14 @@ class _$_LibraryViewModel extends _LibraryViewModel {
             (identical(other.searchBook, searchBook) ||
                 other.searchBook == searchBook) &&
             (identical(other.selectedCategory, selectedCategory) ||
-                other.selectedCategory == selectedCategory));
+                other.selectedCategory == selectedCategory) &&
+            const DeepCollectionEquality()
+                .equals(other._listBooks, _listBooks));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, searchBook, selectedCategory);
+  int get hashCode => Object.hash(runtimeType, searchBook, selectedCategory,
+      const DeepCollectionEquality().hash(_listBooks));
 
   @JsonKey(ignore: true)
   @override
@@ -142,13 +174,16 @@ class _$_LibraryViewModel extends _LibraryViewModel {
 abstract class _LibraryViewModel extends LibraryViewModel {
   const factory _LibraryViewModel(
       {final String searchBook,
-      final String selectedCategory}) = _$_LibraryViewModel;
+      final String selectedCategory,
+      final List<BookViewModel> listBooks}) = _$_LibraryViewModel;
   const _LibraryViewModel._() : super._();
 
   @override
   String get searchBook;
   @override
   String get selectedCategory;
+  @override
+  List<BookViewModel> get listBooks;
   @override
   @JsonKey(ignore: true)
   _$$_LibraryViewModelCopyWith<_$_LibraryViewModel> get copyWith =>

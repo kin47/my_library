@@ -10,8 +10,10 @@ import 'package:my_library/generated/l10n.dart';
 class BookCardWidget extends StatelessWidget {
   BookCardWidget({
     Key? key,
+    required this.imageUrl,
   }) : super(key: key);
 
+  final String imageUrl;
   final LibraryCubit _cubit = di();
 
   @override
@@ -41,7 +43,10 @@ class BookCardWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SW12,
-        Image(
+        FadeInImage(
+          placeholder: AssetImage(
+            Assets.images.imgBackground.keyName,
+          ),
           image: AssetImage(
             Assets.images.imgBackground.keyName,
           ),
