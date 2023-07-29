@@ -92,9 +92,11 @@ class _LibraryPageState extends State<LibraryPage> {
         ListView.separated(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemBuilder: (BuildContext context, int index) => BookCardWidget(),
+          itemBuilder: (BuildContext context, int index) => BookCardWidget(
+            imageUrl: viewModel.listBooks[index].bookImageUrl,
+          ),
           separatorBuilder: (context, index) => SH16,
-          itemCount: 10,
+          itemCount: viewModel.listBooks.length,
         ),
         SH10,
       ],

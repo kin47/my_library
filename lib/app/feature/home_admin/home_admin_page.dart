@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_library/app/feature/home_admin/bloc/home_admin_cubit.dart';
 import 'package:my_library/app/feature/home_admin/bloc/home_admin_state.dart';
+import 'package:my_library/app/feature/home_admin/view_model/home_admin_view_model.dart';
 import 'package:my_library/app/feature/main/widget/book_card_widget.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
@@ -28,24 +29,24 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
         ),
         body: BlocBuilder<HomeAdminCubit, HomeAdminState>(
           bloc: _cubit,
-          builder: (context, state) {
-            return _buildPrimaryWidget();
+          builder: (BuildContext context, HomeAdminState state) {
+            return _buildPrimaryWidget(state);
           },
         ),
       );
 
-  Widget _buildPrimaryWidget() {
+  Widget _buildPrimaryWidget(HomeAdminState state) {
     return SingleChildScrollView(
       child: Column(
         children: [
           SH20,
-          _buildBodyWidget(),
+          _buildBodyWidget(state.viewModel),
         ],
       ),
     );
   }
 
-  Widget _buildBodyWidget() {
+  Widget _buildBodyWidget(HomeAdminViewModel viewModel) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -61,7 +62,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(),
+          BookCardWidget(imageUrl: viewModel.recentAdditionBook.bookImageUrl),
           SH20,
 
           // recent update
@@ -71,7 +72,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(),
+          BookCardWidget(imageUrl: viewModel.recentUpdateBook.bookImageUrl),
           SH20,
 
           // most liked
@@ -81,7 +82,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(),
+          BookCardWidget(imageUrl: viewModel.mostLikedBook.bookImageUrl),
           SH20,
 
           // most comments
@@ -91,7 +92,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(),
+          BookCardWidget(imageUrl: viewModel.mostCommentsBook.bookImageUrl),
           SH30,
         ],
       ),
