@@ -63,7 +63,11 @@ class _HomeUserPageState extends State<HomeUserPage> {
             color: AppColors.text,
           ),
         ),
-        BookCardWidget(imageUrl: viewModel.continueReading.bookImageUrl),
+        BookCardWidget(
+          title: viewModel.continueReading.bookName,
+          author: viewModel.continueReading.author,
+          imageUrl: viewModel.continueReading.bookImageUrl,
+        ),
         SH20,
         Text(
           S.current.recommend,
@@ -71,7 +75,11 @@ class _HomeUserPageState extends State<HomeUserPage> {
             color: AppColors.text,
           ),
         ),
-        BookCardWidget(imageUrl: viewModel.recommendation.bookImageUrl),
+        BookCardWidget(
+          title: viewModel.recommendation.bookName,
+          author: viewModel.recommendation.author,
+          imageUrl: viewModel.recommendation.bookImageUrl,
+        ),
         SH20,
         Text(
           S.current.recent_additions,
@@ -79,7 +87,11 @@ class _HomeUserPageState extends State<HomeUserPage> {
             color: AppColors.text,
           ),
         ),
-        BookCardWidget(imageUrl: viewModel.recentAddition.bookImageUrl),
+        BookCardWidget(
+          title: viewModel.recentAddition.bookName,
+          author: viewModel.recentAddition.author,
+          imageUrl: viewModel.recentAddition.bookImageUrl,
+        ),
       ],
     );
   }

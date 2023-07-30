@@ -10,9 +10,13 @@ import 'package:my_library/generated/l10n.dart';
 class BookCardWidget extends StatelessWidget {
   BookCardWidget({
     Key? key,
+    required this.title,
+    required this.author,
     required this.imageUrl,
   }) : super(key: key);
 
+  final String title;
+  final String author;
   final String imageUrl;
   final LibraryCubit _cubit = di();
 
@@ -60,14 +64,14 @@ class BookCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Harry Potter',
+              title,
               style: DSTextStyle.ws16w700.copyWith(
                 color: AppColors.gold,
               ),
             ),
             SH5,
             Text(
-              "${S.current.author}: J.K.Rowling",
+              "${S.current.author}: $author",
               style: DSTextStyle.ws14w400,
             ),
             Text(

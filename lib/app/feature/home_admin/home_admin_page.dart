@@ -62,7 +62,11 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(imageUrl: viewModel.recentAdditionBook.bookImageUrl),
+          BookCardWidget(
+            title: viewModel.recentAdditionBook.bookName,
+            author: viewModel.recentAdditionBook.author,
+            imageUrl: viewModel.recentAdditionBook.bookImageUrl,
+          ),
           SH20,
 
           // recent update
@@ -72,7 +76,11 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(imageUrl: viewModel.recentUpdateBook.bookImageUrl),
+          BookCardWidget(
+            title: viewModel.recentUpdateBook.bookName,
+            author: viewModel.recentUpdateBook.author,
+            imageUrl: viewModel.recentUpdateBook.bookImageUrl,
+          ),
           SH20,
 
           // most liked
@@ -82,7 +90,11 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(imageUrl: viewModel.mostLikedBook.bookImageUrl),
+          BookCardWidget(
+            title: viewModel.mostLikedBook.bookName,
+            author: viewModel.mostLikedBook.author,
+            imageUrl: viewModel.mostLikedBook.bookImageUrl,
+          ),
           SH20,
 
           // most comments
@@ -92,7 +104,11 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
               color: AppColors.text,
             ),
           ),
-          BookCardWidget(imageUrl: viewModel.mostCommentsBook.bookImageUrl),
+          BookCardWidget(
+            title: viewModel.mostCommentsBook.bookName,
+            author: viewModel.mostCommentsBook.author,
+            imageUrl: viewModel.mostCommentsBook.bookImageUrl,
+          ),
           SH30,
         ],
       ),

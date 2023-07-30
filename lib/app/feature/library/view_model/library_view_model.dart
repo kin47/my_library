@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_library/app/feature/main/view_model/book_view_model.dart';
+import 'package:my_library/app/model/response/book_response.dart';
 
 part 'library_view_model.freezed.dart';
 
@@ -9,6 +9,6 @@ class LibraryViewModel with _$LibraryViewModel {
   const factory LibraryViewModel({
     @Default('') String searchBook,
     @Default('') String selectedCategory,
-    @Default([]) List<BookViewModel> listBooks,
+    @Default([]) List<BookResponse> listBooks,
   }) = _LibraryViewModel;
 }

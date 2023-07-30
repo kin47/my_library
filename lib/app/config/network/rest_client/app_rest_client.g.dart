@@ -22,9 +22,7 @@ class _AppRestClient implements AppRestClient {
   Future<dynamic> register(RegisterRequest body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      'Content-Type': 'application/json',
-    };
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
@@ -50,9 +48,7 @@ class _AppRestClient implements AppRestClient {
   Future<dynamic> addBook(BookRequest body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      'Content-Type': 'application/json',
-    };
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
@@ -71,6 +67,35 @@ class _AppRestClient implements AppRestClient {
           baseUrl,
         ))));
     final value = _result.data;
+    return value;
+  }
+
+  @override
+  Future<List<BookResponse>> getAllBook(String title) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'title': title};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<BookResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/book',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var value = _result.data!
+        .map((dynamic i) => BookResponse.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

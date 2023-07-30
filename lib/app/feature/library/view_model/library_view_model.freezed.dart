@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LibraryViewModel {
   String get searchBook => throw _privateConstructorUsedError;
   String get selectedCategory => throw _privateConstructorUsedError;
-  List<BookViewModel> get listBooks => throw _privateConstructorUsedError;
+  List<BookResponse> get listBooks => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LibraryViewModelCopyWith<LibraryViewModel> get copyWith =>
@@ -34,7 +34,7 @@ abstract class $LibraryViewModelCopyWith<$Res> {
   $Res call(
       {String searchBook,
       String selectedCategory,
-      List<BookViewModel> listBooks});
+      List<BookResponse> listBooks});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$LibraryViewModelCopyWithImpl<$Res, $Val extends LibraryViewModel>
       listBooks: null == listBooks
           ? _value.listBooks
           : listBooks // ignore: cast_nullable_to_non_nullable
-              as List<BookViewModel>,
+              as List<BookResponse>,
     ) as $Val);
   }
 }
@@ -82,7 +82,7 @@ abstract class _$$_LibraryViewModelCopyWith<$Res>
   $Res call(
       {String searchBook,
       String selectedCategory,
-      List<BookViewModel> listBooks});
+      List<BookResponse> listBooks});
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class __$$_LibraryViewModelCopyWithImpl<$Res>
       listBooks: null == listBooks
           ? _value._listBooks
           : listBooks // ignore: cast_nullable_to_non_nullable
-              as List<BookViewModel>,
+              as List<BookResponse>,
     ));
   }
 }
@@ -123,7 +123,7 @@ class _$_LibraryViewModel extends _LibraryViewModel {
   const _$_LibraryViewModel(
       {this.searchBook = '',
       this.selectedCategory = '',
-      final List<BookViewModel> listBooks = const []})
+      final List<BookResponse> listBooks = const []})
       : _listBooks = listBooks,
         super._();
 
@@ -133,10 +133,10 @@ class _$_LibraryViewModel extends _LibraryViewModel {
   @override
   @JsonKey()
   final String selectedCategory;
-  final List<BookViewModel> _listBooks;
+  final List<BookResponse> _listBooks;
   @override
   @JsonKey()
-  List<BookViewModel> get listBooks {
+  List<BookResponse> get listBooks {
     if (_listBooks is EqualUnmodifiableListView) return _listBooks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_listBooks);
@@ -175,7 +175,7 @@ abstract class _LibraryViewModel extends LibraryViewModel {
   const factory _LibraryViewModel(
       {final String searchBook,
       final String selectedCategory,
-      final List<BookViewModel> listBooks}) = _$_LibraryViewModel;
+      final List<BookResponse> listBooks}) = _$_LibraryViewModel;
   const _LibraryViewModel._() : super._();
 
   @override
@@ -183,7 +183,7 @@ abstract class _LibraryViewModel extends LibraryViewModel {
   @override
   String get selectedCategory;
   @override
-  List<BookViewModel> get listBooks;
+  List<BookResponse> get listBooks;
   @override
   @JsonKey(ignore: true)
   _$$_LibraryViewModelCopyWith<_$_LibraryViewModel> get copyWith =>

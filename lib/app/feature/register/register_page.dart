@@ -146,7 +146,7 @@ class _RegisterPageState extends State<RegisterPage> {
             hintText: S.current.username,
             prefixIcon: const Icon(Icons.person_2),
             textInputAction: TextInputAction.next,
-            validator: state.viewModel.username.isNotEmpty,
+            validator: state.viewModel.username.length >= 6,
             errorText: S.current.username_required,
             onChanged: (String value) => _cubit.changeUsernameEvent(value),
           ),
