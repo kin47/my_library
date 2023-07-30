@@ -6,6 +6,8 @@ import 'package:my_library/app/feature/library/view_model/library_view_model.dar
 import 'package:my_library/app/feature/main/widget/book_card_widget.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
+import 'package:my_library/design_system/ds_loading.dart';
+import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
@@ -23,6 +25,12 @@ class _LibraryPageState extends State<LibraryPage> {
   final LibraryCubit _cubit = di();
 
   @override
+  void initState() {
+    _cubit.getBookEvent('');
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DSAppBar(
@@ -38,14 +46,25 @@ class _LibraryPageState extends State<LibraryPage> {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: BlocBuilder<LibraryCubit, LibraryState>(
-          bloc: _cubit,
-          builder: (BuildContext context, LibraryState state) {
-            return _buildPrimaryWidget(state);
-          },
-        ),
+      body: BlocConsumer<LibraryCubit, LibraryState>(
+        bloc: _cubit,
+        listener: (BuildContext context, LibraryState state) {
+          if (state is LibraryErrorState) {
+            showSnackBar(context, state.exception.toString());
+          }
+        },
+        builder: (BuildContext context, LibraryState state) {
+          if (state is LibraryPrimaryState) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: _buildPrimaryWidget(state),
+            );
+          } else if (state is LibraryLoadingState) {
+            return const DSLoading();
+          } else {
+            return Container();
+          }
+        },
       ),
     );
   }
@@ -69,13 +88,17 @@ class _LibraryPageState extends State<LibraryPage> {
 
         // search field
         DSTextField(
+          controller: TextEditingController(text: viewModel.searchBook),
           prefixIcon: const Icon(Icons.book_rounded),
           suffixIcon: IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              await _cubit.getBookEvent(viewModel.searchBook);
+            },
             icon: const Icon(
               Icons.search_rounded,
             ),
           ),
+          onChanged: (value) => _cubit.changeSearchBookEvent(value),
           hintText: S.current.book_name,
         ),
         SH10,
@@ -93,9 +116,11 @@ class _LibraryPageState extends State<LibraryPage> {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) => BookCardWidget(
-            imageUrl: viewModel.listBooks[index].bookImageUrl,
+            title: viewModel.listBooks[index].title,
+            author: viewModel.listBooks[index].author,
+            imageUrl: viewModel.listBooks[index].image,
           ),
-          separatorBuilder: (context, index) => SH16,
+          separatorBuilder: (BuildContext context, int index) => SH16,
           itemCount: viewModel.listBooks.length,
         ),
         SH10,

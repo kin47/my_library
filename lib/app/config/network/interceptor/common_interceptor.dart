@@ -1,14 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:my_library/app/config/network/interceptor/request_options_extension.dart';
+import 'package:my_library/app/util/app_log_util.dart';
 
 class CommonInterceptor extends InterceptorsWrapper {
   static Dio? dio;
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers['Content-Type'] = 'application/json';
+    options.contentType = 'application/json';
 
-    print('=>>>>>>> CURL:\n ${options.toCURL()}');
+    /// Log CURL
+    AppLog.info('=>>>>>>> CURL:\n ${options.toCURL()}');
 
     handler.next(options);
   }

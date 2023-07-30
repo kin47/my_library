@@ -6,12 +6,13 @@ import 'package:my_library/app/repository/book/book_repository.dart';
 import 'package:my_library/app/use_case/use_case.dart';
 
 @injectable
-class BookUseCase extends UseCase<dynamic, BookUseCaseParam> {
-  BookUseCase(this._repository);
+class BookAdditionUseCase extends UseCase<dynamic, BookAdditionUseCaseParam> {
+  BookAdditionUseCase(this._repository);
 
   final BookRepository _repository;
   @override
-  Future<Either<BaseException, dynamic>> call(BookUseCaseParam param) async {
+  Future<Either<BaseException, dynamic>> call(
+      BookAdditionUseCaseParam param) async {
     try {
       final result = await _repository.addBook(
         param: BookRequest(
@@ -24,20 +25,20 @@ class BookUseCase extends UseCase<dynamic, BookUseCaseParam> {
       );
       return Right(result);
     } catch (e, trace) {
-      print('BookUseCase ERROR: $e \n $trace');
+      print('BookAdditionUseCase ERROR: $e \n $trace');
       return Left(exception);
     }
   }
 }
 
-class BookUseCaseParam {
+class BookAdditionUseCaseParam {
   final String title;
   final String author;
   final String content;
   final String image;
   final String description;
 
-  const BookUseCaseParam({
+  const BookAdditionUseCaseParam({
     required this.title,
     required this.author,
     required this.content,

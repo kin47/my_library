@@ -20,19 +20,33 @@ mixin _$LibraryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LibraryViewModel viewModel) libraryPrimaryState,
-    required TResult Function(LibraryViewModel viewModel) libraryLoadingState,
+    required TResult Function(
+            LibraryViewModel viewModel, bool showShouldLoading)
+        libraryLoadingState,
+    required TResult Function(LibraryViewModel viewModel) librarySuccessState,
+    required TResult Function(
+            LibraryViewModel viewModel, BaseException exception)
+        libraryErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LibraryViewModel viewModel)? libraryPrimaryState,
-    TResult? Function(LibraryViewModel viewModel)? libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult? Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LibraryViewModel viewModel)? libraryPrimaryState,
-    TResult Function(LibraryViewModel viewModel)? libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +54,24 @@ mixin _$LibraryState {
   TResult map<TResult extends Object?>({
     required TResult Function(LibraryPrimaryState value) libraryPrimaryState,
     required TResult Function(LibraryLoadingState value) libraryLoadingState,
+    required TResult Function(LibrarySuccessState value) librarySuccessState,
+    required TResult Function(LibraryErrorState value) libraryErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LibraryPrimaryState value)? libraryPrimaryState,
     TResult? Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult? Function(LibrarySuccessState value)? librarySuccessState,
+    TResult? Function(LibraryErrorState value)? libraryErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LibraryPrimaryState value)? libraryPrimaryState,
     TResult Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult Function(LibrarySuccessState value)? librarySuccessState,
+    TResult Function(LibraryErrorState value)? libraryErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -177,7 +197,13 @@ class _$LibraryPrimaryState implements LibraryPrimaryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LibraryViewModel viewModel) libraryPrimaryState,
-    required TResult Function(LibraryViewModel viewModel) libraryLoadingState,
+    required TResult Function(
+            LibraryViewModel viewModel, bool showShouldLoading)
+        libraryLoadingState,
+    required TResult Function(LibraryViewModel viewModel) librarySuccessState,
+    required TResult Function(
+            LibraryViewModel viewModel, BaseException exception)
+        libraryErrorState,
   }) {
     return libraryPrimaryState(viewModel);
   }
@@ -186,7 +212,11 @@ class _$LibraryPrimaryState implements LibraryPrimaryState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LibraryViewModel viewModel)? libraryPrimaryState,
-    TResult? Function(LibraryViewModel viewModel)? libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult? Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
   }) {
     return libraryPrimaryState?.call(viewModel);
   }
@@ -195,7 +225,11 @@ class _$LibraryPrimaryState implements LibraryPrimaryState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LibraryViewModel viewModel)? libraryPrimaryState,
-    TResult Function(LibraryViewModel viewModel)? libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
     required TResult orElse(),
   }) {
     if (libraryPrimaryState != null) {
@@ -209,6 +243,8 @@ class _$LibraryPrimaryState implements LibraryPrimaryState {
   TResult map<TResult extends Object?>({
     required TResult Function(LibraryPrimaryState value) libraryPrimaryState,
     required TResult Function(LibraryLoadingState value) libraryLoadingState,
+    required TResult Function(LibrarySuccessState value) librarySuccessState,
+    required TResult Function(LibraryErrorState value) libraryErrorState,
   }) {
     return libraryPrimaryState(this);
   }
@@ -218,6 +254,8 @@ class _$LibraryPrimaryState implements LibraryPrimaryState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LibraryPrimaryState value)? libraryPrimaryState,
     TResult? Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult? Function(LibrarySuccessState value)? librarySuccessState,
+    TResult? Function(LibraryErrorState value)? libraryErrorState,
   }) {
     return libraryPrimaryState?.call(this);
   }
@@ -227,6 +265,8 @@ class _$LibraryPrimaryState implements LibraryPrimaryState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LibraryPrimaryState value)? libraryPrimaryState,
     TResult Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult Function(LibrarySuccessState value)? librarySuccessState,
+    TResult Function(LibraryErrorState value)? libraryErrorState,
     required TResult orElse(),
   }) {
     if (libraryPrimaryState != null) {
@@ -256,7 +296,7 @@ abstract class _$$LibraryLoadingStateCopyWith<$Res>
       __$$LibraryLoadingStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({LibraryViewModel viewModel});
+  $Res call({LibraryViewModel viewModel, bool showShouldLoading});
 
   @override
   $LibraryViewModelCopyWith<$Res> get viewModel;
@@ -274,12 +314,17 @@ class __$$LibraryLoadingStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? viewModel = null,
+    Object? showShouldLoading = null,
   }) {
     return _then(_$LibraryLoadingState(
       viewModel: null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
               as LibraryViewModel,
+      showShouldLoading: null == showShouldLoading
+          ? _value.showShouldLoading
+          : showShouldLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -287,15 +332,20 @@ class __$$LibraryLoadingStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LibraryLoadingState implements LibraryLoadingState {
-  const _$LibraryLoadingState({this.viewModel = const LibraryViewModel()});
+  const _$LibraryLoadingState(
+      {this.viewModel = const LibraryViewModel(),
+      this.showShouldLoading = true});
 
   @override
   @JsonKey()
   final LibraryViewModel viewModel;
+  @override
+  @JsonKey()
+  final bool showShouldLoading;
 
   @override
   String toString() {
-    return 'LibraryState.libraryLoadingState(viewModel: $viewModel)';
+    return 'LibraryState.libraryLoadingState(viewModel: $viewModel, showShouldLoading: $showShouldLoading)';
   }
 
   @override
@@ -304,11 +354,13 @@ class _$LibraryLoadingState implements LibraryLoadingState {
         (other.runtimeType == runtimeType &&
             other is _$LibraryLoadingState &&
             (identical(other.viewModel, viewModel) ||
-                other.viewModel == viewModel));
+                other.viewModel == viewModel) &&
+            (identical(other.showShouldLoading, showShouldLoading) ||
+                other.showShouldLoading == showShouldLoading));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, viewModel);
+  int get hashCode => Object.hash(runtimeType, viewModel, showShouldLoading);
 
   @JsonKey(ignore: true)
   @override
@@ -321,29 +373,43 @@ class _$LibraryLoadingState implements LibraryLoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LibraryViewModel viewModel) libraryPrimaryState,
-    required TResult Function(LibraryViewModel viewModel) libraryLoadingState,
+    required TResult Function(
+            LibraryViewModel viewModel, bool showShouldLoading)
+        libraryLoadingState,
+    required TResult Function(LibraryViewModel viewModel) librarySuccessState,
+    required TResult Function(
+            LibraryViewModel viewModel, BaseException exception)
+        libraryErrorState,
   }) {
-    return libraryLoadingState(viewModel);
+    return libraryLoadingState(viewModel, showShouldLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LibraryViewModel viewModel)? libraryPrimaryState,
-    TResult? Function(LibraryViewModel viewModel)? libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult? Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
   }) {
-    return libraryLoadingState?.call(viewModel);
+    return libraryLoadingState?.call(viewModel, showShouldLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LibraryViewModel viewModel)? libraryPrimaryState,
-    TResult Function(LibraryViewModel viewModel)? libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
     required TResult orElse(),
   }) {
     if (libraryLoadingState != null) {
-      return libraryLoadingState(viewModel);
+      return libraryLoadingState(viewModel, showShouldLoading);
     }
     return orElse();
   }
@@ -353,6 +419,8 @@ class _$LibraryLoadingState implements LibraryLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(LibraryPrimaryState value) libraryPrimaryState,
     required TResult Function(LibraryLoadingState value) libraryLoadingState,
+    required TResult Function(LibrarySuccessState value) librarySuccessState,
+    required TResult Function(LibraryErrorState value) libraryErrorState,
   }) {
     return libraryLoadingState(this);
   }
@@ -362,6 +430,8 @@ class _$LibraryLoadingState implements LibraryLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LibraryPrimaryState value)? libraryPrimaryState,
     TResult? Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult? Function(LibrarySuccessState value)? librarySuccessState,
+    TResult? Function(LibraryErrorState value)? libraryErrorState,
   }) {
     return libraryLoadingState?.call(this);
   }
@@ -371,6 +441,8 @@ class _$LibraryLoadingState implements LibraryLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LibraryPrimaryState value)? libraryPrimaryState,
     TResult Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult Function(LibrarySuccessState value)? librarySuccessState,
+    TResult Function(LibraryErrorState value)? libraryErrorState,
     required TResult orElse(),
   }) {
     if (libraryLoadingState != null) {
@@ -381,13 +453,365 @@ class _$LibraryLoadingState implements LibraryLoadingState {
 }
 
 abstract class LibraryLoadingState implements LibraryState {
-  const factory LibraryLoadingState({final LibraryViewModel viewModel}) =
-      _$LibraryLoadingState;
+  const factory LibraryLoadingState(
+      {final LibraryViewModel viewModel,
+      final bool showShouldLoading}) = _$LibraryLoadingState;
+
+  @override
+  LibraryViewModel get viewModel;
+  bool get showShouldLoading;
+  @override
+  @JsonKey(ignore: true)
+  _$$LibraryLoadingStateCopyWith<_$LibraryLoadingState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LibrarySuccessStateCopyWith<$Res>
+    implements $LibraryStateCopyWith<$Res> {
+  factory _$$LibrarySuccessStateCopyWith(_$LibrarySuccessState value,
+          $Res Function(_$LibrarySuccessState) then) =
+      __$$LibrarySuccessStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({LibraryViewModel viewModel});
+
+  @override
+  $LibraryViewModelCopyWith<$Res> get viewModel;
+}
+
+/// @nodoc
+class __$$LibrarySuccessStateCopyWithImpl<$Res>
+    extends _$LibraryStateCopyWithImpl<$Res, _$LibrarySuccessState>
+    implements _$$LibrarySuccessStateCopyWith<$Res> {
+  __$$LibrarySuccessStateCopyWithImpl(
+      _$LibrarySuccessState _value, $Res Function(_$LibrarySuccessState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_$LibrarySuccessState(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as LibraryViewModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LibrarySuccessState implements LibrarySuccessState {
+  const _$LibrarySuccessState({this.viewModel = const LibraryViewModel()});
+
+  @override
+  @JsonKey()
+  final LibraryViewModel viewModel;
+
+  @override
+  String toString() {
+    return 'LibraryState.librarySuccessState(viewModel: $viewModel)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LibrarySuccessState &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LibrarySuccessStateCopyWith<_$LibrarySuccessState> get copyWith =>
+      __$$LibrarySuccessStateCopyWithImpl<_$LibrarySuccessState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LibraryViewModel viewModel) libraryPrimaryState,
+    required TResult Function(
+            LibraryViewModel viewModel, bool showShouldLoading)
+        libraryLoadingState,
+    required TResult Function(LibraryViewModel viewModel) librarySuccessState,
+    required TResult Function(
+            LibraryViewModel viewModel, BaseException exception)
+        libraryErrorState,
+  }) {
+    return librarySuccessState(viewModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LibraryViewModel viewModel)? libraryPrimaryState,
+    TResult? Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult? Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
+  }) {
+    return librarySuccessState?.call(viewModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LibraryViewModel viewModel)? libraryPrimaryState,
+    TResult Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
+    required TResult orElse(),
+  }) {
+    if (librarySuccessState != null) {
+      return librarySuccessState(viewModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LibraryPrimaryState value) libraryPrimaryState,
+    required TResult Function(LibraryLoadingState value) libraryLoadingState,
+    required TResult Function(LibrarySuccessState value) librarySuccessState,
+    required TResult Function(LibraryErrorState value) libraryErrorState,
+  }) {
+    return librarySuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LibraryPrimaryState value)? libraryPrimaryState,
+    TResult? Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult? Function(LibrarySuccessState value)? librarySuccessState,
+    TResult? Function(LibraryErrorState value)? libraryErrorState,
+  }) {
+    return librarySuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LibraryPrimaryState value)? libraryPrimaryState,
+    TResult Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult Function(LibrarySuccessState value)? librarySuccessState,
+    TResult Function(LibraryErrorState value)? libraryErrorState,
+    required TResult orElse(),
+  }) {
+    if (librarySuccessState != null) {
+      return librarySuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LibrarySuccessState implements LibraryState {
+  const factory LibrarySuccessState({final LibraryViewModel viewModel}) =
+      _$LibrarySuccessState;
 
   @override
   LibraryViewModel get viewModel;
   @override
   @JsonKey(ignore: true)
-  _$$LibraryLoadingStateCopyWith<_$LibraryLoadingState> get copyWith =>
+  _$$LibrarySuccessStateCopyWith<_$LibrarySuccessState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LibraryErrorStateCopyWith<$Res>
+    implements $LibraryStateCopyWith<$Res> {
+  factory _$$LibraryErrorStateCopyWith(
+          _$LibraryErrorState value, $Res Function(_$LibraryErrorState) then) =
+      __$$LibraryErrorStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({LibraryViewModel viewModel, BaseException exception});
+
+  @override
+  $LibraryViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
+}
+
+/// @nodoc
+class __$$LibraryErrorStateCopyWithImpl<$Res>
+    extends _$LibraryStateCopyWithImpl<$Res, _$LibraryErrorState>
+    implements _$$LibraryErrorStateCopyWith<$Res> {
+  __$$LibraryErrorStateCopyWithImpl(
+      _$LibraryErrorState _value, $Res Function(_$LibraryErrorState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+    Object? exception = null,
+  }) {
+    return _then(_$LibraryErrorState(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as LibraryViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$LibraryErrorState implements LibraryErrorState {
+  const _$LibraryErrorState(
+      {this.viewModel = const LibraryViewModel(),
+      this.exception = const BaseException()});
+
+  @override
+  @JsonKey()
+  final LibraryViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
+
+  @override
+  String toString() {
+    return 'LibraryState.libraryErrorState(viewModel: $viewModel, exception: $exception)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LibraryErrorState &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LibraryErrorStateCopyWith<_$LibraryErrorState> get copyWith =>
+      __$$LibraryErrorStateCopyWithImpl<_$LibraryErrorState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LibraryViewModel viewModel) libraryPrimaryState,
+    required TResult Function(
+            LibraryViewModel viewModel, bool showShouldLoading)
+        libraryLoadingState,
+    required TResult Function(LibraryViewModel viewModel) librarySuccessState,
+    required TResult Function(
+            LibraryViewModel viewModel, BaseException exception)
+        libraryErrorState,
+  }) {
+    return libraryErrorState(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LibraryViewModel viewModel)? libraryPrimaryState,
+    TResult? Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult? Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult? Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
+  }) {
+    return libraryErrorState?.call(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LibraryViewModel viewModel)? libraryPrimaryState,
+    TResult Function(LibraryViewModel viewModel, bool showShouldLoading)?
+        libraryLoadingState,
+    TResult Function(LibraryViewModel viewModel)? librarySuccessState,
+    TResult Function(LibraryViewModel viewModel, BaseException exception)?
+        libraryErrorState,
+    required TResult orElse(),
+  }) {
+    if (libraryErrorState != null) {
+      return libraryErrorState(viewModel, exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LibraryPrimaryState value) libraryPrimaryState,
+    required TResult Function(LibraryLoadingState value) libraryLoadingState,
+    required TResult Function(LibrarySuccessState value) librarySuccessState,
+    required TResult Function(LibraryErrorState value) libraryErrorState,
+  }) {
+    return libraryErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LibraryPrimaryState value)? libraryPrimaryState,
+    TResult? Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult? Function(LibrarySuccessState value)? librarySuccessState,
+    TResult? Function(LibraryErrorState value)? libraryErrorState,
+  }) {
+    return libraryErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LibraryPrimaryState value)? libraryPrimaryState,
+    TResult Function(LibraryLoadingState value)? libraryLoadingState,
+    TResult Function(LibrarySuccessState value)? librarySuccessState,
+    TResult Function(LibraryErrorState value)? libraryErrorState,
+    required TResult orElse(),
+  }) {
+    if (libraryErrorState != null) {
+      return libraryErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LibraryErrorState implements LibraryState {
+  const factory LibraryErrorState(
+      {final LibraryViewModel viewModel,
+      final BaseException exception}) = _$LibraryErrorState;
+
+  @override
+  LibraryViewModel get viewModel;
+  BaseException get exception;
+  @override
+  @JsonKey(ignore: true)
+  _$$LibraryErrorStateCopyWith<_$LibraryErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }

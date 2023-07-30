@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-extension RequestOptionsExts on RequestOptions {
+extension RequestOptionsExtension on RequestOptions {
   String toCURL() {
     var curl = '';
     // Add PATH + REQUEST_METHOD

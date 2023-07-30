@@ -21,6 +21,7 @@ Future<void> initDI() async {
         connectTimeout: const Duration(milliseconds: 30000),
         sendTimeout: const Duration(milliseconds: 30000),
         followRedirects: false);
+  dio.interceptors.add(di<CommonInterceptor>());
   CommonInterceptor.dio = dio;
 
   di.init();
