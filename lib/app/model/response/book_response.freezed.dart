@@ -25,6 +25,7 @@ mixin _$BookResponse {
   String get author => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   int get createAt => throw _privateConstructorUsedError;
   int get updateAt => throw _privateConstructorUsedError;
 
@@ -46,6 +47,7 @@ abstract class $BookResponseCopyWith<$Res> {
       String author,
       String content,
       String image,
+      String description,
       int createAt,
       int updateAt});
 }
@@ -68,6 +70,7 @@ class _$BookResponseCopyWithImpl<$Res, $Val extends BookResponse>
     Object? author = null,
     Object? content = null,
     Object? image = null,
+    Object? description = null,
     Object? createAt = null,
     Object? updateAt = null,
   }) {
@@ -91,6 +94,10 @@ class _$BookResponseCopyWithImpl<$Res, $Val extends BookResponse>
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       createAt: null == createAt
           ? _value.createAt
@@ -118,6 +125,7 @@ abstract class _$$_BookResponseCopyWith<$Res>
       String author,
       String content,
       String image,
+      String description,
       int createAt,
       int updateAt});
 }
@@ -138,6 +146,7 @@ class __$$_BookResponseCopyWithImpl<$Res>
     Object? author = null,
     Object? content = null,
     Object? image = null,
+    Object? description = null,
     Object? createAt = null,
     Object? updateAt = null,
   }) {
@@ -162,6 +171,10 @@ class __$$_BookResponseCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       createAt: null == createAt
           ? _value.createAt
           : createAt // ignore: cast_nullable_to_non_nullable
@@ -184,6 +197,7 @@ class _$_BookResponse extends _BookResponse {
       required this.author,
       required this.content,
       required this.image,
+      required this.description,
       required this.createAt,
       required this.updateAt})
       : super._();
@@ -202,13 +216,15 @@ class _$_BookResponse extends _BookResponse {
   @override
   final String image;
   @override
+  final String description;
+  @override
   final int createAt;
   @override
   final int updateAt;
 
   @override
   String toString() {
-    return 'BookResponse(id: $id, title: $title, author: $author, content: $content, image: $image, createAt: $createAt, updateAt: $updateAt)';
+    return 'BookResponse(id: $id, title: $title, author: $author, content: $content, image: $image, description: $description, createAt: $createAt, updateAt: $updateAt)';
   }
 
   @override
@@ -221,6 +237,8 @@ class _$_BookResponse extends _BookResponse {
             (identical(other.author, author) || other.author == author) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.image, image) || other.image == image) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.createAt, createAt) ||
                 other.createAt == createAt) &&
             (identical(other.updateAt, updateAt) ||
@@ -229,8 +247,8 @@ class _$_BookResponse extends _BookResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, title, author, content, image, createAt, updateAt);
+  int get hashCode => Object.hash(runtimeType, id, title, author, content,
+      image, description, createAt, updateAt);
 
   @JsonKey(ignore: true)
   @override
@@ -253,6 +271,7 @@ abstract class _BookResponse extends BookResponse {
       required final String author,
       required final String content,
       required final String image,
+      required final String description,
       required final int createAt,
       required final int updateAt}) = _$_BookResponse;
   const _BookResponse._() : super._();
@@ -270,6 +289,8 @@ abstract class _BookResponse extends BookResponse {
   String get content;
   @override
   String get image;
+  @override
+  String get description;
   @override
   int get createAt;
   @override

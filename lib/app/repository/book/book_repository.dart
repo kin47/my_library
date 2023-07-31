@@ -3,5 +3,6 @@ import 'package:my_library/app/model/response/book_response.dart';
 
 abstract class BookRepository {
   Future<List<BookResponse>> getAllBook({String title = ""});
+  Future<BookResponse> getOneBook({required int id});
   Future<dynamic> addBook({required BookRequest param});
 }

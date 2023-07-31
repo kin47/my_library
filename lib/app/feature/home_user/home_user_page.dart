@@ -64,6 +64,7 @@ class _HomeUserPageState extends State<HomeUserPage> {
           ),
         ),
         BookCardWidget(
+          id: viewModel.continueReading.id,
           title: viewModel.continueReading.bookName,
           author: viewModel.continueReading.author,
           imageUrl: viewModel.continueReading.bookImageUrl,
@@ -76,6 +77,7 @@ class _HomeUserPageState extends State<HomeUserPage> {
           ),
         ),
         BookCardWidget(
+          id: viewModel.recommendation.id,
           title: viewModel.recommendation.bookName,
           author: viewModel.recommendation.author,
           imageUrl: viewModel.recommendation.bookImageUrl,
@@ -88,6 +90,7 @@ class _HomeUserPageState extends State<HomeUserPage> {
           ),
         ),
         BookCardWidget(
+          id: viewModel.recentAddition.id,
           title: viewModel.recentAddition.bookName,
           author: viewModel.recentAddition.author,
           imageUrl: viewModel.recentAddition.bookImageUrl,

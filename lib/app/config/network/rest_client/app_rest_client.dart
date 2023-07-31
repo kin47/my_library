@@ -19,4 +19,7 @@ abstract class AppRestClient {
 
   @GET('/book')
   Future<List<BookResponse>> getAllBook(@Query("title") String title);
+
+  @GET('/book/get-by-id')
+  Future<BookResponse> getOneBook(@Query("id") int id);
 }

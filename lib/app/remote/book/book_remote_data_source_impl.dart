@@ -19,4 +19,9 @@ class BookRemoteDataSourceImpl implements BookRemoteDataSource {
   Future<List<BookResponse>> getAllBook({String title = ""}) {
     return _appRestClient.getAllBook(title);
   }
+
+  @override
+  Future<BookResponse> getOneBook({required int id}) {
+    return _appRestClient.getOneBook(id);
+  }
 }

@@ -24,6 +24,9 @@ mixin _$BookPreviewState {
     required TResult Function(
             BookPreviewViewModel viewModel, bool showShouldLoading)
         bookPreviewLoadingState,
+    required TResult Function(
+            BookPreviewViewModel viewModel, BaseException exception)
+        bookPreviewErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +34,8 @@ mixin _$BookPreviewState {
     TResult? Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
     TResult? Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
         bookPreviewLoadingState,
+    TResult? Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +43,8 @@ mixin _$BookPreviewState {
     TResult Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
     TResult Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
         bookPreviewLoadingState,
+    TResult Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,18 +54,22 @@ mixin _$BookPreviewState {
         bookPreviewPrimaryState,
     required TResult Function(BookPreviewLoadingState value)
         bookPreviewLoadingState,
+    required TResult Function(BookPreviewErrorState value)
+        bookPreviewErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
     TResult? Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult? Function(BookPreviewErrorState value)? bookPreviewErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
     TResult Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult Function(BookPreviewErrorState value)? bookPreviewErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -189,6 +200,9 @@ class _$BookPreviewPrimaryState implements BookPreviewPrimaryState {
     required TResult Function(
             BookPreviewViewModel viewModel, bool showShouldLoading)
         bookPreviewLoadingState,
+    required TResult Function(
+            BookPreviewViewModel viewModel, BaseException exception)
+        bookPreviewErrorState,
   }) {
     return bookPreviewPrimaryState(viewModel);
   }
@@ -199,6 +213,8 @@ class _$BookPreviewPrimaryState implements BookPreviewPrimaryState {
     TResult? Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
     TResult? Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
         bookPreviewLoadingState,
+    TResult? Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
   }) {
     return bookPreviewPrimaryState?.call(viewModel);
   }
@@ -209,6 +225,8 @@ class _$BookPreviewPrimaryState implements BookPreviewPrimaryState {
     TResult Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
     TResult Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
         bookPreviewLoadingState,
+    TResult Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
     required TResult orElse(),
   }) {
     if (bookPreviewPrimaryState != null) {
@@ -224,6 +242,8 @@ class _$BookPreviewPrimaryState implements BookPreviewPrimaryState {
         bookPreviewPrimaryState,
     required TResult Function(BookPreviewLoadingState value)
         bookPreviewLoadingState,
+    required TResult Function(BookPreviewErrorState value)
+        bookPreviewErrorState,
   }) {
     return bookPreviewPrimaryState(this);
   }
@@ -233,6 +253,7 @@ class _$BookPreviewPrimaryState implements BookPreviewPrimaryState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
     TResult? Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult? Function(BookPreviewErrorState value)? bookPreviewErrorState,
   }) {
     return bookPreviewPrimaryState?.call(this);
   }
@@ -242,6 +263,7 @@ class _$BookPreviewPrimaryState implements BookPreviewPrimaryState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
     TResult Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult Function(BookPreviewErrorState value)? bookPreviewErrorState,
     required TResult orElse(),
   }) {
     if (bookPreviewPrimaryState != null) {
@@ -352,6 +374,9 @@ class _$BookPreviewLoadingState implements BookPreviewLoadingState {
     required TResult Function(
             BookPreviewViewModel viewModel, bool showShouldLoading)
         bookPreviewLoadingState,
+    required TResult Function(
+            BookPreviewViewModel viewModel, BaseException exception)
+        bookPreviewErrorState,
   }) {
     return bookPreviewLoadingState(viewModel, showShouldLoading);
   }
@@ -362,6 +387,8 @@ class _$BookPreviewLoadingState implements BookPreviewLoadingState {
     TResult? Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
     TResult? Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
         bookPreviewLoadingState,
+    TResult? Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
   }) {
     return bookPreviewLoadingState?.call(viewModel, showShouldLoading);
   }
@@ -372,6 +399,8 @@ class _$BookPreviewLoadingState implements BookPreviewLoadingState {
     TResult Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
     TResult Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
         bookPreviewLoadingState,
+    TResult Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
     required TResult orElse(),
   }) {
     if (bookPreviewLoadingState != null) {
@@ -387,6 +416,8 @@ class _$BookPreviewLoadingState implements BookPreviewLoadingState {
         bookPreviewPrimaryState,
     required TResult Function(BookPreviewLoadingState value)
         bookPreviewLoadingState,
+    required TResult Function(BookPreviewErrorState value)
+        bookPreviewErrorState,
   }) {
     return bookPreviewLoadingState(this);
   }
@@ -396,6 +427,7 @@ class _$BookPreviewLoadingState implements BookPreviewLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
     TResult? Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult? Function(BookPreviewErrorState value)? bookPreviewErrorState,
   }) {
     return bookPreviewLoadingState?.call(this);
   }
@@ -405,6 +437,7 @@ class _$BookPreviewLoadingState implements BookPreviewLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
     TResult Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult Function(BookPreviewErrorState value)? bookPreviewErrorState,
     required TResult orElse(),
   }) {
     if (bookPreviewLoadingState != null) {
@@ -425,5 +458,190 @@ abstract class BookPreviewLoadingState implements BookPreviewState {
   @override
   @JsonKey(ignore: true)
   _$$BookPreviewLoadingStateCopyWith<_$BookPreviewLoadingState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BookPreviewErrorStateCopyWith<$Res>
+    implements $BookPreviewStateCopyWith<$Res> {
+  factory _$$BookPreviewErrorStateCopyWith(_$BookPreviewErrorState value,
+          $Res Function(_$BookPreviewErrorState) then) =
+      __$$BookPreviewErrorStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({BookPreviewViewModel viewModel, BaseException exception});
+
+  @override
+  $BookPreviewViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
+}
+
+/// @nodoc
+class __$$BookPreviewErrorStateCopyWithImpl<$Res>
+    extends _$BookPreviewStateCopyWithImpl<$Res, _$BookPreviewErrorState>
+    implements _$$BookPreviewErrorStateCopyWith<$Res> {
+  __$$BookPreviewErrorStateCopyWithImpl(_$BookPreviewErrorState _value,
+      $Res Function(_$BookPreviewErrorState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+    Object? exception = null,
+  }) {
+    return _then(_$BookPreviewErrorState(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as BookPreviewViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$BookPreviewErrorState implements BookPreviewErrorState {
+  const _$BookPreviewErrorState(
+      {this.viewModel = const BookPreviewViewModel(),
+      this.exception = const BaseException()});
+
+  @override
+  @JsonKey()
+  final BookPreviewViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
+
+  @override
+  String toString() {
+    return 'BookPreviewState.bookPreviewErrorState(viewModel: $viewModel, exception: $exception)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BookPreviewErrorState &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BookPreviewErrorStateCopyWith<_$BookPreviewErrorState> get copyWith =>
+      __$$BookPreviewErrorStateCopyWithImpl<_$BookPreviewErrorState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BookPreviewViewModel viewModel)
+        bookPreviewPrimaryState,
+    required TResult Function(
+            BookPreviewViewModel viewModel, bool showShouldLoading)
+        bookPreviewLoadingState,
+    required TResult Function(
+            BookPreviewViewModel viewModel, BaseException exception)
+        bookPreviewErrorState,
+  }) {
+    return bookPreviewErrorState(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
+    TResult? Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
+        bookPreviewLoadingState,
+    TResult? Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
+  }) {
+    return bookPreviewErrorState?.call(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BookPreviewViewModel viewModel)? bookPreviewPrimaryState,
+    TResult Function(BookPreviewViewModel viewModel, bool showShouldLoading)?
+        bookPreviewLoadingState,
+    TResult Function(BookPreviewViewModel viewModel, BaseException exception)?
+        bookPreviewErrorState,
+    required TResult orElse(),
+  }) {
+    if (bookPreviewErrorState != null) {
+      return bookPreviewErrorState(viewModel, exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BookPreviewPrimaryState value)
+        bookPreviewPrimaryState,
+    required TResult Function(BookPreviewLoadingState value)
+        bookPreviewLoadingState,
+    required TResult Function(BookPreviewErrorState value)
+        bookPreviewErrorState,
+  }) {
+    return bookPreviewErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
+    TResult? Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult? Function(BookPreviewErrorState value)? bookPreviewErrorState,
+  }) {
+    return bookPreviewErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BookPreviewPrimaryState value)? bookPreviewPrimaryState,
+    TResult Function(BookPreviewLoadingState value)? bookPreviewLoadingState,
+    TResult Function(BookPreviewErrorState value)? bookPreviewErrorState,
+    required TResult orElse(),
+  }) {
+    if (bookPreviewErrorState != null) {
+      return bookPreviewErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookPreviewErrorState implements BookPreviewState {
+  const factory BookPreviewErrorState(
+      {final BookPreviewViewModel viewModel,
+      final BaseException exception}) = _$BookPreviewErrorState;
+
+  @override
+  BookPreviewViewModel get viewModel;
+  BaseException get exception;
+  @override
+  @JsonKey(ignore: true)
+  _$$BookPreviewErrorStateCopyWith<_$BookPreviewErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }

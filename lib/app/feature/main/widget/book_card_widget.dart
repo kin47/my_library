@@ -10,20 +10,34 @@ import 'package:my_library/generated/l10n.dart';
 class BookCardWidget extends StatelessWidget {
   BookCardWidget({
     Key? key,
+    required this.id,
     required this.title,
     required this.author,
     required this.imageUrl,
   }) : super(key: key);
 
+  final int id;
   final String title;
   final String author;
   final String imageUrl;
   final LibraryCubit _cubit = di();
 
+  ImageProvider image() {
+    if (imageUrl.isEmpty) {
+      return AssetImage(
+        Assets.images.imgBackground.keyName,
+      );
+    } else {
+      return NetworkImage(
+        imageUrl,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _cubit.goToBookPreviewPage(),
+      onTap: () => _cubit.goToBookPreviewPage(id),
       child: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -51,9 +65,7 @@ class BookCardWidget extends StatelessWidget {
           placeholder: AssetImage(
             Assets.images.imgBackground.keyName,
           ),
-          image: AssetImage(
-            Assets.images.imgBackground.keyName,
-          ),
+          image: image(),
           height: 90,
           width: 60,
           fit: BoxFit.cover,
