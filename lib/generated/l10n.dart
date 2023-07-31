@@ -420,6 +420,16 @@ class S {
     );
   }
 
+  /// `Select category`
+  String get select_category {
+    return Intl.message(
+      'Select category',
+      name: 'select_category',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Add new book`
   String get add_new_book {
     return Intl.message(

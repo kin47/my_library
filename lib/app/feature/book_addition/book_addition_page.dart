@@ -188,7 +188,7 @@ class _BookAdditionPageState extends State<BookAdditionPage> {
             DropdownMenuItem<String>(
               value: '',
               child: Text(
-                S.current.find_by_category,
+                S.current.select_category,
                 style: DSTextStyle.ws14w400,
               ),
             ),

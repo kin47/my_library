@@ -130,7 +130,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
           SH30,
           Center(
             child: DSElevatedButton(
-              onPressed: () => _cubit.goToReadingPage(),
+              onPressed: () => _cubit.goToReadingPage(viewModel.bookInfo),
               text: S.current.read_book,
             ),
           )

@@ -107,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "register_subtitle":
             MessageLookupByLibrary.simpleMessage("Let\'s start register now"),
+        "select_category":
+            MessageLookupByLibrary.simpleMessage("Select category"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
         "terms_and_conditions":
             MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
