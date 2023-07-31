@@ -46,11 +46,12 @@ class _RegisterPageState extends State<RegisterPage> {
             return;
           }
           if (state is RegisterSuccessState) {
-            showSnackBar(context, 'Register Successfully');
+            showSnackBar(context, S.current.register_success);
             _cubit.goToLoginPageEvent();
           }
           if (state is RegisterErrorState) {
-            showSnackBar(context, 'Register Error');
+            showSnackBar(
+                context, '${S.current.register_error}: ${state.exception}');
           }
         },
         builder: (BuildContext context, RegisterState state) {

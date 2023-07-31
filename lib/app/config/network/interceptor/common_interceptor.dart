@@ -25,6 +25,5 @@ class CommonInterceptor extends InterceptorsWrapper {
   void onError(DioException err, ErrorInterceptorHandler handler) {
     // TODO: implement onError
     super.onError(err, handler);
-    print(err);
   }
 }

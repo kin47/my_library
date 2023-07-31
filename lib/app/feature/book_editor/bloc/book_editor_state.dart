@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:my_library/app/config/exception/base_exception.dart';
 import 'package:my_library/app/feature/book_editor/view_model/book_editor_view_model.dart';
 
 part 'book_editor_state.freezed.dart';
@@ -20,5 +21,6 @@ class BookEditorState with _$BookEditorState {
 
   const factory BookEditorState.bookEditorErrorState({
     @Default(BookEditorViewModel()) BookEditorViewModel viewModel,
+    @Default(BaseException()) BaseException exception,
   }) = BookEditorErrorState;
 }

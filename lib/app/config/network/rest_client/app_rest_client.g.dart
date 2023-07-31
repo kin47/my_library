@@ -71,6 +71,32 @@ class _AppRestClient implements AppRestClient {
   }
 
   @override
+  Future<dynamic> editBook(BookEditRequest body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/book',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data;
+    return value;
+  }
+
+  @override
   Future<List<BookResponse>> getAllBook(String title) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'title': title};

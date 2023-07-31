@@ -22,6 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_book_error":
+            MessageLookupByLibrary.simpleMessage("Lỗi khi thêm sách"),
+        "add_book_success":
+            MessageLookupByLibrary.simpleMessage("Thêm sách thành công"),
         "add_new_book": MessageLookupByLibrary.simpleMessage("Thêm sách mới"),
         "address": MessageLookupByLibrary.simpleMessage("Địa chỉ nhà"),
         "address_required":
@@ -30,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "author": MessageLookupByLibrary.simpleMessage("Tác giả"),
         "author_required": MessageLookupByLibrary.simpleMessage(
             "Tên tác giả không được để trống"),
+        "book_image": MessageLookupByLibrary.simpleMessage("Ảnh bìa sách"),
         "book_name": MessageLookupByLibrary.simpleMessage("Tên sách"),
         "book_title": MessageLookupByLibrary.simpleMessage("Tên sách"),
         "book_title_required": MessageLookupByLibrary.simpleMessage(
@@ -62,6 +67,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Chưa có tài khoản?"),
         "edit_book": MessageLookupByLibrary.simpleMessage("Sửa sách"),
+        "edit_book_error": MessageLookupByLibrary.simpleMessage(
+            "Cập nhật thông tin sách thất bại"),
+        "edit_book_success": MessageLookupByLibrary.simpleMessage(
+            "Cập nhật thông tin sách thành công"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email không hợp lệ"),
@@ -80,6 +89,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "image_url_required": MessageLookupByLibrary.simpleMessage(
             "Url của ảnh không được để trống"),
         "library": MessageLookupByLibrary.simpleMessage("Thư viện"),
+        "library_error":
+            MessageLookupByLibrary.simpleMessage("Lỗi không thể xem thư viện"),
         "like": MessageLookupByLibrary.simpleMessage("Like"),
         "log_in": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "log_out": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
@@ -100,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumber_required": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại phải tối thiểu 10 số"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "preview_error": MessageLookupByLibrary.simpleMessage(
+            "Lỗi: không thể xem trước sách :("),
         "profile": MessageLookupByLibrary.simpleMessage("Tài khoản"),
         "read_book": MessageLookupByLibrary.simpleMessage("Đọc sách này"),
         "recent_additions":
@@ -108,8 +121,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cập nhật gần đây"),
         "recommend": MessageLookupByLibrary.simpleMessage("Gợi ý dành cho bạn"),
         "register": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+        "register_error":
+            MessageLookupByLibrary.simpleMessage("Đăng kí thất bại"),
         "register_subtitle": MessageLookupByLibrary.simpleMessage(
             "Hãy bắt đầu đăng ký ngay nhé"),
+        "register_success":
+            MessageLookupByLibrary.simpleMessage("Đăng kí thành công"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Đăng ký"),
         "terms_and_conditions":
             MessageLookupByLibrary.simpleMessage("Điều khoản và Điều kiện"),

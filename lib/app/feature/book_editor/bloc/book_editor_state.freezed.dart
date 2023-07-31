@@ -26,7 +26,8 @@ mixin _$BookEditorState {
         bookEditorLoadingState,
     required TResult Function(BookEditorViewModel viewModel)
         bookEditorSuccessState,
-    required TResult Function(BookEditorViewModel viewModel)
+    required TResult Function(
+            BookEditorViewModel viewModel, BaseException exception)
         bookEditorErrorState,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +37,8 @@ mixin _$BookEditorState {
     TResult? Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult? Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult? Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult? Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,7 +47,8 @@ mixin _$BookEditorState {
     TResult Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -206,7 +209,8 @@ class _$BookEditorPrimaryState implements BookEditorPrimaryState {
         bookEditorLoadingState,
     required TResult Function(BookEditorViewModel viewModel)
         bookEditorSuccessState,
-    required TResult Function(BookEditorViewModel viewModel)
+    required TResult Function(
+            BookEditorViewModel viewModel, BaseException exception)
         bookEditorErrorState,
   }) {
     return bookEditorPrimaryState(viewModel);
@@ -219,7 +223,8 @@ class _$BookEditorPrimaryState implements BookEditorPrimaryState {
     TResult? Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult? Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult? Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult? Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
   }) {
     return bookEditorPrimaryState?.call(viewModel);
   }
@@ -231,7 +236,8 @@ class _$BookEditorPrimaryState implements BookEditorPrimaryState {
     TResult Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
     required TResult orElse(),
   }) {
     if (bookEditorPrimaryState != null) {
@@ -384,7 +390,8 @@ class _$BookEditorLoadingState implements BookEditorLoadingState {
         bookEditorLoadingState,
     required TResult Function(BookEditorViewModel viewModel)
         bookEditorSuccessState,
-    required TResult Function(BookEditorViewModel viewModel)
+    required TResult Function(
+            BookEditorViewModel viewModel, BaseException exception)
         bookEditorErrorState,
   }) {
     return bookEditorLoadingState(viewModel, showShouldLoading);
@@ -397,7 +404,8 @@ class _$BookEditorLoadingState implements BookEditorLoadingState {
     TResult? Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult? Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult? Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult? Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
   }) {
     return bookEditorLoadingState?.call(viewModel, showShouldLoading);
   }
@@ -409,7 +417,8 @@ class _$BookEditorLoadingState implements BookEditorLoadingState {
     TResult Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
     required TResult orElse(),
   }) {
     if (bookEditorLoadingState != null) {
@@ -553,7 +562,8 @@ class _$BookEditorSuccessState implements BookEditorSuccessState {
         bookEditorLoadingState,
     required TResult Function(BookEditorViewModel viewModel)
         bookEditorSuccessState,
-    required TResult Function(BookEditorViewModel viewModel)
+    required TResult Function(
+            BookEditorViewModel viewModel, BaseException exception)
         bookEditorErrorState,
   }) {
     return bookEditorSuccessState(viewModel);
@@ -566,7 +576,8 @@ class _$BookEditorSuccessState implements BookEditorSuccessState {
     TResult? Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult? Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult? Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult? Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
   }) {
     return bookEditorSuccessState?.call(viewModel);
   }
@@ -578,7 +589,8 @@ class _$BookEditorSuccessState implements BookEditorSuccessState {
     TResult Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
     required TResult orElse(),
   }) {
     if (bookEditorSuccessState != null) {
@@ -648,10 +660,11 @@ abstract class _$$BookEditorErrorStateCopyWith<$Res>
       __$$BookEditorErrorStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({BookEditorViewModel viewModel});
+  $Res call({BookEditorViewModel viewModel, BaseException exception});
 
   @override
   $BookEditorViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
 }
 
 /// @nodoc
@@ -666,28 +679,46 @@ class __$$BookEditorErrorStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? viewModel = null,
+    Object? exception = null,
   }) {
     return _then(_$BookEditorErrorState(
       viewModel: null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
               as BookEditorViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$BookEditorErrorState implements BookEditorErrorState {
-  const _$BookEditorErrorState({this.viewModel = const BookEditorViewModel()});
+  const _$BookEditorErrorState(
+      {this.viewModel = const BookEditorViewModel(),
+      this.exception = const BaseException()});
 
   @override
   @JsonKey()
   final BookEditorViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
 
   @override
   String toString() {
-    return 'BookEditorState.bookEditorErrorState(viewModel: $viewModel)';
+    return 'BookEditorState.bookEditorErrorState(viewModel: $viewModel, exception: $exception)';
   }
 
   @override
@@ -696,11 +727,13 @@ class _$BookEditorErrorState implements BookEditorErrorState {
         (other.runtimeType == runtimeType &&
             other is _$BookEditorErrorState &&
             (identical(other.viewModel, viewModel) ||
-                other.viewModel == viewModel));
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, viewModel);
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
 
   @JsonKey(ignore: true)
   @override
@@ -719,10 +752,11 @@ class _$BookEditorErrorState implements BookEditorErrorState {
         bookEditorLoadingState,
     required TResult Function(BookEditorViewModel viewModel)
         bookEditorSuccessState,
-    required TResult Function(BookEditorViewModel viewModel)
+    required TResult Function(
+            BookEditorViewModel viewModel, BaseException exception)
         bookEditorErrorState,
   }) {
-    return bookEditorErrorState(viewModel);
+    return bookEditorErrorState(viewModel, exception);
   }
 
   @override
@@ -732,9 +766,10 @@ class _$BookEditorErrorState implements BookEditorErrorState {
     TResult? Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult? Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult? Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult? Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
   }) {
-    return bookEditorErrorState?.call(viewModel);
+    return bookEditorErrorState?.call(viewModel, exception);
   }
 
   @override
@@ -744,11 +779,12 @@ class _$BookEditorErrorState implements BookEditorErrorState {
     TResult Function(BookEditorViewModel viewModel, bool showShouldLoading)?
         bookEditorLoadingState,
     TResult Function(BookEditorViewModel viewModel)? bookEditorSuccessState,
-    TResult Function(BookEditorViewModel viewModel)? bookEditorErrorState,
+    TResult Function(BookEditorViewModel viewModel, BaseException exception)?
+        bookEditorErrorState,
     required TResult orElse(),
   }) {
     if (bookEditorErrorState != null) {
-      return bookEditorErrorState(viewModel);
+      return bookEditorErrorState(viewModel, exception);
     }
     return orElse();
   }
@@ -795,11 +831,13 @@ class _$BookEditorErrorState implements BookEditorErrorState {
 }
 
 abstract class BookEditorErrorState implements BookEditorState {
-  const factory BookEditorErrorState({final BookEditorViewModel viewModel}) =
-      _$BookEditorErrorState;
+  const factory BookEditorErrorState(
+      {final BookEditorViewModel viewModel,
+      final BaseException exception}) = _$BookEditorErrorState;
 
   @override
   BookEditorViewModel get viewModel;
+  BaseException get exception;
   @override
   @JsonKey(ignore: true)
   _$$BookEditorErrorStateCopyWith<_$BookEditorErrorState> get copyWith =>

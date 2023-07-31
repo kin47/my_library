@@ -58,6 +58,7 @@
     "book_title": "Tên sách",
     "content": "Nội dung",
     "image_url": "Url của ảnh",
+    "book_image": "Ảnh bìa sách",
     "book_title_required": "Tên sách không được để trống",
     "image_url_required": "Url của ảnh không được để trống",
     "author_required": "Tên tác giả không được để trống",
@@ -66,9 +67,19 @@
     "description_required": "Mô tả không được để trống",
 
     "edit_book": "Sửa sách",
+
     "change_information_subtitle": "Hãy thay đổi thông tin của bạn",
     "change_password": "Hãy đổi mật khẩu mới",
     "current_password": "Mật khẩu hiện tại",
     "new_password": "Mật khẩu mới",
-    "change_other_information": "Thay đổi thông tin khác (không bắt buộc)"
+    "change_other_information": "Thay đổi thông tin khác (không bắt buộc)",
+
+    "register_success": "Đăng kí thành công",
+    "register_error": "Đăng kí thất bại",
+    "library_error": "Lỗi không thể xem thư viện",
+    "add_book_success": "Thêm sách thành công",
+    "add_book_error": "Lỗi khi thêm sách",
+    "edit_book_success": "Cập nhật thông tin sách thành công",
+    "edit_book_error": "Cập nhật thông tin sách thất bại",
+    "preview_error": "Lỗi: không thể xem trước sách :("
 }

@@ -580,6 +580,16 @@ class S {
     );
   }
 
+  /// `Book cover image`
+  String get book_image {
+    return Intl.message(
+      'Book cover image',
+      name: 'book_image',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Book title must not be empty`
   String get book_title_required {
     return Intl.message(
@@ -695,6 +705,86 @@ class S {
     return Intl.message(
       'Change other information (not required)',
       name: 'change_other_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register successfully`
+  String get register_success {
+    return Intl.message(
+      'Register successfully',
+      name: 'register_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register failed`
+  String get register_error {
+    return Intl.message(
+      'Register failed',
+      name: 'register_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot load the library`
+  String get library_error {
+    return Intl.message(
+      'Cannot load the library',
+      name: 'library_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Book Successfully`
+  String get add_book_success {
+    return Intl.message(
+      'Add Book Successfully',
+      name: 'add_book_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Book Failed`
+  String get add_book_error {
+    return Intl.message(
+      'Add Book Failed',
+      name: 'add_book_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit book successfully`
+  String get edit_book_success {
+    return Intl.message(
+      'Edit book successfully',
+      name: 'edit_book_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit book failed`
+  String get edit_book_error {
+    return Intl.message(
+      'Edit book failed',
+      name: 'edit_book_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot preview this book :(`
+  String get preview_error {
+    return Intl.message(
+      'Cannot preview this book :(',
+      name: 'preview_error',
       desc: '',
       args: [],
     );

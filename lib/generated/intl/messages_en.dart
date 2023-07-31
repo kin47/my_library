@@ -22,6 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_book_error":
+            MessageLookupByLibrary.simpleMessage("Add Book Failed"),
+        "add_book_success":
+            MessageLookupByLibrary.simpleMessage("Add Book Successfully"),
         "add_new_book": MessageLookupByLibrary.simpleMessage("Add new book"),
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "address_required":
@@ -30,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "author": MessageLookupByLibrary.simpleMessage("Author"),
         "author_required":
             MessageLookupByLibrary.simpleMessage("Author must not be empty"),
+        "book_image": MessageLookupByLibrary.simpleMessage("Book cover image"),
         "book_name": MessageLookupByLibrary.simpleMessage("Book name"),
         "book_title": MessageLookupByLibrary.simpleMessage("Book title"),
         "book_title_required": MessageLookupByLibrary.simpleMessage(
@@ -62,6 +67,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "edit_book": MessageLookupByLibrary.simpleMessage("Edit this book"),
+        "edit_book_error":
+            MessageLookupByLibrary.simpleMessage("Edit book failed"),
+        "edit_book_success":
+            MessageLookupByLibrary.simpleMessage("Edit book successfully"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_required":
             MessageLookupByLibrary.simpleMessage("Email is invalid"),
@@ -80,6 +89,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "image_url_required":
             MessageLookupByLibrary.simpleMessage("Image url must not be empty"),
         "library": MessageLookupByLibrary.simpleMessage("Library"),
+        "library_error":
+            MessageLookupByLibrary.simpleMessage("Cannot load the library"),
         "like": MessageLookupByLibrary.simpleMessage("Like"),
         "log_in": MessageLookupByLibrary.simpleMessage("Log in"),
         "log_out": MessageLookupByLibrary.simpleMessage("Log out"),
@@ -98,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumber_required": MessageLookupByLibrary.simpleMessage(
             "Phone number must have at least 10 numbers"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "preview_error":
+            MessageLookupByLibrary.simpleMessage("Cannot preview this book :("),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "read_book": MessageLookupByLibrary.simpleMessage("Read this book"),
         "recent_additions":
@@ -105,8 +118,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "recent_update": MessageLookupByLibrary.simpleMessage("Recent update"),
         "recommend": MessageLookupByLibrary.simpleMessage("Recommendation"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "register_error":
+            MessageLookupByLibrary.simpleMessage("Register failed"),
         "register_subtitle":
             MessageLookupByLibrary.simpleMessage("Let\'s start register now"),
+        "register_success":
+            MessageLookupByLibrary.simpleMessage("Register successfully"),
         "select_category":
             MessageLookupByLibrary.simpleMessage("Select category"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),

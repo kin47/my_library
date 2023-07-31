@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_library/app/feature/book_editor/bloc/book_editor_cubit.dart';
 import 'package:my_library/app/feature/book_editor/bloc/book_editor_state.dart';
 import 'package:my_library/app/feature/book_editor/view_model/book_editor_view_model.dart';
+import 'package:my_library/app/model/response/book_response.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
+import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
@@ -24,6 +26,16 @@ class _BookEditorPageState extends State<BookEditorPage> {
   final BookEditorCubit _cubit = di();
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final book = ModalRoute.of(context)!.settings.arguments as BookResponse;
+      _cubit.retrieveBookInformationEvent(book);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DSAppBar(
@@ -32,7 +44,12 @@ class _BookEditorPageState extends State<BookEditorPage> {
       body: BlocConsumer<BookEditorCubit, BookEditorState>(
         bloc: _cubit,
         listener: (BuildContext context, BookEditorState state) {
-          // TODO: implement listener
+          if (state is BookEditorSuccessState) {
+            showSnackBar(context, S.current.edit_book_success);
+          } else if (state is BookEditorErrorState) {
+            showSnackBar(
+                context, '${S.current.edit_book_error}: ${state.exception}');
+          }
         },
         builder: (BuildContext context, BookEditorState state) {
           return _buildPrimaryWidget(state);
@@ -42,6 +59,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
   }
 
   Widget _buildPrimaryWidget(BookEditorState state) {
+    // retrieve book info from the previous route
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -160,7 +178,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
 
   Widget _buildBottomWidget(BookEditorViewModel viewModel) {
     return DSElevatedButton(
-      onPressed: () {},
+      onPressed: () => _cubit.submitEditBookEvent(),
       enable: viewModel.isValid,
       text: S.current.edit_book,
     );
@@ -232,7 +250,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
         ),
       ),
       child: viewModel.imageUrl.isEmpty
-          ? const Text('Enter a URL')
+          ? Text(S.current.book_image)
           : FittedBox(
               child: Image.network(
                 viewModel.imageUrl,

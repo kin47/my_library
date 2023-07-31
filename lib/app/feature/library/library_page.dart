@@ -53,7 +53,8 @@ class _LibraryPageState extends State<LibraryPage> {
         bloc: _cubit,
         listener: (BuildContext context, LibraryState state) {
           if (state is LibraryErrorState) {
-            showSnackBar(context, state.exception.toString());
+            showSnackBar(
+                context, '${S.current.library_error}:${state.exception}');
           }
         },
         builder: (BuildContext context, LibraryState state) {

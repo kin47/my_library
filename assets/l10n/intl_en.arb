@@ -59,6 +59,7 @@
     "book_title": "Book title",
     "content": "Content",
     "image_url": "Image Url",
+    "book_image": "Book cover image",
     "book_title_required": "Book title must not be empty",
     "image_url_required": "Image url must not be empty",
     "author_required": "Author must not be empty",
@@ -67,9 +68,19 @@
     "description_required": "Description must not be empty",
 
     "edit_book": "Edit this book",
+
     "change_information_subtitle": "Let's change your information",
     "change_password": "Change your password",
     "current_password": "Current password",
     "new_password": "New password",
-    "change_other_information": "Change other information (not required)"
+    "change_other_information": "Change other information (not required)",
+
+    "register_success": "Register successfully",
+    "register_error": "Register failed",
+    "library_error": "Cannot load the library",
+    "add_book_success": "Add Book Successfully",
+    "add_book_error": "Add Book Failed",
+    "edit_book_success": "Edit book successfully",
+    "edit_book_error": "Edit book failed",
+    "preview_error": "Cannot preview this book :("
 }

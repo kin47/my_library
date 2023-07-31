@@ -46,7 +46,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         if (state is BookPreviewErrorState) {
           showSnackBar(
             context,
-            'Cannot preview this book :(, ${state.exception}',
+            '${S.current.preview_error}, ${state.exception}',
           );
         }
       },
@@ -59,7 +59,8 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
               title: Text(state.viewModel.bookInfo.title),
               actions: [
                 IconButton(
-                  onPressed: () => _cubit.goToEditBookPage(),
+                  onPressed: () =>
+                      _cubit.goToEditBookPage(state.viewModel.bookInfo),
                   icon: const Icon(Icons.edit),
                 ),
               ],
