@@ -41,6 +41,7 @@
     "library": "Library",
     "book_name": "Book name",
     "find_by_category": "Find by category",
+    "select_category": "Select category",
     "add_new_book": "Add new book",
     "author": "Author",
     "genre": "Genre",
