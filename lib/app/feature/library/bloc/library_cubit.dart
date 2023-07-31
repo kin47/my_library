@@ -21,8 +21,8 @@ class LibraryCubit extends Cubit<LibraryState> {
         viewModel: state.viewModel.copyWith(selectedCategory: value)));
   }
 
-  void goToBookPreviewPage() {
-    navigatorState.pushNamed(RouteName.bookPreview);
+  void goToBookPreviewPage(int id) {
+    navigatorState.pushNamed(RouteName.bookPreview, arguments: id);
   }
 
   void goToAddBookPage() {

@@ -26,8 +26,11 @@ class _LibraryPageState extends State<LibraryPage> {
 
   @override
   void initState() {
-    _cubit.getBookEvent('');
     super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _cubit.getBookEvent('');
+    });
   }
 
   @override
@@ -60,7 +63,7 @@ class _LibraryPageState extends State<LibraryPage> {
               child: _buildPrimaryWidget(state),
             );
           } else if (state is LibraryLoadingState) {
-            return const DSLoading();
+            return const Scaffold(body: DSLoading());
           } else {
             return Container();
           }
@@ -116,6 +119,7 @@ class _LibraryPageState extends State<LibraryPage> {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index) => BookCardWidget(
+            id: viewModel.listBooks[index].id,
             title: viewModel.listBooks[index].title,
             author: viewModel.listBooks[index].author,
             imageUrl: viewModel.listBooks[index].image,

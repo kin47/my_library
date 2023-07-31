@@ -13,6 +13,7 @@ _$_BookResponse _$$_BookResponseFromJson(Map<String, dynamic> json) =>
       author: json['author'] as String,
       content: json['content'] as String,
       image: json['image'] as String,
+      description: json['description'] as String,
       createAt: json['create_at'] as int,
       updateAt: json['update_at'] as int,
     );
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$_BookResponseToJson(_$_BookResponse instance) =>
       'author': instance.author,
       'content': instance.content,
       'image': instance.image,
+      'description': instance.description,
       'create_at': instance.createAt,
       'update_at': instance.updateAt,
     };

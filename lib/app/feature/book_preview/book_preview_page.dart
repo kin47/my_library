@@ -6,6 +6,8 @@ import 'package:my_library/app/feature/book_preview/view_model/book_preview_view
 import 'package:my_library/app/feature/book_preview/widget/comment_widget.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
+import 'package:my_library/design_system/ds_loading.dart';
+import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
@@ -24,30 +26,52 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
   final BookPreviewCubit _cubit = di();
 
   final FocusNode _commentFocusNode = FocusNode();
+  final String title = '';
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final id = ModalRoute.of(context)!.settings.arguments as int;
+      await _cubit.getBookInformationEvent(id);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.white,
-        title: const Text('Harry Potter'),
-        actions: [
-          IconButton(
-            onPressed: () => _cubit.goToEditBookPage(),
-            icon: const Icon(Icons.edit),
-          ),
-        ],
-      ),
-      body: BlocConsumer<BookPreviewCubit, BookPreviewState>(
-        bloc: _cubit,
-        listener: (context, state) {
-          // TODO: implement listener
-        },
-        builder: (BuildContext context, BookPreviewState state) {
-          return _buildPrimaryWidget(state);
-        },
-      ),
+    return BlocConsumer<BookPreviewCubit, BookPreviewState>(
+      bloc: _cubit,
+      listener: (BuildContext context, BookPreviewState state) {
+        if (state is BookPreviewErrorState) {
+          showSnackBar(
+            context,
+            'Cannot preview this book :(, ${state.exception}',
+          );
+        }
+      },
+      builder: (BuildContext context, BookPreviewState state) {
+        if (state is BookPreviewPrimaryState) {
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: AppColors.primary,
+              foregroundColor: AppColors.white,
+              title: Text(state.viewModel.bookInfo.title),
+              actions: [
+                IconButton(
+                  onPressed: () => _cubit.goToEditBookPage(),
+                  icon: const Icon(Icons.edit),
+                ),
+              ],
+            ),
+            body: _buildPrimaryWidget(state),
+          );
+        } else if (state is BookPreviewLoadingState) {
+          return const DSLoading();
+        } else {
+          return Container();
+        }
+      },
     );
   }
 
@@ -57,15 +81,18 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // build image
-          Image(
+          FadeInImage(
             height: screenHeightPercentage(context, percentage: 0.35),
             width: screenWidth(context),
             fit: BoxFit.cover,
-            image: AssetImage(
+            placeholder: AssetImage(
               Assets.images.imgBackground.keyName,
             ),
+            image: NetworkImage(
+              state.viewModel.bookInfo.image,
+            ),
           ),
-          _buildBodyWidget(),
+          _buildBodyWidget(state.viewModel),
           SH20,
           _buildBottomWidget(state.viewModel),
         ],
@@ -73,7 +100,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
     );
   }
 
-  Widget _buildBodyWidget() {
+  Widget _buildBodyWidget(BookPreviewViewModel viewModel) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -81,7 +108,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         children: [
           SH20,
           Text(
-            '${S.current.author}: J.K.Rowling',
+            '${S.current.author}: ${viewModel.bookInfo.author}',
             style: DSTextStyle.ws16w500,
           ),
           SH10,
@@ -95,7 +122,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
             style: DSTextStyle.ws14w500,
           ),
           Text(
-            "Throughout the series, Harry is described as having his father's perpetually untidy black hair, his mother's bright green eyes, and a lightning bolt-shaped scar on his forehead. He is further described as \"small and skinny for his age\" with \"a thin face\" and \"knobbly knees\", and he wears Windsor glasses.",
+            viewModel.bookInfo.description,
             style: DSTextStyle.ws14w400.copyWith(
               color: AppColors.grey500,
             ),

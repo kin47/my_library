@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookPreviewViewModel {
+  BookResponse get bookInfo => throw _privateConstructorUsedError;
   bool get like => throw _privateConstructorUsedError;
   String get comment => throw _privateConstructorUsedError;
 
@@ -30,7 +31,9 @@ abstract class $BookPreviewViewModelCopyWith<$Res> {
           $Res Function(BookPreviewViewModel) then) =
       _$BookPreviewViewModelCopyWithImpl<$Res, BookPreviewViewModel>;
   @useResult
-  $Res call({bool like, String comment});
+  $Res call({BookResponse bookInfo, bool like, String comment});
+
+  $BookResponseCopyWith<$Res> get bookInfo;
 }
 
 /// @nodoc
@@ -47,10 +50,15 @@ class _$BookPreviewViewModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? bookInfo = null,
     Object? like = null,
     Object? comment = null,
   }) {
     return _then(_value.copyWith(
+      bookInfo: null == bookInfo
+          ? _value.bookInfo
+          : bookInfo // ignore: cast_nullable_to_non_nullable
+              as BookResponse,
       like: null == like
           ? _value.like
           : like // ignore: cast_nullable_to_non_nullable
@@ -60,6 +68,14 @@ class _$BookPreviewViewModelCopyWithImpl<$Res,
           : comment // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BookResponseCopyWith<$Res> get bookInfo {
+    return $BookResponseCopyWith<$Res>(_value.bookInfo, (value) {
+      return _then(_value.copyWith(bookInfo: value) as $Val);
+    });
   }
 }
 
@@ -71,7 +87,10 @@ abstract class _$$_BookPreviewViewModelCopyWith<$Res>
       __$$_BookPreviewViewModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool like, String comment});
+  $Res call({BookResponse bookInfo, bool like, String comment});
+
+  @override
+  $BookResponseCopyWith<$Res> get bookInfo;
 }
 
 /// @nodoc
@@ -85,10 +104,15 @@ class __$$_BookPreviewViewModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? bookInfo = null,
     Object? like = null,
     Object? comment = null,
   }) {
     return _then(_$_BookPreviewViewModel(
+      bookInfo: null == bookInfo
+          ? _value.bookInfo
+          : bookInfo // ignore: cast_nullable_to_non_nullable
+              as BookResponse,
       like: null == like
           ? _value.like
           : like // ignore: cast_nullable_to_non_nullable
@@ -104,9 +128,23 @@ class __$$_BookPreviewViewModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BookPreviewViewModel extends _BookPreviewViewModel {
-  const _$_BookPreviewViewModel({this.like = false, this.comment = ''})
+  const _$_BookPreviewViewModel(
+      {this.bookInfo = const BookResponse(
+          id: 0,
+          author: '',
+          content: '',
+          title: '',
+          image: '',
+          description: '',
+          createAt: 0,
+          updateAt: 0),
+      this.like = false,
+      this.comment = ''})
       : super._();
 
+  @override
+  @JsonKey()
+  final BookResponse bookInfo;
   @override
   @JsonKey()
   final bool like;
@@ -116,7 +154,7 @@ class _$_BookPreviewViewModel extends _BookPreviewViewModel {
 
   @override
   String toString() {
-    return 'BookPreviewViewModel(like: $like, comment: $comment)';
+    return 'BookPreviewViewModel(bookInfo: $bookInfo, like: $like, comment: $comment)';
   }
 
   @override
@@ -124,12 +162,14 @@ class _$_BookPreviewViewModel extends _BookPreviewViewModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BookPreviewViewModel &&
+            (identical(other.bookInfo, bookInfo) ||
+                other.bookInfo == bookInfo) &&
             (identical(other.like, like) || other.like == like) &&
             (identical(other.comment, comment) || other.comment == comment));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, like, comment);
+  int get hashCode => Object.hash(runtimeType, bookInfo, like, comment);
 
   @JsonKey(ignore: true)
   @override
@@ -140,10 +180,14 @@ class _$_BookPreviewViewModel extends _BookPreviewViewModel {
 }
 
 abstract class _BookPreviewViewModel extends BookPreviewViewModel {
-  const factory _BookPreviewViewModel({final bool like, final String comment}) =
-      _$_BookPreviewViewModel;
+  const factory _BookPreviewViewModel(
+      {final BookResponse bookInfo,
+      final bool like,
+      final String comment}) = _$_BookPreviewViewModel;
   const _BookPreviewViewModel._() : super._();
 
+  @override
+  BookResponse get bookInfo;
   @override
   bool get like;
   @override

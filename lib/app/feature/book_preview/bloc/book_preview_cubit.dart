@@ -3,10 +3,13 @@ import 'package:injectable/injectable.dart';
 import 'package:my_library/app/feature/book_preview/bloc/book_preview_state.dart';
 import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/app/routes/app_routes.dart';
+import 'package:my_library/app/use_case/book/book_getter_information_use_case.dart';
 
 @injectable
 class BookPreviewCubit extends Cubit<BookPreviewState> {
-  BookPreviewCubit() : super(const BookPreviewPrimaryState());
+  BookPreviewCubit(this._useCase) : super(const BookPreviewPrimaryState());
+
+  final BookGetterInformationUseCase _useCase;
 
   void changeLikeStatus(bool value) {
     emit(
@@ -22,5 +25,17 @@ class BookPreviewCubit extends Cubit<BookPreviewState> {
 
   void goToEditBookPage() {
     navigatorState.pushNamed(RouteName.editBook);
+  }
+
+  Future<void> getBookInformationEvent(int id) async {
+    emit(BookPreviewLoadingState(
+        viewModel: state.viewModel, showShouldLoading: true));
+    final result = await _useCase.call(id);
+    result.fold(
+      (l) =>
+          emit(BookPreviewErrorState(viewModel: state.viewModel, exception: l)),
+      (r) => emit(BookPreviewPrimaryState(
+          viewModel: state.viewModel.copyWith(bookInfo: r))),
+    );
   }
 }

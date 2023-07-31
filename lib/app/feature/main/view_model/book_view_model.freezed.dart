@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookViewModel {
+  int get id => throw _privateConstructorUsedError;
   String get bookName => throw _privateConstructorUsedError;
   String get bookImageUrl => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
@@ -35,7 +36,8 @@ abstract class $BookViewModelCopyWith<$Res> {
       _$BookViewModelCopyWithImpl<$Res, BookViewModel>;
   @useResult
   $Res call(
-      {String bookName,
+      {int id,
+      String bookName,
       String bookImageUrl,
       String author,
       String genre,
@@ -56,6 +58,7 @@ class _$BookViewModelCopyWithImpl<$Res, $Val extends BookViewModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? bookName = null,
     Object? bookImageUrl = null,
     Object? author = null,
@@ -64,6 +67,10 @@ class _$BookViewModelCopyWithImpl<$Res, $Val extends BookViewModel>
     Object? comment = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       bookName: null == bookName
           ? _value.bookName
           : bookName // ignore: cast_nullable_to_non_nullable
@@ -101,7 +108,8 @@ abstract class _$$_BookViewModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String bookName,
+      {int id,
+      String bookName,
       String bookImageUrl,
       String author,
       String genre,
@@ -120,6 +128,7 @@ class __$$_BookViewModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? bookName = null,
     Object? bookImageUrl = null,
     Object? author = null,
@@ -128,6 +137,10 @@ class __$$_BookViewModelCopyWithImpl<$Res>
     Object? comment = null,
   }) {
     return _then(_$_BookViewModel(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       bookName: null == bookName
           ? _value.bookName
           : bookName // ignore: cast_nullable_to_non_nullable
@@ -160,7 +173,8 @@ class __$$_BookViewModelCopyWithImpl<$Res>
 
 class _$_BookViewModel extends _BookViewModel {
   const _$_BookViewModel(
-      {this.bookName = '',
+      {this.id = 0,
+      this.bookName = '',
       this.bookImageUrl = '',
       this.author = '',
       this.genre = '',
@@ -168,6 +182,9 @@ class _$_BookViewModel extends _BookViewModel {
       this.comment = 0})
       : super._();
 
+  @override
+  @JsonKey()
+  final int id;
   @override
   @JsonKey()
   final String bookName;
@@ -189,7 +206,7 @@ class _$_BookViewModel extends _BookViewModel {
 
   @override
   String toString() {
-    return 'BookViewModel(bookName: $bookName, bookImageUrl: $bookImageUrl, author: $author, genre: $genre, like: $like, comment: $comment)';
+    return 'BookViewModel(id: $id, bookName: $bookName, bookImageUrl: $bookImageUrl, author: $author, genre: $genre, like: $like, comment: $comment)';
   }
 
   @override
@@ -197,6 +214,7 @@ class _$_BookViewModel extends _BookViewModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BookViewModel &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.bookName, bookName) ||
                 other.bookName == bookName) &&
             (identical(other.bookImageUrl, bookImageUrl) ||
@@ -209,7 +227,7 @@ class _$_BookViewModel extends _BookViewModel {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, bookName, bookImageUrl, author, genre, like, comment);
+      runtimeType, id, bookName, bookImageUrl, author, genre, like, comment);
 
   @JsonKey(ignore: true)
   @override
@@ -220,7 +238,8 @@ class _$_BookViewModel extends _BookViewModel {
 
 abstract class _BookViewModel extends BookViewModel {
   const factory _BookViewModel(
-      {final String bookName,
+      {final int id,
+      final String bookName,
       final String bookImageUrl,
       final String author,
       final String genre,
@@ -228,6 +247,8 @@ abstract class _BookViewModel extends BookViewModel {
       final int comment}) = _$_BookViewModel;
   const _BookViewModel._() : super._();
 
+  @override
+  int get id;
   @override
   String get bookName;
   @override

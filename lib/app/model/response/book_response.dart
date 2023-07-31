@@ -15,6 +15,7 @@ class BookResponse with _$BookResponse {
     required String author,
     required String content,
     required String image,
+    required String description,
     required int createAt,
     required int updateAt,
   }) = _BookResponse;

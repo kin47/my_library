@@ -63,6 +63,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
+            id: viewModel.recentAdditionBook.id,
             title: viewModel.recentAdditionBook.bookName,
             author: viewModel.recentAdditionBook.author,
             imageUrl: viewModel.recentAdditionBook.bookImageUrl,
@@ -77,6 +78,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
+            id: viewModel.recentUpdateBook.id,
             title: viewModel.recentUpdateBook.bookName,
             author: viewModel.recentUpdateBook.author,
             imageUrl: viewModel.recentUpdateBook.bookImageUrl,
@@ -91,6 +93,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
+            id: viewModel.mostLikedBook.id,
             title: viewModel.mostLikedBook.bookName,
             author: viewModel.mostLikedBook.author,
             imageUrl: viewModel.mostLikedBook.bookImageUrl,
@@ -105,6 +108,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
+            id: viewModel.mostCommentsBook.id,
             title: viewModel.mostCommentsBook.bookName,
             author: viewModel.mostCommentsBook.author,
             imageUrl: viewModel.mostCommentsBook.bookImageUrl,
