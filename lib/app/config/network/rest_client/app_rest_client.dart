@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:my_library/app/model/request/book/book_edit_request.dart';
 import 'package:my_library/app/model/request/book/book_request.dart';
 import 'package:my_library/app/model/request/register/register_request.dart';
 import 'package:my_library/app/model/response/book_response.dart';
@@ -16,6 +17,9 @@ abstract class AppRestClient {
 
   @POST('/book')
   Future<dynamic> addBook(@Body() BookRequest body);
+
+  @PUT('/book')
+  Future<dynamic> editBook(@Body() BookEditRequest body);
 
   @GET('/book')
   Future<List<BookResponse>> getAllBook(@Query("title") String title);

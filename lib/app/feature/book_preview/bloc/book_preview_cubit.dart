@@ -24,8 +24,8 @@ class BookPreviewCubit extends Cubit<BookPreviewState> {
     navigatorState.pushNamed(RouteName.reading, arguments: book);
   }
 
-  void goToEditBookPage() {
-    navigatorState.pushNamed(RouteName.editBook);
+  void goToEditBookPage(BookResponse book) {
+    navigatorState.pushNamed(RouteName.editBook, arguments: book);
   }
 
   Future<void> getBookInformationEvent(int id) async {

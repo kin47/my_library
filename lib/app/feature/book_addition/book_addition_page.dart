@@ -34,11 +34,11 @@ class _BookAdditionPageState extends State<BookAdditionPage> {
         bloc: _cubit,
         listener: (BuildContext context, BookAdditionState state) {
           if (state is BookAdditionSuccessState) {
-            showSnackBar(context, 'Add Book Successfully');
+            showSnackBar(context, S.current.add_book_success);
           }
           if (state is BookAdditionErrorState) {
-            showSnackBar(
-                context, 'Add Book Error: ${state.exception.toString()}');
+            showSnackBar(context,
+                '${S.current.add_book_error}: ${state.exception.toString()}');
           }
         },
         builder: (BuildContext context, BookAdditionState state) {
@@ -234,7 +234,7 @@ class _BookAdditionPageState extends State<BookAdditionPage> {
         ),
       ),
       child: viewModel.imageUrl.isEmpty
-          ? const Text('Enter a URL')
+          ? Text(S.current.book_image)
           : FittedBox(
               child: Image.network(
                 viewModel.imageUrl,
