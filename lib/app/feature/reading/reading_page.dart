@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_library/app/model/response/book_response.dart';
+import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
@@ -13,7 +13,7 @@ class ReadingPage extends StatelessWidget {
     final book = ModalRoute.of(context)!.settings.arguments as BookResponse;
     return Scaffold(
       appBar: DSAppBar(
-        title: book.title,
+        title: book.book.title,
       ),
       body: _buildBodyWidget(context, book),
     );
@@ -27,18 +27,18 @@ class ReadingPage extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              book.title,
+              book.book.title,
               style: DSTextStyle.ws20w700,
             ),
             Text(
-              '-- ${book.author} --',
+              '-- ${book.book.author} --',
               style: DSTextStyle.ws16w400.copyWith(
                 color: AppColors.grey500,
               ),
             ),
             SH10,
             Text(
-              book.content,
+              book.book.content,
               style: DSTextStyle.ws16w400,
             ),
           ],

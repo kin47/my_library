@@ -68,6 +68,9 @@ class _HomeUserPageState extends State<HomeUserPage> {
           title: viewModel.continueReading.bookName,
           author: viewModel.continueReading.author,
           imageUrl: viewModel.continueReading.bookImageUrl,
+          totalLikes: 0,
+          totalComments: 0,
+          categories: [],
         ),
         SH20,
         Text(
@@ -81,6 +84,9 @@ class _HomeUserPageState extends State<HomeUserPage> {
           title: viewModel.recommendation.bookName,
           author: viewModel.recommendation.author,
           imageUrl: viewModel.recommendation.bookImageUrl,
+          totalLikes: 0,
+          totalComments: 0,
+          categories: [],
         ),
         SH20,
         Text(
@@ -94,6 +100,9 @@ class _HomeUserPageState extends State<HomeUserPage> {
           title: viewModel.recentAddition.bookName,
           author: viewModel.recentAddition.author,
           imageUrl: viewModel.recentAddition.bookImageUrl,
+          totalLikes: 0,
+          totalComments: 0,
+          categories: [],
         ),
       ],
     );

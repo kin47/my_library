@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:my_library/app/model/request/book/book_edit_request.dart';
 import 'package:my_library/app/model/request/book/book_request.dart';
 import 'package:my_library/app/model/request/register/register_request.dart';
-import 'package:my_library/app/model/response/book_response.dart';
+import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'app_rest_client.g.dart';

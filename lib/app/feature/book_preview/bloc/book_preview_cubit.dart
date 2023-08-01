@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_library/app/feature/book_preview/bloc/book_preview_state.dart';
-import 'package:my_library/app/model/response/book_response.dart';
+import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/app/routes/app_routes.dart';
 import 'package:my_library/app/use_case/book/book_getter_information_use_case.dart';

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_library/app/config/exception/base_exception.dart';
-import 'package:my_library/app/model/response/book_response.dart';
+import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/app/repository/book/book_repository.dart';
 import 'package:my_library/app/use_case/use_case.dart';
 
