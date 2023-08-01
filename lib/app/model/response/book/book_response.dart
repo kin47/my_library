@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:my_library/app/model/book.dart';
 
 part 'book_response.freezed.dart';
 
@@ -10,14 +11,10 @@ class BookResponse with _$BookResponse {
 
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory BookResponse({
-    required int id,
-    required String title,
-    required String author,
-    required String content,
-    required String image,
-    required String description,
-    required int createAt,
-    required int updateAt,
+    required Book book,
+    required int totalLikes,
+    required int totalComments,
+    required List<String> categories,
   }) = _BookResponse;
 
   factory BookResponse.fromJson(Map<String, dynamic> json) =>

@@ -130,14 +130,18 @@ class __$$_BookPreviewViewModelCopyWithImpl<$Res>
 class _$_BookPreviewViewModel extends _BookPreviewViewModel {
   const _$_BookPreviewViewModel(
       {this.bookInfo = const BookResponse(
-          id: 0,
-          author: '',
-          content: '',
-          title: '',
-          image: '',
-          description: '',
-          createAt: 0,
-          updateAt: 0),
+          book: Book(
+              id: 0,
+              author: '',
+              content: '',
+              title: '',
+              image: '',
+              description: '',
+              createAt: 0,
+              updateAt: 0),
+          totalLikes: 0,
+          totalComments: 0,
+          categories: []),
       this.like = false,
       this.comment = ''})
       : super._();

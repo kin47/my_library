@@ -38,6 +38,18 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
     });
   }
 
+  // convert list categories to string of categories
+  String _listCategories(List<String> categories) {
+    String categoriesString = '';
+    for (var i = 0; i < categories.length; i++) {
+      categoriesString += categories[i];
+      if (i != categories.length - 1) {
+        categoriesString += ', ';
+      }
+    }
+    return categoriesString;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<BookPreviewCubit, BookPreviewState>(
@@ -56,7 +68,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
             appBar: AppBar(
               backgroundColor: AppColors.primary,
               foregroundColor: AppColors.white,
-              title: Text(state.viewModel.bookInfo.title),
+              title: Text(state.viewModel.bookInfo.book.title),
               actions: [
                 IconButton(
                   onPressed: () =>
@@ -90,7 +102,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
               Assets.images.imgBackground.keyName,
             ),
             image: NetworkImage(
-              state.viewModel.bookInfo.image,
+              state.viewModel.bookInfo.book.image,
             ),
           ),
           _buildBodyWidget(state.viewModel),
@@ -109,12 +121,12 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         children: [
           SH20,
           Text(
-            '${S.current.author}: ${viewModel.bookInfo.author}',
+            '${S.current.author}: ${viewModel.bookInfo.book.author}',
             style: DSTextStyle.ws16w500,
           ),
           SH10,
           Text(
-            '${S.current.genre}: Fantasy',
+            '${S.current.genre}: ${_listCategories(viewModel.bookInfo.categories)}',
             style: DSTextStyle.ws14w500,
           ),
           SH10,
@@ -123,7 +135,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
             style: DSTextStyle.ws14w500,
           ),
           Text(
-            viewModel.bookInfo.description,
+            viewModel.bookInfo.book.description,
             style: DSTextStyle.ws14w400.copyWith(
               color: AppColors.grey500,
             ),
@@ -148,7 +160,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         const Divider(),
         _buildAddCommentWidget(viewModel),
         const Divider(),
-        _buildCommentSection(),
+        _buildCommentSection(viewModel),
       ],
     );
   }
@@ -176,7 +188,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
                     color: AppColors.subText,
                   ),
             Text(
-              '40',
+              viewModel.bookInfo.totalLikes.toString(),
               style: DSTextStyle.ws14w500.copyWith(
                 color: AppColors.primary,
               ),
@@ -195,7 +207,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
               color: AppColors.primary,
             ),
             Text(
-              '40',
+              viewModel.bookInfo.totalComments.toString(),
               style: DSTextStyle.ws14w500.copyWith(
                 color: AppColors.primary,
               ),
@@ -235,7 +247,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
     );
   }
 
-  Widget _buildCommentSection() {
+  Widget _buildCommentSection(BookPreviewViewModel viewModel) {
     return ListView.separated(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
@@ -247,7 +259,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         );
       },
       separatorBuilder: (_, index) => SH10,
-      itemCount: 40,
+      itemCount: viewModel.bookInfo.totalComments,
     );
   }
 }

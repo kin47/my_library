@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_library/app/model/response/book_response.dart';
+import 'package:my_library/app/model/response/book/book_response.dart';
 
 part 'library_view_model.freezed.dart';
 

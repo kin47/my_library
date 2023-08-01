@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_library/app/feature/book_editor/bloc/book_editor_state.dart';
-import 'package:my_library/app/model/response/book_response.dart';
+import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/app/use_case/book/book_editor_use_case.dart';
 
 @injectable
@@ -43,12 +43,12 @@ class BookEditorCubit extends Cubit<BookEditorState> {
   void retrieveBookInformationEvent(BookResponse book) {
     emit(BookEditorState.bookEditorPrimaryState(
       viewModel: state.viewModel.copyWith(
-        id: book.id,
-        author: book.author,
-        bookTitle: book.title,
-        content: book.content,
-        description: book.description,
-        imageUrl: book.image,
+        id: book.book.id,
+        author: book.book.author,
+        bookTitle: book.book.title,
+        content: book.book.content,
+        description: book.book.description,
+        imageUrl: book.book.image,
       ),
     ));
   }

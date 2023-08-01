@@ -14,15 +14,22 @@ class BookCardWidget extends StatelessWidget {
     required this.title,
     required this.author,
     required this.imageUrl,
+    required this.totalLikes,
+    required this.totalComments,
+    required this.categories,
   }) : super(key: key);
 
   final int id;
   final String title;
   final String author;
   final String imageUrl;
+  final int totalLikes;
+  final int totalComments;
+  final List<String> categories;
+
   final LibraryCubit _cubit = di();
 
-  ImageProvider image() {
+  ImageProvider _image() {
     if (imageUrl.isEmpty) {
       return AssetImage(
         Assets.images.imgBackground.keyName,
@@ -32,6 +39,18 @@ class BookCardWidget extends StatelessWidget {
         imageUrl,
       );
     }
+  }
+
+  // convert list categories to string of categories
+  String _listCategories() {
+    String categoriesString = '';
+    for (var i = 0; i < categories.length; i++) {
+      categoriesString += categories[i];
+      if (i != categories.length - 1) {
+        categoriesString += ', ';
+      }
+    }
+    return categoriesString;
   }
 
   @override
@@ -65,7 +84,7 @@ class BookCardWidget extends StatelessWidget {
           placeholder: AssetImage(
             Assets.images.imgBackground.keyName,
           ),
-          image: image(),
+          image: _image(),
           height: 90,
           width: 60,
           fit: BoxFit.cover,
@@ -87,8 +106,9 @@ class BookCardWidget extends StatelessWidget {
               style: DSTextStyle.ws14w400,
             ),
             Text(
-              "${S.current.genre}: Fantasy",
+              "${S.current.genre}: ${_listCategories()}",
               style: DSTextStyle.ws14w400,
+              overflow: TextOverflow.ellipsis,
             ),
             _buildLikedAndCommentsWidget()
           ],
@@ -101,6 +121,7 @@ class BookCardWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        // likes
         const Icon(
           Icons.thumb_up,
           color: AppColors.gold,
@@ -108,12 +129,14 @@ class BookCardWidget extends StatelessWidget {
         ),
         SW5,
         Text(
-          '40',
+          totalLikes.toString(),
           style: DSTextStyle.ws14w400.copyWith(
             color: AppColors.gold,
           ),
         ),
         SW20,
+
+        // comments
         const Icon(
           Icons.insert_comment_rounded,
           color: AppColors.white,
@@ -121,7 +144,7 @@ class BookCardWidget extends StatelessWidget {
         ),
         SW5,
         Text(
-          '40',
+          totalComments.toString(),
           style: DSTextStyle.ws14w400.copyWith(
             color: AppColors.white,
           ),
