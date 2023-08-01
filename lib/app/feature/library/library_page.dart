@@ -28,8 +28,8 @@ class _LibraryPageState extends State<LibraryPage> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await _cubit.getBookEvent('');
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _cubit.getBookEvent('');
     });
   }
 

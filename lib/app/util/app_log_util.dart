@@ -42,7 +42,5 @@ class AppLog {
           CommonException(message: message, error: error, trace: trace);
       _listLog.insert(0, exception);
     }
-
-    // FirebaseCrashlytics.instance.recordError(error, trace, printDetails: true);
   }
 }
