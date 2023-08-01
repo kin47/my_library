@@ -42,8 +42,7 @@ class _RegisterPageState extends State<RegisterPage> {
         bloc: _cubit,
         listener: (BuildContext context, RegisterState state) {
           if (state is RegisterLoadingState && state.showShouldLoading) {
-            const DSLoading();
-            return;
+            showLoading(context);
           }
           if (state is RegisterSuccessState) {
             showSnackBar(context, S.current.register_success);

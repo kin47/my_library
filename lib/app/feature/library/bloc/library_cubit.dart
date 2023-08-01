@@ -4,6 +4,7 @@ import 'package:my_library/app/feature/library/bloc/library_state.dart';
 import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/app/routes/app_routes.dart';
 import 'package:my_library/app/use_case/book/book_getter_use_case.dart';
+import 'package:my_library/design_system/ds_loading.dart';
 
 @injectable
 class LibraryCubit extends Cubit<LibraryState> {
@@ -33,6 +34,7 @@ class LibraryCubit extends Cubit<LibraryState> {
     emit(LibraryLoadingState(
         viewModel: state.viewModel, showShouldLoading: true));
     final result = await _bookGetterUseCase.call(title);
+    dismissLoading();
     result.fold(
       (l) => emit(LibraryErrorState(viewModel: state.viewModel, exception: l)),
       (r) => emit(LibraryPrimaryState(

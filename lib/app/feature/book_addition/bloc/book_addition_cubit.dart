@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_library/app/feature/book_addition/bloc/book_addition_state.dart';
 import 'package:my_library/app/use_case/book/book_addition_use_case.dart';
+import 'package:my_library/design_system/ds_loading.dart';
 
 @injectable
 class BookAdditionCubit extends Cubit<BookAdditionState> {
@@ -41,6 +42,8 @@ class BookAdditionCubit extends Cubit<BookAdditionState> {
   }
 
   Future<void> addBookEvent() async {
+    emit(BookAdditionLoadingState(
+        viewModel: state.viewModel, showShouldLoading: true));
     final result = await _bookAdditionUseCase.call(
       BookAdditionUseCaseParam(
         title: state.viewModel.bookTitle,
@@ -50,6 +53,7 @@ class BookAdditionCubit extends Cubit<BookAdditionState> {
         image: state.viewModel.imageUrl,
       ),
     );
+    dismissLoading();
     result.fold(
       (l) => emit(
           BookAdditionErrorState(viewModel: state.viewModel, exception: l)),

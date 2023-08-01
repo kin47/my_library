@@ -6,6 +6,7 @@ import 'package:my_library/app/feature/book_addition/view_model/book_addition_vi
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
+import 'package:my_library/design_system/ds_loading.dart';
 import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
@@ -33,6 +34,9 @@ class _BookAdditionPageState extends State<BookAdditionPage> {
       body: BlocConsumer<BookAdditionCubit, BookAdditionState>(
         bloc: _cubit,
         listener: (BuildContext context, BookAdditionState state) {
+          if (state is BookAdditionLoadingState) {
+            showLoading(context);
+          }
           if (state is BookAdditionSuccessState) {
             showSnackBar(context, S.current.add_book_success);
           }

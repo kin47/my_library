@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:my_library/app/feature/book_editor/bloc/book_editor_state.dart';
 import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/app/use_case/book/book_editor_use_case.dart';
+import 'package:my_library/design_system/ds_loading.dart';
 
 @injectable
 class BookEditorCubit extends Cubit<BookEditorState> {
@@ -66,6 +67,7 @@ class BookEditorCubit extends Cubit<BookEditorState> {
         image: state.viewModel.imageUrl,
       ),
     );
+    dismissLoading();
     result.fold(
       (l) =>
           emit(BookEditorErrorState(viewModel: state.viewModel, exception: l)),

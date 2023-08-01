@@ -29,6 +29,7 @@ class BookCardWidget extends StatelessWidget {
 
   final LibraryCubit _cubit = di();
 
+  // provide image of the card, if it's null, return default background image
   ImageProvider _image() {
     if (imageUrl.isEmpty) {
       return AssetImage(
