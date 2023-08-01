@@ -4,6 +4,7 @@ import 'package:my_library/app/config/exception/base_exception.dart';
 import 'package:my_library/app/model/request/book/book_request.dart';
 import 'package:my_library/app/repository/book/book_repository.dart';
 import 'package:my_library/app/use_case/use_case.dart';
+import 'package:my_library/app/util/app_log_util.dart';
 
 @injectable
 class BookAdditionUseCase extends UseCase<dynamic, BookAdditionUseCaseParam> {
@@ -25,7 +26,7 @@ class BookAdditionUseCase extends UseCase<dynamic, BookAdditionUseCaseParam> {
       );
       return Right(result);
     } catch (e, trace) {
-      print('BookAdditionUseCase ERROR: $e \n $trace');
+      AppLog.error('Book Addition Use Case Error $e \n $trace');
       return Left(exception);
     }
   }
