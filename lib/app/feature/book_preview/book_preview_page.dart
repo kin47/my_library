@@ -4,6 +4,7 @@ import 'package:my_library/app/feature/book_preview/bloc/book_preview_cubit.dart
 import 'package:my_library/app/feature/book_preview/bloc/book_preview_state.dart';
 import 'package:my_library/app/feature/book_preview/view_model/book_preview_view_model.dart';
 import 'package:my_library/app/feature/book_preview/widget/comment_widget.dart';
+import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
 import 'package:my_library/design_system/ds_loading.dart';
@@ -50,11 +51,27 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
     return categoriesString;
   }
 
+  // provide image of the card, if it's null, return default background image
+  ImageProvider _image(String imageUrl) {
+    if (imageUrl.isEmpty) {
+      return AssetImage(
+        Assets.images.imgBackground.keyName,
+      );
+    } else {
+      return NetworkImage(
+        imageUrl,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<BookPreviewCubit, BookPreviewState>(
       bloc: _cubit,
       listener: (BuildContext context, BookPreviewState state) {
+        if (state is BookPreviewLoadingState) {
+          showLoading(context);
+        }
         if (state is BookPreviewErrorState) {
           showSnackBar(
             context,
@@ -63,27 +80,21 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
         }
       },
       builder: (BuildContext context, BookPreviewState state) {
-        if (state is BookPreviewPrimaryState) {
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: AppColors.primary,
-              foregroundColor: AppColors.white,
-              title: Text(state.viewModel.bookInfo.book.title),
-              actions: [
-                IconButton(
-                  onPressed: () =>
-                      _cubit.goToEditBookPage(state.viewModel.bookInfo),
-                  icon: const Icon(Icons.edit),
-                ),
-              ],
-            ),
-            body: _buildPrimaryWidget(state),
-          );
-        } else if (state is BookPreviewLoadingState) {
-          return const DSLoading();
-        } else {
-          return Container();
-        }
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.white,
+            title: Text(state.viewModel.bookInfo.book.title),
+            actions: [
+              IconButton(
+                onPressed: () =>
+                    _cubit.goToEditBookPage(state.viewModel.bookInfo),
+                icon: const Icon(Icons.edit),
+              ),
+            ],
+          ),
+          body: _buildPrimaryWidget(state),
+        );
       },
     );
   }
@@ -101,9 +112,7 @@ class _BookPreviewPageState extends State<BookPreviewPage> {
             placeholder: AssetImage(
               Assets.images.imgBackground.keyName,
             ),
-            image: NetworkImage(
-              state.viewModel.bookInfo.book.image,
-            ),
+            image: _image(state.viewModel.bookInfo.book.image),
           ),
           _buildBodyWidget(state.viewModel),
           SH20,

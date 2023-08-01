@@ -7,6 +7,7 @@ import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
+import 'package:my_library/design_system/ds_loading.dart';
 import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_field.dart';
@@ -44,6 +45,9 @@ class _BookEditorPageState extends State<BookEditorPage> {
       body: BlocConsumer<BookEditorCubit, BookEditorState>(
         bloc: _cubit,
         listener: (BuildContext context, BookEditorState state) {
+          if (state is BookEditorLoadingState) {
+            showLoading(context);
+          }
           if (state is BookEditorSuccessState) {
             showSnackBar(context, S.current.edit_book_success);
           } else if (state is BookEditorErrorState) {

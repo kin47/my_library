@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:my_library/app/feature/register/bloc/register_state.dart';
 import 'package:my_library/app/routes/app_pages.dart';
 import 'package:my_library/app/use_case/register/register_use_case.dart';
+import 'package:my_library/design_system/ds_loading.dart';
 
 @injectable
 class RegisterCubit extends Cubit<RegisterState> {
@@ -67,6 +68,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         password: state.viewModel.password,
       ),
     );
+    dismissLoading();
     result.fold(
       (l) => emit(RegisterErrorState(viewModel: state.viewModel, exception: l)),
       (r) => emit(RegisterSuccessState(viewModel: state.viewModel)),

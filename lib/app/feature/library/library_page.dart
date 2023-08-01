@@ -52,22 +52,19 @@ class _LibraryPageState extends State<LibraryPage> {
       body: BlocConsumer<LibraryCubit, LibraryState>(
         bloc: _cubit,
         listener: (BuildContext context, LibraryState state) {
+          if (state is LibraryLoadingState) {
+            showLoading(context);
+          }
           if (state is LibraryErrorState) {
             showSnackBar(
                 context, '${S.current.library_error}:${state.exception}');
           }
         },
         builder: (BuildContext context, LibraryState state) {
-          if (state is LibraryPrimaryState) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: _buildPrimaryWidget(state),
-            );
-          } else if (state is LibraryLoadingState) {
-            return const Scaffold(body: DSLoading());
-          } else {
-            return Container();
-          }
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: _buildPrimaryWidget(state),
+          );
         },
       ),
     );
