@@ -52,7 +52,6 @@ class _DSTextFieldState extends State<DSTextField> {
 
   @override
   void initState() {
-    // TODO: implement initState
     obscureText = widget.isPasswordInput;
     super.initState();
   }
