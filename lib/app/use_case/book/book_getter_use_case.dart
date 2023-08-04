@@ -7,15 +7,17 @@ import 'package:my_library/app/use_case/use_case.dart';
 import 'package:my_library/app/util/app_log_util.dart';
 
 @injectable
-class BookGetterUseCase extends UseCase<List<BookResponse>, String> {
+class BookGetterUseCase extends UseCase<List<BookResponse>, List<String>> {
   BookGetterUseCase(this._repository);
 
   final BookRepository _repository;
   @override
-  Future<Either<BaseException, List<BookResponse>>> call(String param) async {
+  Future<Either<BaseException, List<BookResponse>>> call(
+      List<String> param) async {
     try {
       final result = await _repository.getAllBook(
-        title: param,
+        title: param[0],
+        category: param[1],
       );
       return Right(result);
     } catch (e, trace) {

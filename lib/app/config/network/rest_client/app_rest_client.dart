@@ -3,6 +3,7 @@ import 'package:my_library/app/model/request/book/book_edit_request.dart';
 import 'package:my_library/app/model/request/book/book_request.dart';
 import 'package:my_library/app/model/request/register/register_request.dart';
 import 'package:my_library/app/model/response/book/book_response.dart';
+import 'package:my_library/app/model/response/category/category_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'app_rest_client.g.dart';
@@ -22,8 +23,14 @@ abstract class AppRestClient {
   Future<dynamic> editBook(@Body() BookEditRequest body);
 
   @GET('/book')
-  Future<List<BookResponse>> getAllBook(@Query("title") String title);
+  Future<List<BookResponse>> getAllBook(
+    @Query("title") String title,
+    @Query("category") String category,
+  );
 
   @GET('/book/get-by-id')
   Future<BookResponse> getOneBook(@Query("id") int id);
+
+  @GET('/category')
+  Future<List<CategoryResponse>> getCategory();
 }

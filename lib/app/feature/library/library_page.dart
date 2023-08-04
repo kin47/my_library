@@ -29,7 +29,8 @@ class _LibraryPageState extends State<LibraryPage> {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _cubit.getBookEvent('');
+      _cubit.getCategoryEvent();
+      _cubit.getBookEvent(title: '', category: '');
     });
   }
 
@@ -89,11 +90,13 @@ class _LibraryPageState extends State<LibraryPage> {
 
         // search field
         DSTextField(
-          controller: TextEditingController(text: viewModel.searchBook),
           prefixIcon: const Icon(Icons.book_rounded),
           suffixIcon: IconButton(
             onPressed: () async {
-              await _cubit.getBookEvent(viewModel.searchBook);
+              await _cubit.getBookEvent(
+                title: viewModel.searchBook,
+                category: viewModel.selectedCategory,
+              );
             },
             icon: const Icon(
               Icons.search_rounded,
@@ -149,39 +152,33 @@ class _LibraryPageState extends State<LibraryPage> {
           iconEnabledColor: AppColors.primary,
           borderRadius: const BorderRadius.all(Radius.circular(24)),
           isExpanded: true,
-          items: [
-            DropdownMenuItem<String>(
-              value: '',
+          items: List.generate(
+            viewModel.categories.length,
+            (int index) => DropdownMenuItem<String>(
+              value: viewModel.categories[index].name,
               child: Text(
-                S.current.find_by_category,
+                viewModel.categories[index].name,
                 style: DSTextStyle.ws14w400,
               ),
             ),
-            DropdownMenuItem<String>(
-              value: 'Comedy',
-              child: Text(
-                'Comedy',
-                style: DSTextStyle.ws14w400,
+          )..add(
+              DropdownMenuItem<String>(
+                value: '',
+                child: Text(
+                  S.current.find_by_category,
+                  style: DSTextStyle.ws14w400,
+                ),
               ),
             ),
-            DropdownMenuItem<String>(
-              value: 'Romance',
-              child: Text(
-                'Romance',
-                style: DSTextStyle.ws14w400,
-              ),
-            ),
-            DropdownMenuItem<String>(
-              value: 'Fantasy',
-              child: Text(
-                'Fantasy',
-                style: DSTextStyle.ws14w400,
-              ),
-            ),
-          ],
           value: viewModel.selectedCategory,
           onChanged: (String? value) {
-            if (value != null) _cubit.changeSelectedCategoryEvent(value);
+            if (value != null) {
+              _cubit.changeSelectedCategoryEvent(value);
+              _cubit.getBookEvent(
+                title: viewModel.searchBook,
+                category: value,
+              );
+            }
           },
         ),
       ),

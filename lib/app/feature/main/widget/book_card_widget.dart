@@ -91,28 +91,31 @@ class BookCardWidget extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         SW12,
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: DSTextStyle.ws16w700.copyWith(
-                color: AppColors.gold,
+        SizedBox(
+          width: 250,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: DSTextStyle.ws16w700.copyWith(
+                  color: AppColors.gold,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
-            ),
-            SH5,
-            Text(
-              "${S.current.author}: $author",
-              style: DSTextStyle.ws14w400,
-            ),
-            Text(
-              "${S.current.genre}: ${_listCategories()}",
-              style: DSTextStyle.ws14w400,
-              overflow: TextOverflow.ellipsis,
-            ),
-            _buildLikedAndCommentsWidget()
-          ],
+              SH5,
+              Text(
+                "${S.current.author}: $author",
+                style: DSTextStyle.ws14w400,
+              ),
+              Text(
+                "${S.current.genre}: ${_listCategories()}",
+                style: DSTextStyle.ws14w400,
+              ),
+              _buildLikedAndCommentsWidget()
+            ],
+          ),
         ),
       ],
     );

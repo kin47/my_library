@@ -15,8 +15,14 @@ class BookRepositoryImpl implements BookRepository {
   }
 
   @override
-  Future<List<BookResponse>> getAllBook({String title = ""}) {
-    return _bookRemoteDataSource.getAllBook(title: title);
+  Future<List<BookResponse>> getAllBook({
+    String title = "",
+    String category = "",
+  }) {
+    return _bookRemoteDataSource.getAllBook(
+      title: title,
+      category: category,
+    );
   }
 
   @override

@@ -97,9 +97,15 @@ class _AppRestClient implements AppRestClient {
   }
 
   @override
-  Future<List<BookResponse>> getAllBook(String title) async {
+  Future<List<BookResponse>> getAllBook(
+    String title,
+    String category,
+  ) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'title': title};
+    final queryParameters = <String, dynamic>{
+      r'title': title,
+      r'category': category,
+    };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
@@ -149,6 +155,36 @@ class _AppRestClient implements AppRestClient {
               baseUrl,
             ))));
     final value = BookResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<CategoryResponse>> getCategory() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<CategoryResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/category',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var value = _result.data!
+        .map(
+            (dynamic i) => CategoryResponse.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

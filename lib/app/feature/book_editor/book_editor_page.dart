@@ -26,6 +26,12 @@ class BookEditorPage extends StatefulWidget {
 class _BookEditorPageState extends State<BookEditorPage> {
   final BookEditorCubit _cubit = di();
 
+  final TextEditingController _bookTitleController = TextEditingController();
+  final TextEditingController _imageUrlController = TextEditingController();
+  final TextEditingController _authorController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _contentController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -33,6 +39,11 @@ class _BookEditorPageState extends State<BookEditorPage> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final book = ModalRoute.of(context)!.settings.arguments as BookResponse;
       _cubit.retrieveBookInformationEvent(book);
+      _bookTitleController.text = book.book.title;
+      _imageUrlController.text = book.book.image;
+      _authorController.text = book.book.author;
+      _descriptionController.text = book.book.description;
+      _contentController.text = book.book.content;
     });
   }
 
@@ -93,12 +104,15 @@ class _BookEditorPageState extends State<BookEditorPage> {
 
           // book title
           DSTextField(
-            controller: TextEditingController(text: viewModel.bookTitle),
+            controller: _bookTitleController,
+            height: 66,
             hintText: S.current.book_title,
             prefixIcon: const Icon(Icons.book_rounded),
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.name,
-            onChanged: (String value) => _cubit.changeBookTitleEvent(value),
+            onChanged: (String value) {
+              _cubit.changeBookTitleEvent(value);
+            },
             validator: viewModel.bookTitle.isNotEmpty,
             errorText: S.current.book_title_required,
           ),
@@ -112,7 +126,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
               // image url
               Expanded(
                 child: DSTextField(
-                  controller: TextEditingController(text: viewModel.imageUrl),
+                  controller: _imageUrlController,
                   hintText: S.current.image_url,
                   height: 150,
                   maxLines: 5,
@@ -132,7 +146,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
 
           // author
           DSTextField(
-            controller: TextEditingController(text: viewModel.author),
+            controller: _authorController,
             hintText: S.current.author,
             prefixIcon: const Icon(Icons.person_2_rounded),
             textInputAction: TextInputAction.next,
@@ -149,7 +163,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
 
           // description
           DSTextField(
-            controller: TextEditingController(text: viewModel.description),
+            controller: _descriptionController,
             hintText: S.current.description,
             prefixIcon: const Icon(Icons.description),
             height: 160,
@@ -164,7 +178,7 @@ class _BookEditorPageState extends State<BookEditorPage> {
 
           // content
           DSTextField(
-            controller: TextEditingController(text: viewModel.content),
+            controller: _contentController,
             hintText: S.current.content,
             prefixIcon: const Icon(Icons.content_paste),
             height: 280,
