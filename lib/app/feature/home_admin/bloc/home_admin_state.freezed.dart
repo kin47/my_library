@@ -24,6 +24,9 @@ mixin _$HomeAdminState {
     required TResult Function(
             HomeAdminViewModel viewModel, bool showShouldLoading)
         homeAdminLoadingState,
+    required TResult Function(
+            HomeAdminViewModel viewModel, BaseException exception)
+        homeAdminErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +34,8 @@ mixin _$HomeAdminState {
     TResult? Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
     TResult? Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
         homeAdminLoadingState,
+    TResult? Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +43,8 @@ mixin _$HomeAdminState {
     TResult Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
     TResult Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
         homeAdminLoadingState,
+    TResult Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,18 +54,21 @@ mixin _$HomeAdminState {
         homeAdminPrimaryState,
     required TResult Function(HomeAdminLoadingState value)
         homeAdminLoadingState,
+    required TResult Function(HomeAdminErrorState value) homeAdminErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
     TResult? Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult? Function(HomeAdminErrorState value)? homeAdminErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
     TResult Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult Function(HomeAdminErrorState value)? homeAdminErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -188,6 +198,9 @@ class _$HomeAdminPrimaryState implements HomeAdminPrimaryState {
     required TResult Function(
             HomeAdminViewModel viewModel, bool showShouldLoading)
         homeAdminLoadingState,
+    required TResult Function(
+            HomeAdminViewModel viewModel, BaseException exception)
+        homeAdminErrorState,
   }) {
     return homeAdminPrimaryState(viewModel);
   }
@@ -198,6 +211,8 @@ class _$HomeAdminPrimaryState implements HomeAdminPrimaryState {
     TResult? Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
     TResult? Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
         homeAdminLoadingState,
+    TResult? Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
   }) {
     return homeAdminPrimaryState?.call(viewModel);
   }
@@ -208,6 +223,8 @@ class _$HomeAdminPrimaryState implements HomeAdminPrimaryState {
     TResult Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
     TResult Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
         homeAdminLoadingState,
+    TResult Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
     required TResult orElse(),
   }) {
     if (homeAdminPrimaryState != null) {
@@ -223,6 +240,7 @@ class _$HomeAdminPrimaryState implements HomeAdminPrimaryState {
         homeAdminPrimaryState,
     required TResult Function(HomeAdminLoadingState value)
         homeAdminLoadingState,
+    required TResult Function(HomeAdminErrorState value) homeAdminErrorState,
   }) {
     return homeAdminPrimaryState(this);
   }
@@ -232,6 +250,7 @@ class _$HomeAdminPrimaryState implements HomeAdminPrimaryState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
     TResult? Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult? Function(HomeAdminErrorState value)? homeAdminErrorState,
   }) {
     return homeAdminPrimaryState?.call(this);
   }
@@ -241,6 +260,7 @@ class _$HomeAdminPrimaryState implements HomeAdminPrimaryState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
     TResult Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult Function(HomeAdminErrorState value)? homeAdminErrorState,
     required TResult orElse(),
   }) {
     if (homeAdminPrimaryState != null) {
@@ -351,6 +371,9 @@ class _$HomeAdminLoadingState implements HomeAdminLoadingState {
     required TResult Function(
             HomeAdminViewModel viewModel, bool showShouldLoading)
         homeAdminLoadingState,
+    required TResult Function(
+            HomeAdminViewModel viewModel, BaseException exception)
+        homeAdminErrorState,
   }) {
     return homeAdminLoadingState(viewModel, showShouldLoading);
   }
@@ -361,6 +384,8 @@ class _$HomeAdminLoadingState implements HomeAdminLoadingState {
     TResult? Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
     TResult? Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
         homeAdminLoadingState,
+    TResult? Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
   }) {
     return homeAdminLoadingState?.call(viewModel, showShouldLoading);
   }
@@ -371,6 +396,8 @@ class _$HomeAdminLoadingState implements HomeAdminLoadingState {
     TResult Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
     TResult Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
         homeAdminLoadingState,
+    TResult Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
     required TResult orElse(),
   }) {
     if (homeAdminLoadingState != null) {
@@ -386,6 +413,7 @@ class _$HomeAdminLoadingState implements HomeAdminLoadingState {
         homeAdminPrimaryState,
     required TResult Function(HomeAdminLoadingState value)
         homeAdminLoadingState,
+    required TResult Function(HomeAdminErrorState value) homeAdminErrorState,
   }) {
     return homeAdminLoadingState(this);
   }
@@ -395,6 +423,7 @@ class _$HomeAdminLoadingState implements HomeAdminLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
     TResult? Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult? Function(HomeAdminErrorState value)? homeAdminErrorState,
   }) {
     return homeAdminLoadingState?.call(this);
   }
@@ -404,6 +433,7 @@ class _$HomeAdminLoadingState implements HomeAdminLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
     TResult Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult Function(HomeAdminErrorState value)? homeAdminErrorState,
     required TResult orElse(),
   }) {
     if (homeAdminLoadingState != null) {
@@ -424,5 +454,189 @@ abstract class HomeAdminLoadingState implements HomeAdminState {
   @override
   @JsonKey(ignore: true)
   _$$HomeAdminLoadingStateCopyWith<_$HomeAdminLoadingState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HomeAdminErrorStateCopyWith<$Res>
+    implements $HomeAdminStateCopyWith<$Res> {
+  factory _$$HomeAdminErrorStateCopyWith(_$HomeAdminErrorState value,
+          $Res Function(_$HomeAdminErrorState) then) =
+      __$$HomeAdminErrorStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({HomeAdminViewModel viewModel, BaseException exception});
+
+  @override
+  $HomeAdminViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
+}
+
+/// @nodoc
+class __$$HomeAdminErrorStateCopyWithImpl<$Res>
+    extends _$HomeAdminStateCopyWithImpl<$Res, _$HomeAdminErrorState>
+    implements _$$HomeAdminErrorStateCopyWith<$Res> {
+  __$$HomeAdminErrorStateCopyWithImpl(
+      _$HomeAdminErrorState _value, $Res Function(_$HomeAdminErrorState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+    Object? exception = null,
+  }) {
+    return _then(_$HomeAdminErrorState(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as HomeAdminViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$HomeAdminErrorState implements HomeAdminErrorState {
+  const _$HomeAdminErrorState(
+      {this.viewModel = const HomeAdminViewModel(),
+      this.exception = const BaseException()});
+
+  @override
+  @JsonKey()
+  final HomeAdminViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
+
+  @override
+  String toString() {
+    return 'HomeAdminState.homeAdminErrorState(viewModel: $viewModel, exception: $exception)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HomeAdminErrorState &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeAdminErrorStateCopyWith<_$HomeAdminErrorState> get copyWith =>
+      __$$HomeAdminErrorStateCopyWithImpl<_$HomeAdminErrorState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeAdminViewModel viewModel)
+        homeAdminPrimaryState,
+    required TResult Function(
+            HomeAdminViewModel viewModel, bool showShouldLoading)
+        homeAdminLoadingState,
+    required TResult Function(
+            HomeAdminViewModel viewModel, BaseException exception)
+        homeAdminErrorState,
+  }) {
+    return homeAdminErrorState(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
+    TResult? Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
+        homeAdminLoadingState,
+    TResult? Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
+  }) {
+    return homeAdminErrorState?.call(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeAdminViewModel viewModel)? homeAdminPrimaryState,
+    TResult Function(HomeAdminViewModel viewModel, bool showShouldLoading)?
+        homeAdminLoadingState,
+    TResult Function(HomeAdminViewModel viewModel, BaseException exception)?
+        homeAdminErrorState,
+    required TResult orElse(),
+  }) {
+    if (homeAdminErrorState != null) {
+      return homeAdminErrorState(viewModel, exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeAdminPrimaryState value)
+        homeAdminPrimaryState,
+    required TResult Function(HomeAdminLoadingState value)
+        homeAdminLoadingState,
+    required TResult Function(HomeAdminErrorState value) homeAdminErrorState,
+  }) {
+    return homeAdminErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
+    TResult? Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult? Function(HomeAdminErrorState value)? homeAdminErrorState,
+  }) {
+    return homeAdminErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeAdminPrimaryState value)? homeAdminPrimaryState,
+    TResult Function(HomeAdminLoadingState value)? homeAdminLoadingState,
+    TResult Function(HomeAdminErrorState value)? homeAdminErrorState,
+    required TResult orElse(),
+  }) {
+    if (homeAdminErrorState != null) {
+      return homeAdminErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeAdminErrorState implements HomeAdminState {
+  const factory HomeAdminErrorState(
+      {final HomeAdminViewModel viewModel,
+      final BaseException exception}) = _$HomeAdminErrorState;
+
+  @override
+  HomeAdminViewModel get viewModel;
+  BaseException get exception;
+  @override
+  @JsonKey(ignore: true)
+  _$$HomeAdminErrorStateCopyWith<_$HomeAdminErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }

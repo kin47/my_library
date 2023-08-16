@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_admin_view_model.dart';
+part of 'home_admin_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,8 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+HomeAdminResponse _$HomeAdminResponseFromJson(Map<String, dynamic> json) {
+  return _HomeAdminResponse.fromJson(json);
+}
+
 /// @nodoc
-mixin _$HomeAdminViewModel {
+mixin _$HomeAdminResponse {
   int get numberOfUsers => throw _privateConstructorUsedError;
   String get mostLikedCategory => throw _privateConstructorUsedError;
   BookResponse get recentAdditionBook => throw _privateConstructorUsedError;
@@ -23,16 +27,17 @@ mixin _$HomeAdminViewModel {
   BookResponse get mostLikedBook => throw _privateConstructorUsedError;
   BookResponse get mostCommentsBook => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HomeAdminViewModelCopyWith<HomeAdminViewModel> get copyWith =>
+  $HomeAdminResponseCopyWith<HomeAdminResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeAdminViewModelCopyWith<$Res> {
-  factory $HomeAdminViewModelCopyWith(
-          HomeAdminViewModel value, $Res Function(HomeAdminViewModel) then) =
-      _$HomeAdminViewModelCopyWithImpl<$Res, HomeAdminViewModel>;
+abstract class $HomeAdminResponseCopyWith<$Res> {
+  factory $HomeAdminResponseCopyWith(
+          HomeAdminResponse value, $Res Function(HomeAdminResponse) then) =
+      _$HomeAdminResponseCopyWithImpl<$Res, HomeAdminResponse>;
   @useResult
   $Res call(
       {int numberOfUsers,
@@ -49,9 +54,9 @@ abstract class $HomeAdminViewModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeAdminViewModelCopyWithImpl<$Res, $Val extends HomeAdminViewModel>
-    implements $HomeAdminViewModelCopyWith<$Res> {
-  _$HomeAdminViewModelCopyWithImpl(this._value, this._then);
+class _$HomeAdminResponseCopyWithImpl<$Res, $Val extends HomeAdminResponse>
+    implements $HomeAdminResponseCopyWith<$Res> {
+  _$HomeAdminResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -130,11 +135,11 @@ class _$HomeAdminViewModelCopyWithImpl<$Res, $Val extends HomeAdminViewModel>
 }
 
 /// @nodoc
-abstract class _$$_HomeAdminViewModelCopyWith<$Res>
-    implements $HomeAdminViewModelCopyWith<$Res> {
-  factory _$$_HomeAdminViewModelCopyWith(_$_HomeAdminViewModel value,
-          $Res Function(_$_HomeAdminViewModel) then) =
-      __$$_HomeAdminViewModelCopyWithImpl<$Res>;
+abstract class _$$_HomeAdminResponseCopyWith<$Res>
+    implements $HomeAdminResponseCopyWith<$Res> {
+  factory _$$_HomeAdminResponseCopyWith(_$_HomeAdminResponse value,
+          $Res Function(_$_HomeAdminResponse) then) =
+      __$$_HomeAdminResponseCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -156,11 +161,11 @@ abstract class _$$_HomeAdminViewModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HomeAdminViewModelCopyWithImpl<$Res>
-    extends _$HomeAdminViewModelCopyWithImpl<$Res, _$_HomeAdminViewModel>
-    implements _$$_HomeAdminViewModelCopyWith<$Res> {
-  __$$_HomeAdminViewModelCopyWithImpl(
-      _$_HomeAdminViewModel _value, $Res Function(_$_HomeAdminViewModel) _then)
+class __$$_HomeAdminResponseCopyWithImpl<$Res>
+    extends _$HomeAdminResponseCopyWithImpl<$Res, _$_HomeAdminResponse>
+    implements _$$_HomeAdminResponseCopyWith<$Res> {
+  __$$_HomeAdminResponseCopyWithImpl(
+      _$_HomeAdminResponse _value, $Res Function(_$_HomeAdminResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -173,7 +178,7 @@ class __$$_HomeAdminViewModelCopyWithImpl<$Res>
     Object? mostLikedBook = null,
     Object? mostCommentsBook = null,
   }) {
-    return _then(_$_HomeAdminViewModel(
+    return _then(_$_HomeAdminResponse(
       numberOfUsers: null == numberOfUsers
           ? _value.numberOfUsers
           : numberOfUsers // ignore: cast_nullable_to_non_nullable
@@ -204,93 +209,43 @@ class __$$_HomeAdminViewModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomeAdminViewModel extends _HomeAdminViewModel {
-  const _$_HomeAdminViewModel(
-      {this.numberOfUsers = 0,
-      this.mostLikedCategory = '',
-      this.recentAdditionBook = const BookResponse(
-          book: Book(
-              id: 0,
-              title: '',
-              author: '',
-              content: '',
-              image: '',
-              description: '',
-              createAt: 0,
-              updateAt: 0),
-          categories: [],
-          totalComments: 0,
-          totalLikes: 0),
-      this.recentUpdateBook = const BookResponse(
-          book: Book(
-              id: 0,
-              title: '',
-              author: '',
-              content: '',
-              image: '',
-              description: '',
-              createAt: 0,
-              updateAt: 0),
-          categories: [],
-          totalComments: 0,
-          totalLikes: 0),
-      this.mostLikedBook = const BookResponse(
-          book: Book(
-              id: 0,
-              title: '',
-              author: '',
-              content: '',
-              image: '',
-              description: '',
-              createAt: 0,
-              updateAt: 0),
-          categories: [],
-          totalComments: 0,
-          totalLikes: 0),
-      this.mostCommentsBook = const BookResponse(
-          book: Book(
-              id: 0,
-              title: '',
-              author: '',
-              content: '',
-              image: '',
-              description: '',
-              createAt: 0,
-              updateAt: 0),
-          categories: [],
-          totalComments: 0,
-          totalLikes: 0)})
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _$_HomeAdminResponse extends _HomeAdminResponse {
+  const _$_HomeAdminResponse(
+      {required this.numberOfUsers,
+      required this.mostLikedCategory,
+      required this.recentAdditionBook,
+      required this.recentUpdateBook,
+      required this.mostLikedBook,
+      required this.mostCommentsBook})
       : super._();
 
+  factory _$_HomeAdminResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_HomeAdminResponseFromJson(json);
+
   @override
-  @JsonKey()
   final int numberOfUsers;
   @override
-  @JsonKey()
   final String mostLikedCategory;
   @override
-  @JsonKey()
   final BookResponse recentAdditionBook;
   @override
-  @JsonKey()
   final BookResponse recentUpdateBook;
   @override
-  @JsonKey()
   final BookResponse mostLikedBook;
   @override
-  @JsonKey()
   final BookResponse mostCommentsBook;
 
   @override
   String toString() {
-    return 'HomeAdminViewModel(numberOfUsers: $numberOfUsers, mostLikedCategory: $mostLikedCategory, recentAdditionBook: $recentAdditionBook, recentUpdateBook: $recentUpdateBook, mostLikedBook: $mostLikedBook, mostCommentsBook: $mostCommentsBook)';
+    return 'HomeAdminResponse(numberOfUsers: $numberOfUsers, mostLikedCategory: $mostLikedCategory, recentAdditionBook: $recentAdditionBook, recentUpdateBook: $recentUpdateBook, mostLikedBook: $mostLikedBook, mostCommentsBook: $mostCommentsBook)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeAdminViewModel &&
+            other is _$_HomeAdminResponse &&
             (identical(other.numberOfUsers, numberOfUsers) ||
                 other.numberOfUsers == numberOfUsers) &&
             (identical(other.mostLikedCategory, mostLikedCategory) ||
@@ -305,6 +260,7 @@ class _$_HomeAdminViewModel extends _HomeAdminViewModel {
                 other.mostCommentsBook == mostCommentsBook));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, numberOfUsers, mostLikedCategory,
       recentAdditionBook, recentUpdateBook, mostLikedBook, mostCommentsBook);
@@ -312,20 +268,30 @@ class _$_HomeAdminViewModel extends _HomeAdminViewModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeAdminViewModelCopyWith<_$_HomeAdminViewModel> get copyWith =>
-      __$$_HomeAdminViewModelCopyWithImpl<_$_HomeAdminViewModel>(
+  _$$_HomeAdminResponseCopyWith<_$_HomeAdminResponse> get copyWith =>
+      __$$_HomeAdminResponseCopyWithImpl<_$_HomeAdminResponse>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_HomeAdminResponseToJson(
+      this,
+    );
+  }
 }
 
-abstract class _HomeAdminViewModel extends HomeAdminViewModel {
-  const factory _HomeAdminViewModel(
-      {final int numberOfUsers,
-      final String mostLikedCategory,
-      final BookResponse recentAdditionBook,
-      final BookResponse recentUpdateBook,
-      final BookResponse mostLikedBook,
-      final BookResponse mostCommentsBook}) = _$_HomeAdminViewModel;
-  const _HomeAdminViewModel._() : super._();
+abstract class _HomeAdminResponse extends HomeAdminResponse {
+  const factory _HomeAdminResponse(
+      {required final int numberOfUsers,
+      required final String mostLikedCategory,
+      required final BookResponse recentAdditionBook,
+      required final BookResponse recentUpdateBook,
+      required final BookResponse mostLikedBook,
+      required final BookResponse mostCommentsBook}) = _$_HomeAdminResponse;
+  const _HomeAdminResponse._() : super._();
+
+  factory _HomeAdminResponse.fromJson(Map<String, dynamic> json) =
+      _$_HomeAdminResponse.fromJson;
 
   @override
   int get numberOfUsers;
@@ -341,6 +307,6 @@ abstract class _HomeAdminViewModel extends HomeAdminViewModel {
   BookResponse get mostCommentsBook;
   @override
   @JsonKey(ignore: true)
-  _$$_HomeAdminViewModelCopyWith<_$_HomeAdminViewModel> get copyWith =>
+  _$$_HomeAdminResponseCopyWith<_$_HomeAdminResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

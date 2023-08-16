@@ -48,7 +48,12 @@ class LibraryCubit extends Cubit<LibraryState> {
       {required String title, required String category}) async {
     emit(LibraryLoadingState(
         viewModel: state.viewModel, showShouldLoading: true));
-    final result = await _bookGetterUseCase.call([title, category]);
+    final result = await _bookGetterUseCase.call(
+      BookGetterUseCaseParam(
+        title: title,
+        category: category,
+      ),
+    );
     dismissLoading();
     result.fold(
       (l) => emit(LibraryErrorState(viewModel: state.viewModel, exception: l)),
