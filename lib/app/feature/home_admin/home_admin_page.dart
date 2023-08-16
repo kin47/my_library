@@ -6,6 +6,8 @@ import 'package:my_library/app/feature/home_admin/view_model/home_admin_view_mod
 import 'package:my_library/app/feature/main/widget/book_card_widget.dart';
 import 'package:my_library/design_system/ds_app_bar.dart';
 import 'package:my_library/design_system/ds_color.dart';
+import 'package:my_library/design_system/ds_loading.dart';
+import 'package:my_library/design_system/ds_snackbar.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
 import 'package:my_library/design_system/ds_text_style.dart';
 import 'package:my_library/di/di.dart';
@@ -23,12 +25,29 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
   final HomeAdminCubit _cubit = di();
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _cubit.getHomeAdminInfoEvent();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) => Scaffold(
         appBar: DSAppBar(
           title: S.current.home,
         ),
-        body: BlocBuilder<HomeAdminCubit, HomeAdminState>(
+        body: BlocConsumer<HomeAdminCubit, HomeAdminState>(
           bloc: _cubit,
+          listener: (BuildContext context, HomeAdminState state) {
+            if (state is HomeAdminLoadingState) {
+              showLoading(context);
+            }
+            if (state is HomeAdminErrorState) {
+              showSnackBar(context, '');
+            }
+          },
           builder: (BuildContext context, HomeAdminState state) {
             return _buildPrimaryWidget(state);
           },
@@ -52,7 +71,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildFirstBodyRow(context),
+          _buildFirstBodyRow(viewModel),
 
           SH20,
           // recent addition
@@ -63,13 +82,13 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
-            id: viewModel.recentAdditionBook.id,
-            title: viewModel.recentAdditionBook.bookName,
-            author: viewModel.recentAdditionBook.author,
-            imageUrl: viewModel.recentAdditionBook.bookImageUrl,
-            totalLikes: 0,
-            totalComments: 0,
-            categories: [],
+            id: viewModel.recentAdditionBook.book.id,
+            title: viewModel.recentAdditionBook.book.title,
+            author: viewModel.recentAdditionBook.book.author,
+            imageUrl: viewModel.recentAdditionBook.book.image,
+            totalLikes: viewModel.recentAdditionBook.totalLikes,
+            totalComments: viewModel.recentAdditionBook.totalComments,
+            categories: viewModel.recentAdditionBook.categories,
           ),
           SH20,
 
@@ -81,13 +100,13 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
-            id: viewModel.recentUpdateBook.id,
-            title: viewModel.recentUpdateBook.bookName,
-            author: viewModel.recentUpdateBook.author,
-            imageUrl: viewModel.recentUpdateBook.bookImageUrl,
-            totalLikes: 0,
-            totalComments: 0,
-            categories: [],
+            id: viewModel.recentUpdateBook.book.id,
+            title: viewModel.recentUpdateBook.book.title,
+            author: viewModel.recentUpdateBook.book.author,
+            imageUrl: viewModel.recentUpdateBook.book.image,
+            totalLikes: viewModel.recentUpdateBook.totalLikes,
+            totalComments: viewModel.recentUpdateBook.totalComments,
+            categories: viewModel.recentUpdateBook.categories,
           ),
           SH20,
 
@@ -99,13 +118,13 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
-            id: viewModel.mostLikedBook.id,
-            title: viewModel.mostLikedBook.bookName,
-            author: viewModel.mostLikedBook.author,
-            imageUrl: viewModel.mostLikedBook.bookImageUrl,
-            totalLikes: 0,
-            totalComments: 0,
-            categories: [],
+            id: viewModel.mostLikedBook.book.id,
+            title: viewModel.mostLikedBook.book.title,
+            author: viewModel.mostLikedBook.book.author,
+            imageUrl: viewModel.mostLikedBook.book.image,
+            totalLikes: viewModel.mostLikedBook.totalLikes,
+            totalComments: viewModel.mostLikedBook.totalComments,
+            categories: viewModel.mostLikedBook.categories,
           ),
           SH20,
 
@@ -117,13 +136,13 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
             ),
           ),
           BookCardWidget(
-            id: viewModel.mostCommentsBook.id,
-            title: viewModel.mostCommentsBook.bookName,
-            author: viewModel.mostCommentsBook.author,
-            imageUrl: viewModel.mostCommentsBook.bookImageUrl,
-            totalLikes: 0,
-            totalComments: 0,
-            categories: [],
+            id: viewModel.mostCommentsBook.book.id,
+            title: viewModel.mostCommentsBook.book.title,
+            author: viewModel.mostCommentsBook.book.author,
+            imageUrl: viewModel.mostCommentsBook.book.image,
+            totalLikes: viewModel.mostCommentsBook.totalLikes,
+            totalComments: viewModel.mostCommentsBook.totalComments,
+            categories: viewModel.mostCommentsBook.categories,
           ),
           SH30,
         ],
@@ -131,24 +150,24 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
     );
   }
 
-  Widget _buildFirstBodyRow(BuildContext context) {
+  Widget _buildFirstBodyRow(HomeAdminViewModel viewModel) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Flexible(
           flex: 1,
-          child: _buildNumberOfUsersWidget(),
+          child: _buildNumberOfUsersWidget(viewModel.numberOfUsers),
         ),
         SW20,
         Flexible(
           flex: 1,
-          child: _buildMostLikedCategoryWidget(),
+          child: _buildMostLikedCategoryWidget(viewModel.mostLikedCategory),
         ),
       ],
     );
   }
 
-  Widget _buildNumberOfUsersWidget() {
+  Widget _buildNumberOfUsersWidget(int numberOfUsers) {
     return Container(
       height: 130,
       width: MediaQuery.of(context).size.width,
@@ -186,7 +205,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
                 ),
                 SW10,
                 Text(
-                  '200',
+                  numberOfUsers.toString(),
                   style: DSTextStyle.ws30w500.copyWith(
                     color: AppColors.white,
                   ),
@@ -199,7 +218,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
     );
   }
 
-  Widget _buildMostLikedCategoryWidget() {
+  Widget _buildMostLikedCategoryWidget(String mostLikedCategory) {
     return Container(
       height: 130,
       width: MediaQuery.of(context).size.width,
@@ -226,7 +245,7 @@ class _HomeAdminPageState extends State<HomeAdminPage> {
           ),
           SH30,
           Text(
-            'Fantasy',
+            mostLikedCategory,
             style: DSTextStyle.ws16w500.copyWith(
               color: AppColors.text,
               backgroundColor: AppColors.white.withOpacity(0.8),

@@ -4,6 +4,7 @@ import 'package:my_library/app/model/request/book/book_request.dart';
 import 'package:my_library/app/model/request/register/register_request.dart';
 import 'package:my_library/app/model/response/book/book_response.dart';
 import 'package:my_library/app/model/response/category/category_response.dart';
+import 'package:my_library/app/model/response/home_admin/home_admin_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'app_rest_client.g.dart';
@@ -11,7 +12,7 @@ part 'app_rest_client.g.dart';
 @RestApi(parser: Parser.JsonSerializable)
 abstract class AppRestClient {
   factory AppRestClient.from(Dio dio) =>
-      _AppRestClient(dio, baseUrl: 'http://192.168.1.217:8080/api');
+      _AppRestClient(dio, baseUrl: 'http://192.168.1.218:8080/api');
 
   @POST('/register')
   Future<dynamic> register(@Body() RegisterRequest body);
@@ -33,4 +34,7 @@ abstract class AppRestClient {
 
   @GET('/category')
   Future<List<CategoryResponse>> getCategory();
+
+  @GET('/home/admin')
+  Future<HomeAdminResponse> getAdminStatistical();
 }

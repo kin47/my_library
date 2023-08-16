@@ -92,7 +92,7 @@ class BookCardWidget extends StatelessWidget {
         ),
         SW12,
         SizedBox(
-          width: 250,
+          width: 245,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,

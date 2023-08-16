@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:my_library/app/config/exception/base_exception.dart';
 import 'package:my_library/app/feature/home_admin/view_model/home_admin_view_model.dart';
 
 part 'home_admin_state.freezed.dart';
@@ -13,4 +14,9 @@ class HomeAdminState with _$HomeAdminState {
     @Default(HomeAdminViewModel()) HomeAdminViewModel viewModel,
     @Default(true) bool showShouldLoading,
   }) = HomeAdminLoadingState;
+
+  const factory HomeAdminState.homeAdminErrorState({
+    @Default(HomeAdminViewModel()) HomeAdminViewModel viewModel,
+    @Default(BaseException()) BaseException exception,
+  }) = HomeAdminErrorState;
 }
