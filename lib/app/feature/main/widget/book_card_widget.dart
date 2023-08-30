@@ -91,8 +91,7 @@ class BookCardWidget extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         SW12,
-        SizedBox(
-          width: 245,
+        Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:my_library/app/config/exception/base_exception.dart';
 import 'package:my_library/app/feature/home_user/view_model/home_user_view_model.dart';
 
 part 'home_user_state.freezed.dart';
@@ -13,4 +14,9 @@ class HomeUserState with _$HomeUserState {
     @Default(HomeUserViewModel()) HomeUserViewModel viewModel,
     @Default(true) bool showShouldLoading,
   }) = HomeUserLoadingState;
+
+  const factory HomeUserState.homeUserErrorState({
+    @Default(HomeUserViewModel()) HomeUserViewModel viewModel,
+    @Default(BaseException()) BaseException exception,
+  }) = HomeUserErrorState;
 }

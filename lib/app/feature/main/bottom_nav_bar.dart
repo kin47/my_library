@@ -34,7 +34,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _adminPages[_selectedPageIndex],
+      body: _userPages[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black12,
         selectedItemColor: Theme.of(context).primaryColor,

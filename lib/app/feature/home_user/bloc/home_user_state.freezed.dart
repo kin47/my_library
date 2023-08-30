@@ -23,6 +23,9 @@ mixin _$HomeUserState {
     required TResult Function(
             HomeUserViewModel viewModel, bool showShouldLoading)
         homeUserLoadingState,
+    required TResult Function(
+            HomeUserViewModel viewModel, BaseException exception)
+        homeUserErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,8 @@ mixin _$HomeUserState {
     TResult? Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
     TResult? Function(HomeUserViewModel viewModel, bool showShouldLoading)?
         homeUserLoadingState,
+    TResult? Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +42,8 @@ mixin _$HomeUserState {
     TResult Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
     TResult Function(HomeUserViewModel viewModel, bool showShouldLoading)?
         homeUserLoadingState,
+    TResult Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,18 +51,21 @@ mixin _$HomeUserState {
   TResult map<TResult extends Object?>({
     required TResult Function(HomeUserPrimaryState value) homeUserPrimaryState,
     required TResult Function(HomeUserLoadingState value) homeUserLoadingState,
+    required TResult Function(HomeUserErrorState value) homeUserErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HomeUserPrimaryState value)? homeUserPrimaryState,
     TResult? Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult? Function(HomeUserErrorState value)? homeUserErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomeUserPrimaryState value)? homeUserPrimaryState,
     TResult Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult Function(HomeUserErrorState value)? homeUserErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -184,6 +194,9 @@ class _$HomeUserPrimaryState implements HomeUserPrimaryState {
     required TResult Function(
             HomeUserViewModel viewModel, bool showShouldLoading)
         homeUserLoadingState,
+    required TResult Function(
+            HomeUserViewModel viewModel, BaseException exception)
+        homeUserErrorState,
   }) {
     return homeUserPrimaryState(viewModel);
   }
@@ -194,6 +207,8 @@ class _$HomeUserPrimaryState implements HomeUserPrimaryState {
     TResult? Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
     TResult? Function(HomeUserViewModel viewModel, bool showShouldLoading)?
         homeUserLoadingState,
+    TResult? Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
   }) {
     return homeUserPrimaryState?.call(viewModel);
   }
@@ -204,6 +219,8 @@ class _$HomeUserPrimaryState implements HomeUserPrimaryState {
     TResult Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
     TResult Function(HomeUserViewModel viewModel, bool showShouldLoading)?
         homeUserLoadingState,
+    TResult Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
     required TResult orElse(),
   }) {
     if (homeUserPrimaryState != null) {
@@ -217,6 +234,7 @@ class _$HomeUserPrimaryState implements HomeUserPrimaryState {
   TResult map<TResult extends Object?>({
     required TResult Function(HomeUserPrimaryState value) homeUserPrimaryState,
     required TResult Function(HomeUserLoadingState value) homeUserLoadingState,
+    required TResult Function(HomeUserErrorState value) homeUserErrorState,
   }) {
     return homeUserPrimaryState(this);
   }
@@ -226,6 +244,7 @@ class _$HomeUserPrimaryState implements HomeUserPrimaryState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HomeUserPrimaryState value)? homeUserPrimaryState,
     TResult? Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult? Function(HomeUserErrorState value)? homeUserErrorState,
   }) {
     return homeUserPrimaryState?.call(this);
   }
@@ -235,6 +254,7 @@ class _$HomeUserPrimaryState implements HomeUserPrimaryState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomeUserPrimaryState value)? homeUserPrimaryState,
     TResult Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult Function(HomeUserErrorState value)? homeUserErrorState,
     required TResult orElse(),
   }) {
     if (homeUserPrimaryState != null) {
@@ -344,6 +364,9 @@ class _$HomeUserLoadingState implements HomeUserLoadingState {
     required TResult Function(
             HomeUserViewModel viewModel, bool showShouldLoading)
         homeUserLoadingState,
+    required TResult Function(
+            HomeUserViewModel viewModel, BaseException exception)
+        homeUserErrorState,
   }) {
     return homeUserLoadingState(viewModel, showShouldLoading);
   }
@@ -354,6 +377,8 @@ class _$HomeUserLoadingState implements HomeUserLoadingState {
     TResult? Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
     TResult? Function(HomeUserViewModel viewModel, bool showShouldLoading)?
         homeUserLoadingState,
+    TResult? Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
   }) {
     return homeUserLoadingState?.call(viewModel, showShouldLoading);
   }
@@ -364,6 +389,8 @@ class _$HomeUserLoadingState implements HomeUserLoadingState {
     TResult Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
     TResult Function(HomeUserViewModel viewModel, bool showShouldLoading)?
         homeUserLoadingState,
+    TResult Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
     required TResult orElse(),
   }) {
     if (homeUserLoadingState != null) {
@@ -377,6 +404,7 @@ class _$HomeUserLoadingState implements HomeUserLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(HomeUserPrimaryState value) homeUserPrimaryState,
     required TResult Function(HomeUserLoadingState value) homeUserLoadingState,
+    required TResult Function(HomeUserErrorState value) homeUserErrorState,
   }) {
     return homeUserLoadingState(this);
   }
@@ -386,6 +414,7 @@ class _$HomeUserLoadingState implements HomeUserLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HomeUserPrimaryState value)? homeUserPrimaryState,
     TResult? Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult? Function(HomeUserErrorState value)? homeUserErrorState,
   }) {
     return homeUserLoadingState?.call(this);
   }
@@ -395,6 +424,7 @@ class _$HomeUserLoadingState implements HomeUserLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HomeUserPrimaryState value)? homeUserPrimaryState,
     TResult Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult Function(HomeUserErrorState value)? homeUserErrorState,
     required TResult orElse(),
   }) {
     if (homeUserLoadingState != null) {
@@ -415,5 +445,186 @@ abstract class HomeUserLoadingState implements HomeUserState {
   @override
   @JsonKey(ignore: true)
   _$$HomeUserLoadingStateCopyWith<_$HomeUserLoadingState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HomeUserErrorStateCopyWith<$Res>
+    implements $HomeUserStateCopyWith<$Res> {
+  factory _$$HomeUserErrorStateCopyWith(_$HomeUserErrorState value,
+          $Res Function(_$HomeUserErrorState) then) =
+      __$$HomeUserErrorStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({HomeUserViewModel viewModel, BaseException exception});
+
+  @override
+  $HomeUserViewModelCopyWith<$Res> get viewModel;
+  $BaseExceptionCopyWith<$Res> get exception;
+}
+
+/// @nodoc
+class __$$HomeUserErrorStateCopyWithImpl<$Res>
+    extends _$HomeUserStateCopyWithImpl<$Res, _$HomeUserErrorState>
+    implements _$$HomeUserErrorStateCopyWith<$Res> {
+  __$$HomeUserErrorStateCopyWithImpl(
+      _$HomeUserErrorState _value, $Res Function(_$HomeUserErrorState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+    Object? exception = null,
+  }) {
+    return _then(_$HomeUserErrorState(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as HomeUserViewModel,
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as BaseException,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BaseExceptionCopyWith<$Res> get exception {
+    return $BaseExceptionCopyWith<$Res>(_value.exception, (value) {
+      return _then(_value.copyWith(exception: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$HomeUserErrorState implements HomeUserErrorState {
+  const _$HomeUserErrorState(
+      {this.viewModel = const HomeUserViewModel(),
+      this.exception = const BaseException()});
+
+  @override
+  @JsonKey()
+  final HomeUserViewModel viewModel;
+  @override
+  @JsonKey()
+  final BaseException exception;
+
+  @override
+  String toString() {
+    return 'HomeUserState.homeUserErrorState(viewModel: $viewModel, exception: $exception)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HomeUserErrorState &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeUserErrorStateCopyWith<_$HomeUserErrorState> get copyWith =>
+      __$$HomeUserErrorStateCopyWithImpl<_$HomeUserErrorState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeUserViewModel viewModel) homeUserPrimaryState,
+    required TResult Function(
+            HomeUserViewModel viewModel, bool showShouldLoading)
+        homeUserLoadingState,
+    required TResult Function(
+            HomeUserViewModel viewModel, BaseException exception)
+        homeUserErrorState,
+  }) {
+    return homeUserErrorState(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
+    TResult? Function(HomeUserViewModel viewModel, bool showShouldLoading)?
+        homeUserLoadingState,
+    TResult? Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
+  }) {
+    return homeUserErrorState?.call(viewModel, exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeUserViewModel viewModel)? homeUserPrimaryState,
+    TResult Function(HomeUserViewModel viewModel, bool showShouldLoading)?
+        homeUserLoadingState,
+    TResult Function(HomeUserViewModel viewModel, BaseException exception)?
+        homeUserErrorState,
+    required TResult orElse(),
+  }) {
+    if (homeUserErrorState != null) {
+      return homeUserErrorState(viewModel, exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HomeUserPrimaryState value) homeUserPrimaryState,
+    required TResult Function(HomeUserLoadingState value) homeUserLoadingState,
+    required TResult Function(HomeUserErrorState value) homeUserErrorState,
+  }) {
+    return homeUserErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HomeUserPrimaryState value)? homeUserPrimaryState,
+    TResult? Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult? Function(HomeUserErrorState value)? homeUserErrorState,
+  }) {
+    return homeUserErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HomeUserPrimaryState value)? homeUserPrimaryState,
+    TResult Function(HomeUserLoadingState value)? homeUserLoadingState,
+    TResult Function(HomeUserErrorState value)? homeUserErrorState,
+    required TResult orElse(),
+  }) {
+    if (homeUserErrorState != null) {
+      return homeUserErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeUserErrorState implements HomeUserState {
+  const factory HomeUserErrorState(
+      {final HomeUserViewModel viewModel,
+      final BaseException exception}) = _$HomeUserErrorState;
+
+  @override
+  HomeUserViewModel get viewModel;
+  BaseException get exception;
+  @override
+  @JsonKey(ignore: true)
+  _$$HomeUserErrorStateCopyWith<_$HomeUserErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }
