@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:event_bus/event_bus.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_library/app/config/exception/base_exception.dart';
@@ -13,8 +14,8 @@ Future<void> initDI() async {
   di
     ..registerFactory<AppRestClient>(() => AppRestClient.from(di<Dio>()))
     ..registerLazySingleton<CommonInterceptor>(() => CommonInterceptor())
-    ..registerFactory<BaseException>(() => BaseException());
-
+    ..registerFactory<BaseException>(() => const BaseException())
+    ..registerSingleton<EventBus>(EventBus());
   final Dio dio = Dio()
     ..options = BaseOptions(
         receiveTimeout: const Duration(milliseconds: 30000),

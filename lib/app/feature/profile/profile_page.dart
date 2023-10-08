@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:my_library/app/feature/profile/bloc/profile_cubit.dart';
 import 'package:my_library/app/feature/profile/bloc/profile_state.dart';
+import 'package:my_library/app/feature/profile/widget/language_chooser_widget.dart';
 import 'package:my_library/design_system/ds_color.dart';
 import 'package:my_library/design_system/ds_elevated_button.dart';
 import 'package:my_library/design_system/ds_spacing.dart';
@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
           SH20,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: _buildLanguageSettingWidget(),
+            child: LanguageChooserWidget(bloc: _cubit),
           ),
           SH20,
           DSElevatedButton(
@@ -175,84 +175,6 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildLanguageSettingWidget() {
-    return Card(
-      child: Column(
-        children: [
-          SH8,
-          _buildVietnameseCardWidget(),
-          const Divider(),
-          _buildEnglishCardWidget(),
-          SH8,
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEnglishCardWidget() {
-    return GestureDetector(
-      onTap: () async {
-        await S.load(const Locale('en'));
-        setState(() {});
-      },
-      child: Row(
-        children: [
-          SW12,
-          Image(
-            height: 27,
-            image: AssetImage(
-              Assets.images.icEn.keyName,
-            ),
-          ),
-          SW20,
-          Text(
-            S.current.english,
-          ),
-          const Spacer(),
-          Intl.getCurrentLocale() == 'en'
-              ? const Icon(
-                  Icons.check,
-                  color: AppColors.primary,
-                )
-              : Container(),
-          SW12,
-        ],
-      ),
-    );
-  }
-
-  Widget _buildVietnameseCardWidget() {
-    return GestureDetector(
-      onTap: () async {
-        await S.load(const Locale('vi'));
-        setState(() {});
-      },
-      child: Row(
-        children: [
-          SW12,
-          Image(
-            height: 27,
-            image: AssetImage(
-              Assets.images.icVn.keyName,
-            ),
-          ),
-          SW20,
-          Text(
-            S.current.vietnamese,
-          ),
-          const Spacer(),
-          Intl.getCurrentLocale() == 'en'
-              ? Container()
-              : const Icon(
-                  Icons.check,
-                  color: AppColors.primary,
-                ),
-          SW12,
-        ],
-      ),
     );
   }
 }
